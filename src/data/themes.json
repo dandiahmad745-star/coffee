@@ -1,0 +1,204 @@
+{
+    "themes": [
+        {
+            "name": "Latte Cream",
+            "description": "Lembut, halus, dan menenangkan seperti segelas latte.",
+            "colors": {
+                "background": "35 50% 96%",
+                "foreground": "24 25% 20%",
+                "primary": "25 45% 40%",
+                "accent": "30 50% 70%"
+            }
+        },
+        {
+            "name": "Espresso Noir",
+            "description": "Gelap, intens, dan mewah seperti shot espresso pekat.",
+            "colors": {
+                "background": "25 15% 10%",
+                "foreground": "35 30% 90%",
+                "primary": "35 80% 75%",
+                "accent": "40 70% 60%"
+            }
+        },
+        {
+            "name": "Morning Roast",
+            "description": "Cerah dan hangat seperti kopi pertama di pagi hari.",
+            "colors": {
+                "background": "45 40% 98%",
+                "foreground": "25 40% 25%",
+                "primary": "20 60% 45%",
+                "accent": "30 70% 65%"
+            }
+        },
+        {
+            "name": "Gayo Highlands",
+            "description": "Terinspirasi dari alam dataran tinggi Gayo, sejuk dan alami.",
+            "colors": {
+                "background": "210 20% 98%",
+                "foreground": "140 25% 25%",
+                "primary": "120 30% 35%",
+                "accent": "150 40% 60%"
+            }
+        },
+        {
+            "name": "Caramel Macchiato",
+            "description": "Manis, hangat, dengan sentuhan karamel yang menggoda.",
+            "colors": {
+                "background": "30 55% 94%",
+                "foreground": "25 45% 20%",
+                "primary": "30 85% 55%",
+                "accent": "25 60% 70%"
+            }
+        },
+        {
+            "name": "Cold Brew Cool",
+            "description": "Dingin, modern, dan menyegarkan seperti segelas cold brew.",
+            "colors": {
+                "background": "220 30% 15%",
+                "foreground": "210 40% 95%",
+                "primary": "200 80% 70%",
+                "accent": "230 50% 80%"
+            }
+        },
+        {
+            "name": "Robusta Bold",
+            "description": "Kuat, berani, dan penuh energi seperti kopi Robusta.",
+            "colors": {
+                "background": "10 10% 15%",
+                "foreground": "20 20% 90%",
+                "primary": "15 80% 55%",
+                "accent": "0 70% 60%"
+            }
+        },
+        {
+            "name": "Mocha Delight",
+            "description": "Perpaduan kaya antara kopi dan cokelat.",
+            "colors": {
+                "background": "25 30% 92%",
+                "foreground": "25 40% 15%",
+                "primary": "25 60% 35%",
+                "accent": "20 40% 50%"
+            }
+        },
+        {
+            "name": "Green Bean",
+            "description": "Segar dan alami, terinspirasi dari biji kopi mentah.",
+            "colors": {
+                "background": "90 20% 97%",
+                "foreground": "100 25% 20%",
+                "primary": "80 50% 40%",
+                "accent": "90 40% 60%"
+            }
+        },
+        {
+            "name": "Vintage Cafe",
+            "description": "Nostalgia dan klasik seperti kedai kopi tua di Eropa.",
+            "colors": {
+                "background": "45 30% 92%",
+                "foreground": "35 30% 25%",
+                "primary": "0 50% 40%",
+                "accent": "25 35% 50%"
+            }
+        },
+        {
+            "name": "Vanilla Bean",
+            "description": "Elegan, sederhana, dan manis.",
+            "colors": {
+                "background": "60 50% 98%",
+                "foreground": "50 15% 30%",
+                "primary": "50 80% 70%",
+                "accent": "45 50% 80%"
+            }
+        },
+        {
+            "name": "Cinnamon Dust",
+            "description": "Hangat dan pedas seperti taburan bubuk kayu manis.",
+            "colors": {
+                "background": "25 40% 96%",
+                "foreground": "15 40% 30%",
+                "primary": "10 70% 50%",
+                "accent": "20 60% 65%"
+            }
+        },
+        {
+            "name": "Dark Roast",
+            "description": "Gelap, misterius, dengan kilau minyak biji kopi sangrai gelap.",
+            "colors": {
+                "background": "20 20% 8%",
+                "foreground": "20 15% 85%",
+                "primary": "25 30% 60%",
+                "accent": "20 20% 40%"
+            }
+        },
+        {
+            "name": "Affogato Contrast",
+            "description": "Kontras tajam antara panas dan dingin, gelap dan terang.",
+            "colors": {
+                "background": "0 0% 100%",
+                "foreground": "0 0% 5%",
+                "primary": "25 45% 35%",
+                "accent": "220 5% 50%"
+            }
+        },
+        {
+            "name": "Sunrise Brew",
+            "description": "Palet warna hangat dari fajar di perkebunan kopi.",
+            "colors": {
+                "background": "35 60% 97%",
+                "foreground": "15 50% 25%",
+                "primary": "20 80% 55%",
+                "accent": "40 90% 65%"
+            }
+        },
+        {
+            "name": "Misty Mountain",
+            "description": "Sejuk dan lembut seperti kabut di pegunungan kopi.",
+            "colors": {
+                "background": "205 30% 95%",
+                "foreground": "210 20% 25%",
+                "primary": "220 40% 50%",
+                "accent": "210 30% 70%"
+            }
+        },
+        {
+            "name": "Honey Process",
+            "description": "Manis dan keemasan seperti metode proses madu.",
+            "colors": {
+                "background": "40 60% 96%",
+                "foreground": "30 40% 20%",
+                "primary": "35 80% 50%",
+                "accent": "45 70% 60%"
+            }
+        },
+        {
+            "name": "Blooming Fields",
+            "description": "Terinspirasi dari bunga pohon kopi yang mekar.",
+            "colors": {
+                "background": "330 30% 98%",
+                "foreground": "340 20% 25%",
+                "primary": "340 70% 60%",
+                "accent": "350 60% 80%"
+            }
+        },
+        {
+            "name": "Barista's Choice",
+            "description": "Profesional, bersih, dan fungsional.",
+            "colors": {
+                "background": "210 15% 96%",
+                "foreground": "220 20% 10%",
+                "primary": "215 80% 55%",
+                "accent": "210 10% 60%"
+            }
+        },
+        {
+            "name": "Earth & Clay",
+            "description": "Hangat, organik, dan membumi.",
+            "colors": {
+                "background": "25 30% 94%",
+                "foreground": "20 25% 20%",
+                "primary": "20 70% 45%",
+                "accent": "15 40% 60%"
+            }
+        }
+    ]
+}

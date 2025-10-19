@@ -1,13 +1,15 @@
 
-import { Coffee, LogOut, User } from 'lucide-react';
+import { Coffee, LogOut, User, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useUser } from '@/context/UserContext';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function Header({ className }: { className?: string }) {
   const { user, logout } = useUser();
+  const { setIsThemeDialogOpen } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -71,6 +73,15 @@ export default function Header({ className }: { className?: string }) {
                     </Link>
                 </Button>
             )}
+            <Button
+                variant="ghost"
+                size="icon"
+                className={cn("h-9 w-9 rounded-full", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}
+                onClick={() => setIsThemeDialogOpen(true)}
+              >
+                <Palette className="h-5 w-5" />
+                <span className="sr-only">Ganti Tema</span>
+            </Button>
           </div>
         </div>
       </div>
