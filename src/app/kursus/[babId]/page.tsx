@@ -1,12 +1,12 @@
 
 'use client';
 import { useState, useEffect } from 'react';
-import { useParams, notFound } from 'next/navigation';
+import { useParams, notFound, useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CheckCircle, Circle, Lock } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Circle, Lock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
 import {
@@ -30,22 +30,64 @@ type Chapter = {
   materials: Material[];
 };
 
+const PROGRESS_KEY = 'kopiStartProgress';
+
+type Progress = {
+    completedMaterials: string[];
+}
+
 export default function ChapterDetailPage() {
   const params = useParams();
+  const router = useRouter();
   const babId = params.babId as string;
   const [chapter, setChapter] = useState<Chapter | null>(null);
+  const [progress, setProgress] = useState<Progress>({ completedMaterials: [] });
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const chapterData = initialData.chapters.find(c => c.id === babId);
     if (chapterData) {
       setChapter(chapterData);
     }
+
+    try {
+      const savedProgress = localStorage.getItem(PROGRESS_KEY);
+      if (savedProgress) {
+        setProgress(JSON.parse(savedProgress));
+      }
+    } catch (error) {
+        console.error("Failed to load progress from localStorage", error);
+    }
   }, [babId]);
 
+  const handleMaterialClick = (materialId: string, isLocked: boolean) => {
+    if (!isLocked) {
+        router.push(`/kursus/${babId}/${materialId}`);
+    }
+  };
+  
+  if (!isMounted) {
+     return (
+       <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
+        <Header />
+        <main className="flex-grow pt-24 sm:pt-32">
+            <div className="container mx-auto px-4 text-center">
+                <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Memuat Bab...</h1>
+            </div>
+        </main>
+        <Footer />
+       </div>
+    )
+  }
+
   if (!chapter) {
-    // In a real app, you might want a better loading state
     return notFound();
   }
+  
+  const completedCount = chapter.materials.filter(m => progress.completedMaterials.includes(m.id)).length;
+  const totalMaterials = chapter.materials.length;
+  const chapterProgress = totalMaterials > 0 ? (completedCount / totalMaterials) * 100 : 0;
 
   return (
     <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
@@ -81,40 +123,51 @@ export default function ChapterDetailPage() {
                     <p className="mt-4 text-lg text-muted-foreground">
                         {chapter.description}
                     </p>
+                    <div className="mt-6">
+                        <div className="flex justify-between mb-1">
+                            <span className="text-base font-medium text-primary">Progress Bab</span>
+                            <span className="text-sm font-medium text-primary">{completedCount} / {totalMaterials} Selesai</span>
+                        </div>
+                        <div className="w-full bg-muted rounded-full h-2.5">
+                            <div className="bg-primary h-2.5 rounded-full" style={{width: `${chapterProgress}%`}}></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="space-y-4">
                     {chapter.materials.map((material, index) => {
-                        const isLocked = index > 0; // Lock all but the first material for now
-                        const isCompleted = false; // Placeholder
+                        const isCompleted = progress.completedMaterials.includes(material.id);
+                        // Materi pertama selalu tidak terkunci.
+                        // Materi selanjutnya tidak terkunci jika materi sebelumnya sudah selesai.
+                        const isLocked = index > 0 && !progress.completedMaterials.includes(chapter.materials[index - 1].id);
                         
                         return (
-                            <Link href="#" key={material.id} className="block">
-                                <Card className={`flex items-center p-6 transition-all duration-200 ${isLocked ? 'bg-muted/60 cursor-not-allowed' : 'bg-card hover:border-primary/50 hover:shadow-lg'}`}>
-                                    <div className="mr-6">
-                                        {isLocked ? (
-                                            <Lock className="h-8 w-8 text-muted-foreground" />
-                                        ) : isCompleted ? (
-                                            <CheckCircle className="h-8 w-8 text-green-500" />
-                                        ) : (
-                                            <Circle className="h-8 w-8 text-primary/50" />
-                                        )}
-                                    </div>
-                                    <div className="flex-grow">
-                                        <CardTitle className={`!text-xl font-semibold ${isLocked ? 'text-muted-foreground' : 'text-foreground'}`}>
-                                            {material.title}
-                                        </CardTitle>
-                                        <CardDescription className="mt-1">
-                                            Materi {index + 1}
-                                        </CardDescription>
-                                    </div>
-                                    {!isLocked && (
-                                        <Button variant="ghost" size="icon">
-                                            <ArrowLeft className="h-5 w-5 -rotate-180" />
-                                        </Button>
+                            <Card 
+                                key={material.id} 
+                                onClick={() => handleMaterialClick(material.id, isLocked)}
+                                className={`flex items-center p-6 transition-all duration-200 ${isLocked ? 'bg-muted/60 cursor-not-allowed' : 'bg-card hover:border-primary/50 hover:shadow-lg cursor-pointer'}`}
+                            >
+                                <div className="mr-6">
+                                    {isLocked ? (
+                                        <Lock className="h-8 w-8 text-muted-foreground" />
+                                    ) : isCompleted ? (
+                                        <CheckCircle className="h-8 w-8 text-green-500" />
+                                    ) : (
+                                        <Circle className="h-8 w-8 text-primary/50" />
                                     )}
-                                </Card>
-                            </Link>
+                                </div>
+                                <div className="flex-grow">
+                                    <CardTitle className={`!text-xl font-semibold ${isLocked ? 'text-muted-foreground' : 'text-foreground'}`}>
+                                        {material.title}
+                                    </CardTitle>
+                                    <CardDescription className="mt-1">
+                                        Materi {index + 1}
+                                    </CardDescription>
+                                </div>
+                                {!isLocked && (
+                                    <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                )}
+                            </Card>
                         );
                     })}
                 </div>
