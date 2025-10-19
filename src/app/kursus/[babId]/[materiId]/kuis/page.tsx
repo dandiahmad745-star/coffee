@@ -28,7 +28,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { useUser } from '@/firebase';
+import { useUserContext } from '@/context/UserContext';
 
 type Question = {
   question: string;
@@ -48,15 +48,10 @@ type Chapter = {
   materials: Material[];
 };
 
-const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
 const PASSING_SCORE = 75;
 
-type ProgressData = {
-    completedMaterials: string[];
-}
-
 export default function QuizPage() {
-  const { user, loading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading, saveProgress, userProgress } = useUserContext();
   const params = useParams();
   const router = useRouter();
   const { babId, materiId } = params as { babId: string; materiId: string };
@@ -116,18 +111,11 @@ export default function QuizPage() {
     setIsPassed(passed);
 
     if (passed) {
-      try {
-        const progressKey = `${PROGRESS_KEY_PREFIX}${user.uid}`;
-        const savedProgress = localStorage.getItem(progressKey);
-        let progress: ProgressData = savedProgress ? JSON.parse(savedProgress) : { completedMaterials: [] };
-        
-        if (!progress.completedMaterials.includes(materiId)) {
-            progress.completedMaterials.push(materiId);
-            localStorage.setItem(progressKey, JSON.stringify(progress));
-        }
-      } catch (error) {
-        console.error("Failed to save progress", error);
-      }
+      const newProgress = {
+        ...userProgress,
+        completedMaterials: [...new Set([...userProgress.completedMaterials, materiId])]
+      };
+      saveProgress(newProgress);
     }
     setShowResultDialog(true);
   };

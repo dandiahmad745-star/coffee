@@ -16,7 +16,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { useUser } from '@/firebase';
+import { useUserContext } from '@/context/UserContext';
 
 type Material = {
   id: string;
@@ -31,7 +31,7 @@ type Chapter = {
 };
 
 export default function MaterialDetailPage() {
-  const { user, loading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading } = useUserContext();
   const router = useRouter();
   const params = useParams();
   const { babId, materiId } = params as { babId: string; materiId: string };
@@ -42,10 +42,13 @@ export default function MaterialDetailPage() {
 
   useEffect(() => {
     setIsMounted(true);
-    if (!isUserLoading && !user) {
+  }, []);
+
+  useEffect(() => {
+    if (isMounted && !isUserLoading && !user) {
       router.push('/login');
     }
-  }, [user, isUserLoading, router]);
+  }, [user, isUserLoading, router, isMounted]);
 
   useEffect(() => {
     const chapterData = initialData.chapters.find(c => c.id === babId);

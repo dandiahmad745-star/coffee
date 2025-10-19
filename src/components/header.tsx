@@ -4,15 +4,12 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { useAuth, useUser } from '@/firebase';
+import { useUserContext } from '@/context/UserContext';
 import { useTheme } from '@/context/ThemeContext';
-import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 
 export default function Header({ className }: { className?: string }) {
-  const { user, loading } = useUser();
-  const auth = useAuth();
-  const router = useRouter();
+  const { user, loading, logout } = useUserContext();
   const { setIsThemeDialogOpen } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -24,11 +21,6 @@ export default function Header({ className }: { className?: string }) {
     handleScroll(); // set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleLogout = async () => {
-    await signOut(auth);
-    router.push('/');
-  };
 
   return (
     <header
@@ -68,8 +60,8 @@ export default function Header({ className }: { className?: string }) {
             </nav>
             {loading ? null : user ? (
               <div className="flex items-center gap-2">
-                  <span className={cn("hidden sm:inline text-sm font-semibold", isScrolled ? 'text-foreground' : 'text-white')}>{user.displayName || user.email}</span>
-                  <Button variant="outline" size="sm" onClick={handleLogout}>
+                  <span className={cn("hidden sm:inline text-sm font-semibold", isScrolled ? 'text-foreground' : 'text-white')}>{user.name || user.email}</span>
+                  <Button variant="outline" size="sm" onClick={logout}>
                       <LogOut className="h-4 w-4" />
                       <span className="ml-2 hidden sm:inline">Logout</span>
                   </Button>

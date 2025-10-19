@@ -9,22 +9,28 @@ import { Download, Award, Coffee, ArrowLeft } from 'lucide-react';
 import { format } from 'date-fns';
 import id from 'date-fns/locale/id';
 import Link from 'next/link';
-import { useUser } from '@/firebase';
+import { useUserContext } from '@/context/UserContext';
 
 export default function CertificatePage() {
-    const { user, loading: isUserLoading } = useUser();
+    const { user, loading: isUserLoading } = useUserContext();
     const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     
     useEffect(() => {
         setIsMounted(true);
     }, []);
+    
+    useEffect(() => {
+        if (isMounted && !isUserLoading && !user) {
+          router.push('/login');
+        }
+    }, [user, isUserLoading, router, isMounted]);
 
     const handleDownload = () => {
         window.print();
     };
 
-    if (!isMounted || isUserLoading) {
+    if (!isMounted || isUserLoading || !user) {
         return (
             <div className="flex flex-col min-h-screen bg-background text-foreground">
                 <Header />
@@ -41,7 +47,7 @@ export default function CertificatePage() {
     
     const today = new Date();
     const formattedDate = format(today, "d MMMM yyyy", { locale: id });
-    const userName = user?.displayName || user?.email || "Sobat Coffe Learning";
+    const userName = user?.name || user?.email || "Sobat Coffe Learning";
 
     return (
         <div className="flex flex-col min-h-screen bg-muted/40 text-foreground print:bg-white">

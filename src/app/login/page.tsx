@@ -12,15 +12,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Lock, User as UserIcon } from 'lucide-react';
-import { useAuth, useUser } from '@/firebase';
-import { 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
-  updateProfile 
-} from 'firebase/auth';
+import { useUserContext } from '@/context/UserContext';
 
 export default function LoginPage() {
-  const { user } = useUser();
+  const { user } = useUserContext();
   const router = useRouter();
   
   useEffect(() => {
@@ -73,8 +68,7 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const auth = useAuth();
-  const router = useRouter();
+  const { login, register } = useUserContext();
   const { toast } = useToast();
 
   const handleSubmit = async (e: FormEvent) => {
@@ -92,44 +86,23 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
 
     try {
       if (isRegister) {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        await updateProfile(userCredential.user, { displayName: name });
+        await register(name, email, password);
         toast({
           title: "Pendaftaran Berhasil!",
           description: `Selamat datang, ${name}!`,
         });
       } else {
-        await signInWithEmailAndPassword(auth, email, password);
+        await login(email, password);
         toast({
             title: "Login Berhasil!",
             description: `Selamat datang kembali!`,
         });
       }
-      router.push('/kursus');
     } catch (error: any) {
-      console.error(error);
-      let description = "Terjadi kesalahan. Silakan coba lagi.";
-      if (error.code) {
-        switch (error.code) {
-          case 'auth/email-already-in-use':
-            description = "Email ini sudah terdaftar. Silakan login.";
-            break;
-          case 'auth/user-invalid-credential':
-          case 'auth/wrong-password':
-          case 'auth/user-not-found':
-            description = "Email atau password salah.";
-            break;
-          case 'auth/weak-password':
-            description = "Password terlalu lemah. Gunakan minimal 6 karakter.";
-            break;
-          default:
-            description = error.message;
-        }
-      }
       toast({
           variant: "destructive",
           title: "Gagal",
-          description: description,
+          description: error.message || "Terjadi kesalahan. Silakan coba lagi.",
       });
     } finally {
       setIsLoading(false);

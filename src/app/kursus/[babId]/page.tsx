@@ -18,7 +18,8 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Progress } from '@/components/ui/progress';
-import { useUser } from '@/firebase';
+import { useUserContext } from '@/context/UserContext';
+
 
 type Material = {
   id: string;
@@ -32,46 +33,30 @@ type Chapter = {
   materials: Material[];
 };
 
-const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
-
-type ProgressData = {
-    completedMaterials: string[];
-}
-
 export default function ChapterDetailPage() {
-  const { user, loading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading, userProgress } = useUserContext();
   const router = useRouter();
   const params = useParams();
   const babId = params.babId as string;
   const [chapter, setChapter] = useState<Chapter | null>(null);
-  const [progress, setProgress] = useState<ProgressData>({ completedMaterials: [] });
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-    if (!isUserLoading && !user) {
+  }, []);
+
+  useEffect(() => {
+    if (isMounted && !isUserLoading && !user) {
       router.push('/login');
     }
-  }, [user, isUserLoading, router]);
+  }, [user, isUserLoading, router, isMounted]);
 
   useEffect(() => {
     const chapterData = initialData.chapters.find(c => c.id === babId);
     if (chapterData) {
       setChapter(chapterData);
     }
-
-    if (user) {
-      try {
-        const progressKey = `${PROGRESS_KEY_PREFIX}${user.uid}`;
-        const savedProgress = localStorage.getItem(progressKey);
-        if (savedProgress) {
-          setProgress(JSON.parse(savedProgress));
-        }
-      } catch (error) {
-          console.error("Failed to load progress from localStorage", error);
-      }
-    }
-  }, [babId, user]);
+  }, [babId]);
 
   const handleMaterialClick = (materialId: string, isLocked: boolean) => {
     if (!isLocked) {
@@ -79,7 +64,7 @@ export default function ChapterDetailPage() {
     }
   };
   
-  if (isUserLoading || !user) {
+  if (!isMounted || isUserLoading || !user) {
      return (
        <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
         <Header />
@@ -91,13 +76,11 @@ export default function ChapterDetailPage() {
     )
   }
 
-  if (!isMounted) return null;
-
   if (!chapter) {
     return notFound();
   }
   
-  const completedCount = chapter.materials.filter(m => progress.completedMaterials.includes(m.id)).length;
+  const completedCount = chapter.materials.filter(m => userProgress.completedMaterials.includes(m.id)).length;
   const totalMaterials = chapter.materials.length;
   const chapterProgress = totalMaterials > 0 ? (completedCount / totalMaterials) * 100 : 0;
 
@@ -146,10 +129,10 @@ export default function ChapterDetailPage() {
 
                 <div className="space-y-4">
                     {chapter.materials.map((material, index) => {
-                        const isCompleted = progress.completedMaterials.includes(material.id);
+                        const isCompleted = userProgress.completedMaterials.includes(material.id);
                         // Materi pertama selalu tidak terkunci.
                         // Materi selanjutnya tidak terkunci jika materi sebelumnya sudah selesai.
-                        const isLocked = index > 0 && !progress.completedMaterials.includes(chapter.materials[index - 1].id);
+                        const isLocked = index > 0 && !userProgress.completedMaterials.includes(chapter.materials[index - 1].id);
                         
                         return (
                             <Card 

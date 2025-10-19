@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, BookCheck, Lock, Award } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
-import { useUser } from '@/firebase';
+import { useUserContext } from '@/context/UserContext';
 
 type Chapter = {
   id: string;
@@ -18,46 +18,32 @@ type Chapter = {
   materials: { id: string; title: string }[];
 };
 
-const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
-
 export default function CoursePage() {
-  const { user, loading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading, userProgress } = useUserContext();
   const router = useRouter();
   const [chapters] = useState<Chapter[]>(initialData.chapters);
-  const [progress, setProgress] = useState<{ completedMaterials: string[] }>({ completedMaterials: [] });
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-    if (!isUserLoading && !user) {
-      router.push('/login');
-    }
-  }, [user, isUserLoading, router]);
+  }, []);
 
   useEffect(() => {
-    if (user) {
-      try {
-        const progressKey = `${PROGRESS_KEY_PREFIX}${user.uid}`;
-        const savedProgress = localStorage.getItem(progressKey);
-        if (savedProgress) {
-          setProgress(JSON.parse(savedProgress));
-        }
-      } catch (error) {
-        console.error("Failed to load progress from localStorage", error);
-      }
+    if (isMounted && !isUserLoading && !user) {
+      router.push('/login');
     }
-  }, [user]);
+  }, [user, isUserLoading, router, isMounted]);
   
   const allMaterialsCount = chapters.reduce((acc, chapter) => acc + chapter.materials.length, 0);
-  const isCourseCompleted = progress.completedMaterials.length >= allMaterialsCount;
+  const isCourseCompleted = userProgress.completedMaterials.length >= allMaterialsCount && allMaterialsCount > 0;
 
   const getCompletedMaterialsInChapter = (chapterId: string) => {
     const chapter = chapters.find(c => c.id === chapterId);
     if (!chapter) return [];
-    return chapter.materials.filter(m => progress.completedMaterials.includes(m.id));
+    return chapter.materials.filter(m => userProgress.completedMaterials.includes(m.id));
   };
   
-  if (isUserLoading || !user) {
+  if (!isMounted || isUserLoading || !user) {
      return (
        <div className="flex flex-col min-h-screen bg-background text-foreground">
         <Header />
@@ -72,8 +58,6 @@ export default function CoursePage() {
     )
   }
 
-  if (!isMounted) return null;
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
@@ -85,7 +69,7 @@ export default function CoursePage() {
                 Kurikulum Coffe Learning
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Selamat datang, {user.displayName || user.email}! Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan.
+                Selamat datang, {user.name || user.email}! Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan.
               </p>
             </div>
 
