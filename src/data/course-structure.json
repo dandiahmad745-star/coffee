@@ -469,14 +469,462 @@
       "title": "Bab 2: Teknik Seduh Manual",
       "description": "Fokus pada seni menyeduh kopi tanpa mesin. Kuasai metode populer seperti Pour Over, French Press, dan lainnya untuk mengeluarkan potensi rasa terbaik.",
       "materials": [
-        { "id": "materi-2-1", "title": "Pengantar Seduh Manual", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-2", "title": "Memahami Rasio Kopi dan Air", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-3", "title": "Teknik Pour Over: V60", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-4", "title": "Teknik Rendam: French Press", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-5", "title": "Teknik Tekan: AeroPress", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-6", "title": "Seni Cold Brew", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-7", "title": "Grind Size: Kunci Konsistensi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-2-8", "title": "Troubleshooting Seduhan Anda", "content": "Konten akan segera ditambahkan.", "quiz": [] }
+        { 
+          "id": "materi-2-1", 
+          "title": "Pengantar Seduh Manual", 
+          "content": "Selamat datang di dunia seduh manual! Berbeda dengan mesin kopi otomatis, seduh manual atau 'manual brew' memberikan Anda kendali penuh atas setiap variabel dalam proses menyeduh kopi. Ini adalah seni yang memungkinkan Anda untuk bereksperimen dan menyesuaikan seduhan untuk mengeluarkan potensi rasa terbaik dari setiap biji kopi.\n\n**Mengapa Seduh Manual?**\n*   **Kontrol:** Anda mengontrol suhu air, ukuran gilingan, rasio kopi dan air, waktu seduh, dan teknik penuangan. Setiap perubahan kecil dapat menghasilkan perbedaan rasa yang signifikan.\n*   **Koneksi:** Proses ini menciptakan hubungan yang lebih intim antara Anda dan kopi yang Anda minum. Anda menjadi bagian aktif dari proses kreasi, bukan hanya penekan tombol.\n*   **Kualitas Rasa:** Banyak pecinta kopi berpendapat bahwa metode manual mampu menonjolkan nuansa rasa yang lebih halus dan kompleks (flavor notes) yang mungkin hilang pada mesin otomatis.\n*   **Aksesibilitas:** Peralatan seduh manual seringkali jauh lebih terjangkau, portabel, dan mudah dirawat dibandingkan mesin espresso yang mahal.\n\n**Dua Filosofi Utama Seduh Manual:**\n1.  **Immersion (Rendam):** Dalam metode ini, bubuk kopi direndam sepenuhnya dalam air selama periode waktu tertentu sebelum disaring. Contoh paling populer adalah **French Press**. Metode ini cenderung menghasilkan kopi dengan **body yang lebih tebal** dan rasa yang lebih kaya karena semua minyak kopi ikut terekstraksi.\n2.  **Percolation/Infusion (Tetes/Saring):** Dalam metode ini, air mengalir melewati bubuk kopi dan menyaringnya. Contoh paling populer adalah **Pour Over (seperti V60 atau Kalita)**. Metode ini cenderung menghasilkan kopi dengan **rasa yang lebih 'bersih' (clean)** dan jernih, serta menonjolkan keasaman (acidity) yang cerah.\n\nDi bab ini, kita akan menjelajahi berbagai alat dan teknik yang termasuk dalam kedua filosofi ini. Siapkan diri Anda untuk sebuah perjalanan rasa yang memuaskan!",
+          "quiz": [
+            {
+              "question": "Apa keuntungan utama dari metode seduh manual dibandingkan mesin otomatis?",
+              "options": ["Lebih cepat", "Kontrol penuh atas variabel seduhan", "Selalu menghasilkan rasa yang sama", "Tidak perlu keahlian"],
+              "answer": "Kontrol penuh atas variabel seduhan"
+            },
+            {
+              "question": "Metode di mana bubuk kopi direndam sepenuhnya dalam air disebut...",
+              "options": ["Percolation", "Drip", "Immersion", "Espresso"],
+              "answer": "Immersion"
+            },
+            {
+              "question": "Alat manakah yang merupakan contoh klasik dari metode seduh Immersion?",
+              "options": ["V60", "Mesin Espresso", "French Press", "Kalita Wave"],
+              "answer": "French Press"
+            },
+            {
+              "question": "Metode di mana air mengalir melewati bubuk kopi dan menyaringnya disebut...",
+              "options": ["Immersion", "Soaking", "Percolation/Infusion", "Steeping"],
+              "answer": "Percolation/Infusion"
+            },
+            {
+              "question": "V60 adalah contoh populer dari metode seduh...",
+              "options": ["Immersion", "French Press", "Pour Over", "Espresso"],
+              "answer": "Pour Over"
+            },
+            {
+              "question": "Kopi yang dihasilkan dari metode Immersion (seperti French Press) cenderung memiliki...",
+              "options": ["Body yang ringan dan rasa bersih", "Body yang tebal dan rasa kaya", "Hanya rasa asam", "Tidak ada rasa sama sekali"],
+              "answer": "Body yang tebal dan rasa kaya"
+            },
+            {
+              "question": "Kopi yang dihasilkan dari metode Percolation (seperti V60) cenderung memiliki...",
+              "options": ["Body tebal dan keruh", "Rasa yang 'bersih' dan keasaman cerah", "Rasa sangat pahit", "Tidak ada aroma"],
+              "answer": "Rasa yang 'bersih' dan keasaman cerah"
+            },
+            {
+              "question": "Manakah yang BUKAN merupakan variabel yang bisa Anda kontrol dalam seduh manual?",
+              "options": ["Suhu air", "Ukuran gilingan", "Waktu seduh", "Asal negara pembuat alat"],
+              "answer": "Asal negara pembuat alat"
+            },
+            {
+              "question": "Mengapa banyak pecinta kopi menyukai seduh manual?",
+              "options": ["Karena lebih mahal", "Karena bisa menonjolkan nuansa rasa yang lebih halus", "Karena tidak perlu listrik", "Karena lebih mudah dibersihkan"],
+              "answer": "Karena bisa menonjolkan nuansa rasa yang lebih halus"
+            },
+            {
+              "question": "Peralatan seduh manual seringkali dianggap lebih terjangkau daripada...",
+              "options": ["Gelas", "Teko air", "Mesin Espresso", "Sendok"],
+              "answer": "Mesin Espresso"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-2", 
+          "title": "Memahami Rasio Kopi dan Air", 
+          "content": "Salah satu konsep fundamental dalam menyeduh kopi yang enak dan konsisten adalah **rasio kopi dan air (brew ratio)**. Rasio ini hanyalah perbandingan antara berat bubuk kopi yang Anda gunakan dengan berat air yang Anda gunakan untuk menyeduh.\n\n**Mengapa Rasio Penting?**\nRasio menentukan **kekuatan (strength)** dan **tingkat ekstraksi (extraction)** dari seduhan Anda. Jika Anda menggunakan terlalu banyak kopi, hasilnya akan sangat kuat, pekat, dan kemungkinan besar *under-extracted* (rasa asam dan mentah). Sebaliknya, jika Anda menggunakan terlalu sedikit kopi (terlalu banyak air), hasilnya akan lemah, encer, dan kemungkinan besar *over-extracted* (rasa pahit dan kosong).\n\n**Bagaimana Cara Menuliskannya?**\nRasio ditulis sebagai `1:X`, di mana `1` merepresentasikan 1 gram kopi, dan `X` merepresentasikan `X` gram air. Misalnya, rasio 1:15 berarti Anda menggunakan 1 gram kopi untuk setiap 15 gram air.\n\n**Titik Awal Rasio yang Umum:**\nSetiap metode seduh dan preferensi pribadi bisa memiliki rasio yang berbeda, tetapi ada beberapa titik awal yang diakui secara global:\n*   **Pour Over (V60, Kalita):** Rasio yang paling umum adalah **1:15 hingga 1:17**. Contoh: 20 gram kopi dengan 300 gram air (1:15).\n*   **French Press:** Karena metode rendam, rasio yang digunakan cenderung sedikit lebih pekat, sekitar **1:12 hingga 1:15**. Contoh: 30 gram kopi dengan 450 gram air (1:15).\n*   **AeroPress:** Sangat fleksibel. Bisa menggunakan rasio pekat seperti **1:5** untuk membuat konsentrat (mirip espresso), lalu diencerkan dengan air panas. Atau bisa juga menggunakan rasio normal seperti **1:16** untuk seduhan langsung.\n*   **Cold Brew:** Membutuhkan rasio yang sangat pekat karena hasilnya adalah konsentrat yang akan diencerkan nanti. Rasio umum adalah **1:4 hingga 1:8**. Contoh: 100 gram kopi dengan 800 gram air (1:8).\n\n**Pentingnya Timbangan Digital:**\nUntuk menerapkan rasio dengan akurat, penggunaan **timbangan digital** sangatlah krusial. Mengukur kopi dengan sendok atau air dengan gelas ukur sangat tidak konsisten. Timbangan memungkinkan Anda untuk menyeduh kopi yang sama enaknya setiap hari.\n\n**Eksperimen adalah Kunci:**\nRasio di atas adalah titik awal. Jangan takut untuk bereksperimen! Jika kopi Anda terasa terlalu kuat, coba gunakan lebih banyak air (misalnya, ubah rasio dari 1:15 menjadi 1:16). Jika terasa terlalu lemah, gunakan lebih sedikit air (ubah dari 1:15 menjadi 1:14). Temukan rasio yang paling pas untuk biji kopi dan selera Anda.",
+          "quiz": [
+            {
+              "question": "Apa yang dimaksud dengan rasio kopi dan air 1:16?",
+              "options": ["1 gram air untuk 16 gram kopi", "1 sendok kopi untuk 16 ml air", "1 gram kopi untuk 16 gram air", "1 cangkir kopi untuk 16 cangkir air"],
+              "answer": "1 gram kopi untuk 16 gram air"
+            },
+            {
+              "question": "Jika Anda menggunakan 20 gram kopi dengan rasio 1:15, berapa gram air yang Anda butuhkan?",
+              "options": ["200 gram", "150 gram", "300 gram", "350 gram"],
+              "answer": "300 gram"
+            },
+            {
+              "question": "Alat apa yang paling krusial untuk menerapkan rasio seduh secara akurat?",
+              "options": ["Sendok takar", "Timbangan digital", "Gelas ukur", "Stopwatch"],
+              "answer": "Timbangan digital"
+            },
+            {
+              "question": "Jika hasil seduhan Anda terasa terlalu lemah dan encer, apa yang harus Anda lakukan pada seduhan berikutnya?",
+              "options": ["Menggunakan lebih banyak air (misal: dari 1:15 ke 1:16)", "Menggunakan lebih sedikit air (misal: dari 1:15 ke 1:14)", "Menggiling lebih kasar", "Menurunkan suhu air"],
+              "answer": "Menggunakan lebih sedikit air (misal: dari 1:15 ke 1:14)"
+            },
+            {
+              "question": "Metode seduh manakah yang umumnya menggunakan rasio paling pekat untuk membuat konsentrat?",
+              "options": ["Pour Over", "French Press", "Cold Brew", "Siphon"],
+              "answer": "Cold Brew"
+            },
+            {
+              "question": "Rasio awal yang umum direkomendasikan untuk metode Pour Over adalah...",
+              "options": ["1:5 hingga 1:8", "1:10 hingga 1:12", "1:15 hingga 1:17", "1:20 hingga 1:25"],
+              "answer": "1:15 hingga 1:17"
+            },
+            {
+              "question": "Menggunakan terlalu banyak kopi (rasio terlalu pekat) kemungkinan besar akan menghasilkan kopi yang...",
+              "options": ["Over-extracted dan pahit", "Under-extracted dan asam", "Sempurna dan seimbang", "Encer dan lemah"],
+              "answer": "Under-extracted dan asam"
+            },
+            {
+              "question": "Rasio kopi dan air terutama menentukan dua hal, yaitu kekuatan (strength) dan...",
+              "options": ["Warna", "Tingkat ekstraksi", "Suhu", "Harga"],
+              "answer": "Tingkat ekstraksi"
+            },
+            {
+              "question": "Mengapa mengukur kopi dengan sendok dianggap tidak konsisten?",
+              "options": ["Karena sendok mudah kotor", "Karena kepadatan bubuk kopi bisa berbeda-beda", "Karena sendok terbuat dari logam", "Karena tidak ada yang merekomendasikannya"],
+              "answer": "Karena kepadatan bubuk kopi bisa berbeda-beda"
+            },
+            {
+              "question": "Jika kopi Anda terasa terlalu kuat, apa yang harus diubah pada rasio?",
+              "options": ["Kurangi jumlah kopi dengan air yang sama", "Tambah jumlah air dengan kopi yang sama", "Kurangi jumlah air dengan kopi yang sama", "Gunakan rasio 1:10"],
+              "answer": "Tambah jumlah air dengan kopi yang sama"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-3", 
+          "title": "Teknik Pour Over: V60", 
+          "content": "Pour over adalah salah satu metode seduh manual paling populer, dan Hario V60 adalah rajanya. Nama V60 berasal dari bentuknya: **kerucut berbentuk V dengan sudut 60 derajat**. Desain ini, bersama dengan satu lubang besar di bagian bawah dan rusuk spiral di dinding dalamnya, memungkinkan kontrol yang presisi atas aliran air dan waktu ekstraksi.\n\n**Apa yang Anda Butuhkan?**\n1.  **Dripper Hario V60:** Tersedia dalam bahan keramik, plastik, kaca, atau metal.\n2.  **Filter Kertas V60:** Didesain khusus untuk V60.\n3.  **Gooseneck Kettle (Teko Leher Angsa):** Krusial untuk kontrol penuangan yang lambat dan presisi.\n4.  **Timbangan Digital:** Untuk mengukur kopi dan air secara akurat.\n5.  **Grinder (Penggiling Kopi):** Untuk hasil terbaik, giling biji kopi sesaat sebelum menyeduh.\n6.  **Server/Cangkir:** Untuk menampung hasil seduhan.\n7.  **Stopwatch:** Untuk mengukur waktu seduh.\n\n**Langkah-langkah Menyeduh dengan V60 (Contoh: 15g kopi, 250g air, rasio ~1:16.7):**\n\n1.  **Persiapan:**\n    *   Didihkan air, lalu biarkan sekitar 30-60 detik hingga suhunya turun ke **90-96°C**.\n    *   Giling 15 gram biji kopi dengan ukuran gilingan **medium-fine** (sedikit lebih halus dari gula pasir).\n    *   Letakkan filter kertas di dalam V60, lalu basahi seluruh filter dengan air panas (ini disebut *rinsing*). Tujuannya untuk menghilangkan rasa kertas dan memanaskan V60. Buang air bilasan ini.\n    *   Letakkan V60 di atas server/cangkir, taruh di atas timbangan, dan masukkan 15g bubuk kopi. Ratakan permukaannya dan tekan tombol 'tare' pada timbangan untuk kembali ke angka 0.\n\n2.  **Tahap Blooming (0:00 - 0:45):**\n    *   Mulai stopwatch. Tuang air secara perlahan sebanyak 2-3 kali berat kopi (sekitar 30-45g air) secara merata untuk membasahi seluruh bubuk kopi.\n    *   Anda akan melihat bubuk kopi 'mekar' dan melepaskan gelembung gas (CO2). Proses ini disebut **blooming**. Diamkan selama 30-45 detik. Blooming sangat penting untuk memastikan ekstraksi yang merata.\n\n3.  **Tahap Penuangan (0:45 - 2:00):**\n    *   Setelah blooming, lanjutkan penuangan air dengan gerakan memutar yang lambat dan konsisten. Mulai dari tengah, bergerak ke luar, lalu kembali ke tengah. Hindari menuang langsung ke dinding filter.\n    *   Tuang secara bertahap hingga timbangan menunjukkan total berat air 250g. Usahakan untuk menjaga ketinggian air di dalam V60 tetap stabil.\n\n4.  **Tahap Drawdown (2:00 - selesai):**\n    *   Setelah semua air dituang, biarkan air turun sepenuhnya melewati bubuk kopi. Total waktu seduh yang ideal untuk V60 adalah antara **2:30 hingga 3:30 menit**. Jika terlalu cepat, gilingan Anda mungkin terlalu kasar. Jika terlalu lambat, mungkin terlalu halus.\n\n5.  **Sajikan:**\n    *   Angkat V60, aduk sedikit kopi di dalam server agar rasanya homogen, dan nikmati!\n\nMenyeduh dengan V60 adalah sebuah tarian antara teknik dan intuisi. Jangan takut untuk menyesuaikan ukuran gilingan, suhu, dan teknik penuangan untuk mendapatkan secangkir kopi yang sempurna bagi Anda.",
+          "quiz": [
+            {
+              "question": "Apa arti dari nama 'V60' pada dripper Hario V60?",
+              "options": ["Versi ke-60", "Volume 60ml", "Kerucut berbentuk V dengan sudut 60 derajat", "Dibuat pada tahun 1960"],
+              "answer": "Kerucut berbentuk V dengan sudut 60 derajat"
+            },
+            {
+              "question": "Mengapa penggunaan teko leher angsa (gooseneck kettle) sangat penting untuk V60?",
+              "options": ["Agar terlihat profesional", "Untuk kontrol penuangan yang lambat dan presisi", "Untuk mendinginkan air lebih cepat", "Karena teko lain tidak bisa mendidihkan air"],
+              "answer": "Untuk kontrol penuangan yang lambat dan presisi"
+            },
+            {
+              "question": "Apa tujuan utama dari proses 'rinsing' atau membilas filter kertas sebelum menyeduh?",
+              "options": ["Untuk membersihkan dripper", "Menghilangkan rasa kertas dan memanaskan V60", "Membuat filter lebih kuat", "Mendinginkan air"],
+              "answer": "Menghilangkan rasa kertas dan memanaskan V60"
+            },
+            {
+              "question": "Proses membasahi bubuk kopi di awal dan membiarkannya 'mekar' disebut...",
+              "options": ["Blooming", "Soaking", "Rinsing", "Wetting"],
+              "answer": "Blooming"
+            },
+            {
+              "question": "Ukuran gilingan yang direkomendasikan untuk V60 adalah...",
+              "options": ["Sangat kasar (seperti merica pecah)", "Medium-fine (seperti gula pasir)", "Sangat halus (seperti tepung)", "Tidak digiling (biji utuh)"],
+              "answer": "Medium-fine (seperti gula pasir)"
+            },
+            {
+              "question": "Berapa total waktu seduh ideal untuk V60?",
+              "options": ["Kurang dari 1 menit", "1 - 2 menit", "2:30 - 3:30 menit", "Lebih dari 5 menit"],
+              "answer": "2:30 - 3:30 menit"
+            },
+            {
+              "question": "Jika waktu seduh V60 Anda terlalu cepat (misal hanya 1:30 menit), kemungkinan besar masalahnya adalah...",
+              "options": ["Ukuran gilingan terlalu halus", "Ukuran gilingan terlalu kasar", "Suhu air terlalu panas", "Kopi terlalu sedikit"],
+              "answer": "Ukuran gilingan terlalu kasar"
+            },
+            {
+              "question": "Apa fungsi rusuk spiral di bagian dalam dinding V60?",
+              "options": ["Hanya hiasan", "Membuat V60 lebih kuat", "Menciptakan ruang udara untuk ekstraksi yang merata", "Memperlambat aliran air"],
+              "answer": "Menciptakan ruang udara untuk ekstraksi yang merata"
+            },
+            {
+              "question": "Pada tahap penuangan, ke mana sebaiknya Anda tidak menuangkan air secara langsung?",
+              "options": ["Ke bagian tengah bubuk kopi", "Ke dinding filter kertas", "Secara melingkar", "Dengan gerakan lambat"],
+              "answer": "Ke dinding filter kertas"
+            },
+            {
+              "question": "Berapa banyak air yang biasanya digunakan untuk tahap blooming?",
+              "options": ["Sebanyak mungkin", "Setengah dari total air", "2-3 kali berat bubuk kopi", "Hanya beberapa tetes"],
+              "answer": "2-3 kali berat bubuk kopi"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-4", 
+          "title": "Teknik Rendam: French Press", 
+          "content": "French Press adalah salah satu alat seduh kopi paling ikonik dan mudah digunakan. Metode ini menggunakan prinsip **immersion (rendam)**, di mana bubuk kopi direndam sepenuhnya di dalam air panas selama beberapa menit. Hasilnya adalah secangkir kopi dengan **body yang tebal, kaya, dan tekstur yang sedikit 'berpasir'** karena filter logamnya tidak menyaring sedimen halus dan minyak kopi.\n\n**Apa yang Anda Butuhkan?**\n1.  **French Press:** Tersedia dalam berbagai ukuran.\n2.  **Bubuk Kopi:** Giling biji kopi dengan ukuran **coarse (kasar)**, mirip remahan roti atau merica pecah.\n3.  **Air Panas:** Suhu ideal sekitar 90-96°C.\n4.  **Timbangan Digital.**\n5.  **Stopwatch.**\n\n**Mengapa Gilingan Kasar?**\nMenggunakan gilingan kasar sangat penting untuk French Press. Karena kopi direndam lama, gilingan halus akan menyebabkan *over-extraction* (rasa sangat pahit). Gilingan kasar juga lebih mudah disaring oleh filter logam dan mengurangi jumlah sedimen halus di cangkir Anda.\n\n**Langkah-langkah Menyeduh dengan French Press (Contoh: 30g kopi, 450g air, rasio 1:15):**\n\n1.  **Persiapan:**\n    *   Panaskan French Press dengan membilasnya menggunakan air panas, lalu buang airnya. Ini menjaga suhu seduhan tetap stabil.\n    *   Masukkan 30 gram kopi giling kasar ke dalam French Press.\n    *   Letakkan French Press di atas timbangan dan 'tare' ke angka 0.\n\n2.  **Penuangan dan Perendaman (0:00 - 4:00):**\n    *   Mulai stopwatch. Tuangkan 450 gram air panas ke seluruh permukaan bubuk kopi. Pastikan semua bubuk kopi terendam.\n    *   Pasang tutup plunger di atasnya, namun **JANGAN DITEKAN**. Cukup letakkan di atas untuk menjaga panas.\n    *   Diamkan dan biarkan kopi terendam selama **4 menit**. Ini adalah waktu standar, namun Anda bisa bereksperimen antara 3-5 menit.\n\n3.  **Memecah Kerak (Opsional tapi Direkomendasikan):**\n    *   Setelah 4 menit, Anda akan melihat lapisan kerak bubuk kopi mengapung di permukaan. Gunakan sendok untuk mengaduk perlahan atau cukup dorong kerak tersebut hingga tenggelam. Sebagian besar bubuk kopi akan mengendap ke dasar.\n    *   Langkah ini membantu mengurangi sedimen di cangkir akhir dan menghasilkan rasa yang lebih jernih.\n\n4.  **Menekan Plunger (Setelah 4:00):**\n    *   Setelah kerak dipecah (atau langsung setelah 4 menit jika Anda melewatkan langkah sebelumnya), tekan plunger secara **perlahan dan konsisten**. Jangan menekannya dengan cepat atau dengan paksa. Cukup tekan hingga plunger mencapai dasar.\n\n5.  **Sajikan Segera:**\n    *   **Penting:** Segera tuang seluruh kopi dari French Press ke dalam cangkir atau server lain. Jangan biarkan kopi tetap berada di dalam French Press, karena proses ekstraksi akan terus berjalan dan membuat kopi menjadi sangat pahit (*over-extracted*).\n\nFrench Press adalah cara yang fantastis untuk menikmati kopi dengan rasa yang penuh dan bertekstur. Selamat mencoba!",
+          "quiz": [
+            {
+              "question": "Metode seduh utama yang digunakan oleh French Press adalah...",
+              "options": ["Percolation", "Drip", "Immersion (Rendam)", "Pressure"],
+              "answer": "Immersion (Rendam)"
+            },
+            {
+              "question": "Ukuran gilingan kopi yang ideal untuk French Press adalah...",
+              "options": ["Sangat halus (espresso fine)", "Medium (seperti gula pasir)", "Coarse (kasar)", "Biji utuh"],
+              "answer": "Coarse (kasar)"
+            },
+            {
+              "question": "Mengapa penting untuk segera menuang kopi setelah plunger ditekan?",
+              "options": ["Agar tidak dingin", "Untuk mencegah over-extraction yang membuat kopi pahit", "Agar French Press bisa langsung dicuci", "Tidak ada alasan khusus"],
+              "answer": "Untuk mencegah over-extraction yang membuat kopi pahit"
+            },
+            {
+              "question": "Berapa lama waktu perendaman standar untuk menyeduh dengan French Press?",
+              "options": ["30 detik", "1 menit", "4 menit", "10 menit"],
+              "answer": "4 menit"
+            },
+            {
+              "question": "Apa yang terjadi jika Anda menggunakan gilingan halus untuk French Press?",
+              "options": ["Kopi akan menjadi lebih manis", "Akan terjadi over-extraction dan rasa sangat pahit", "Air tidak akan bisa turun", "Rasa kopi akan hambar"],
+              "answer": "Akan terjadi over-extraction dan rasa sangat pahit"
+            },
+            {
+              "question": "Karakteristik rasa kopi yang dihasilkan oleh French Press adalah...",
+              "options": ["Body ringan dan jernih", "Body tebal, kaya, dan sedikit berpasir", "Sangat asam dan fruity", "Tidak beraroma"],
+              "answer": "Body tebal, kaya, dan sedikit berpasir"
+            },
+            {
+              "question": "Apa yang harus dilakukan saat menekan plunger French Press?",
+              "options": ["Menekannya dengan sangat cepat dan kuat", "Menekannya perlahan dan konsisten", "Menekannya setengah jalan saja", "Menekannya berulang kali"],
+              "answer": "Menekannya perlahan dan konsisten"
+            },
+            {
+              "question": "Langkah 'memecah kerak' setelah 4 menit bertujuan untuk...",
+              "options": ["Membuat kopi lebih panas", "Mengurangi jumlah sedimen di cangkir akhir", "Mempercepat proses seduh", "Menambah rasa pahit"],
+              "answer": "Mengurangi jumlah sedimen di cangkir akhir"
+            },
+            {
+              "question": "Filter pada French Press terbuat dari bahan apa?",
+              "options": ["Kertas", "Kain", "Logam", "Plastik"],
+              "answer": "Logam"
+            },
+            {
+              "question": "Mengapa kopi hasil French Press terasa lebih 'berminyak' dibandingkan V60?",
+              "options": ["Karena kopinya lebih mahal", "Karena filter logam tidak menyaring minyak alami kopi", "Karena direndam lebih lama", "Karena airnya lebih panas"],
+              "answer": "Karena filter logam tidak menyaring minyak alami kopi"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-5", 
+          "title": "Teknik Tekan: AeroPress", 
+          "content": "AeroPress adalah salah satu alat seduh paling unik, serbaguna, dan disukai di dunia kopi. Diciptakan oleh Alan Adler (penemu frisbee Aerobie), alat ini menggabungkan prinsip **immersion (rendam), pressure (tekanan), dan filtration (penyaringan)** dalam satu alat yang ringkas, portabel, dan terbuat dari plastik tahan lama.\n\n**Mengapa AeroPress Begitu Populer?**\n*   **Serbaguna:** Anda bisa membuat berbagai jenis kopi, dari seduhan yang mirip pour-over hingga konsentrat pekat mirip espresso.\n*   **Cepat:** Waktu seduh total seringkali hanya sekitar 2 menit.\n*   **Rasa Bersih:** Menggunakan filter kertas (atau metal), AeroPress menghasilkan kopi dengan body yang jernih dan bebas ampas.\n*   **Portabel & Tahan Banting:** Terbuat dari plastik, membuatnya ideal untuk dibawa bepergian atau camping.\n*   **Mudah Dibersihkan:** Membersihkannya sangat mudah, cukup tekan plunger hingga ampas kopi keluar membentuk 'puck'.\n\n**Dua Teknik Utama: Standar vs. Inverted (Terbalik)**\n\n**1. Teknik Standar (Standard Method):**\nDalam metode ini, AeroPress diletakkan langsung di atas cangkir. Ini adalah metode yang paling sederhana.\n*   **Langkah:**\n    1.  Pasang filter kertas di dalam tutup filter, basahi sedikit, lalu kunci ke badan AeroPress.\n    2.  Letakkan AeroPress di atas cangkir yang kokoh.\n    3.  Masukkan bubuk kopi (ukuran gilingan **medium-fine**).\n    4.  Tuang air panas. Sebagian kecil air akan mulai menetes ke cangkir (ini normal).\n    5.  Aduk sebentar, lalu masukkan plunger.\n    6.  Tekan plunger secara perlahan selama 20-30 detik hingga terdengar suara mendesis.\n\n**2. Teknik Terbalik (Inverted Method):**\nMetode ini mencegah kopi menetes sebelum waktunya, memberikan kontrol penuh atas waktu rendam (full immersion). Ini adalah metode favorit banyak orang.\n*   **Langkah (Contoh: 15g kopi, 240g air):**\n    1.  Masukkan plunger ke dalam badan AeroPress, hanya sekitar 1-2 cm.\n    2.  Balikkan AeroPress sehingga berdiri di atas plunger. Sekarang alat ini tampak seperti tabung yang tertutup di bagian bawah.\n    3.  Masukkan 15g kopi giling **medium-fine**.\n    4.  Mulai stopwatch, tuang 240g air panas (suhu 85-95°C). Aduk perlahan selama 10 detik.\n    5.  Diamkan hingga stopwatch menunjukkan 1:30 menit.\n    6.  Sementara menunggu, pasang filter kertas pada tutupnya dan basahi.\n    7.  Saat 1:30, kunci tutup filter ke AeroPress.\n    8.  Dengan hati-hati, balikkan AeroPress ke atas cangkir yang kokoh.\n    9.  Tekan plunger secara perlahan dan konsisten selama sekitar 30 detik.\n    10. Berhenti menekan saat Anda mendengar suara mendesis.\n\n**Eksperimen Tanpa Batas:**\nAeroPress adalah kanvas kosong. Anda bisa mengubah ukuran gilingan, suhu air, rasio, dan waktu rendam untuk menemukan resep favorit Anda. Ada kejuaraan dunia AeroPress setiap tahun, di mana ribuan resep unik dilombakan. Jangan ragu untuk mencoba!",
+          "quiz": [
+            {
+              "question": "AeroPress menggabungkan tiga prinsip seduh, yaitu rendam, penyaringan, dan...",
+              "options": ["Gravitasi", "Tekanan (Pressure)", "Vakum", "Penguapan"],
+              "answer": "Tekanan (Pressure)"
+            },
+            {
+              "question": "Apa keuntungan utama dari menggunakan metode terbalik (inverted) pada AeroPress?",
+              "options": ["Lebih cepat", "Mencegah kopi menetes sebelum waktunya, memberikan kontrol waktu rendam penuh", "Kopi menjadi lebih panas", "Tidak perlu diaduk"],
+              "answer": "Mencegah kopi menetes sebelum waktunya, memberikan kontrol waktu rendam penuh"
+            },
+            {
+              "question": "Kapan sebaiknya Anda berhenti menekan plunger AeroPress?",
+              "options": ["Saat plunger sudah setengah jalan", "Saat terdengar suara mendesis", "Saat semua air sudah habis", "Setelah 10 detik menekan"],
+              "answer": "Saat terdengar suara mendesis"
+            },
+            {
+              "question": "Ukuran gilingan yang umum digunakan untuk AeroPress adalah...",
+              "options": ["Sangat kasar (coarse)", "Medium-fine", "Sangat halus (espresso)", "Biji utuh"],
+              "answer": "Medium-fine"
+            },
+            {
+              "question": "Siapakah penemu AeroPress?",
+              "options": ["James Hoffman", "Alan Adler", "Melitta Bentz", "Luigi Bezzera"],
+              "answer": "Alan Adler"
+            },
+            {
+              "question": "Salah satu keunggulan utama AeroPress yang membuatnya cocok untuk bepergian adalah...",
+              "options": ["Terbuat dari kaca yang elegan", "Ukurannya sangat besar", "Portabel dan terbuat dari plastik tahan banting", "Menggunakan listrik"],
+              "answer": "Portabel dan terbuat dari plastik tahan banting"
+            },
+            {
+              "question": "Bagaimana cara membersihkan AeroPress setelah digunakan?",
+              "options": ["Direndam semalaman", "Menggunakan mesin cuci piring", "Menekan plunger hingga ampas kopi keluar membentuk 'puck'", "Harus dibongkar seluruhnya"],
+              "answer": "Menekan plunger hingga ampas kopi keluar membentuk 'puck'"
+            },
+            {
+              "question": "Dalam metode terbalik, AeroPress diletakkan berdiri di atas...",
+              "options": ["Cangkir", "Tutup filter", "Meja", "Plunger"],
+              "answer": "Plunger"
+            },
+            {
+              "question": "Suara mendesis di akhir penekanan menandakan bahwa...",
+              "options": ["AeroPress rusak", "Kopi sudah habis dan yang tersisa hanya udara", "Kopi terlalu panas", "Gilingan terlalu kasar"],
+              "answer": "Kopi sudah habis dan yang tersisa hanya udara"
+            },
+            {
+              "question": "Dengan AeroPress, Anda bisa membuat konsentrat pekat yang mirip dengan...",
+              "options": ["Cold Brew", "French Press", "Espresso", "Turkish Coffee"],
+              "answer": "Espresso"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-6", 
+          "title": "Seni Cold Brew", 
+          "content": "Berbeda dari *iced coffee* (kopi panas yang didinginkan dengan es), **Cold Brew** adalah metode seduh yang unik karena sama sekali tidak menggunakan panas. Kopi ini dibuat dengan merendam bubuk kopi giling kasar di dalam air suhu ruang atau air dingin selama periode waktu yang sangat lama, biasanya antara **12 hingga 24 jam**.\n\n**Bagaimana Cara Kerjanya?**\nTanpa panas, proses ekstraksi rasa dari kopi berjalan sangat lambat. Air dingin mengekstrak senyawa-senyawa rasa dengan cara yang berbeda. Senyawa yang menyebabkan rasa pahit dan asam kurang larut dalam air dingin. Hasilnya adalah minuman kopi dengan karakteristik yang sangat khas:\n*   **Tingkat Keasaman Rendah:** Jauh lebih tidak asam dibandingkan kopi seduh panas, membuatnya lebih ramah di lambung.\n*   **Rasa Halus & Manis Alami:** Proses yang lambat mengeluarkan nuansa rasa cokelat, kacang, dan manis buah yang halus.\n*   **Kurang Pahit:** Rasa pahitnya sangat minim.\n*   **Konsentrat:** Hasil akhir dari cold brew adalah konsentrat kopi yang pekat. Konsentrat ini kemudian diencerkan dengan air dingin, susu, atau es batu sebelum diminum.\n\n**Apa yang Anda Butuhkan?**\nAnda tidak perlu alat mahal. Anda bisa menggunakan:\n1.  **Toples Besar atau French Press:** Apapun wadah yang cukup besar untuk menampung kopi dan air.\n2.  **Kopi Giling Sangat Kasar (Extra Coarse):** Ukuran gilingan sangat penting. Gilingan harus sangat kasar, lebih kasar dari untuk French Press, untuk mencegah *over-extraction* dan memudahkan penyaringan.\n3.  **Air Dingin/Suhu Ruang.**\n4.  **Sistem Penyaringan:** Kain katun tipis, saringan teh yang sangat halus, atau filter kertas.\n\n**Langkah-langkah Membuat Cold Brew (Contoh: rasio 1:8, 100g kopi, 800g air):**\n\n1.  **Campur:** Masukkan 100 gram kopi giling sangat kasar ke dalam toples Anda.\n2.  **Tuang Air:** Tuangkan 800 gram air dingin secara perlahan, pastikan semua bubuk kopi basah. Aduk perlahan untuk memastikan tidak ada bubuk kopi yang kering.\n3.  **Rendam (Steep):** Tutup toples dan diamkan di suhu ruang atau di dalam kulkas selama 12 hingga 24 jam. Semakin lama direndam, semakin kuat rasanya. 18 jam adalah titik awal yang baik.\n4.  **Saring:** Setelah selesai direndam, saring kopi secara perlahan. Jika menggunakan toples, tuang campuran melalui saringan yang telah dilapisi kain katun atau filter kertas ke dalam wadah lain. Jika menggunakan French Press, cukup tekan plunger perlahan.\n5.  **Simpan:** Konsentrat cold brew Anda kini siap. Simpan di dalam botol tertutup di kulkas. Konsentrat ini bisa bertahan hingga 2 minggu.\n\n**Cara Menyajikan:**\nSajikan dengan rasio **1 bagian konsentrat cold brew dan 1-2 bagian air atau susu**, sesuai selera. Tambahkan es batu dan nikmati kopi yang halus dan menyegarkan.",
+          "quiz": [
+            {
+              "question": "Apa perbedaan utama antara Cold Brew dan Iced Coffee?",
+              "options": ["Cold Brew lebih panas", "Cold Brew tidak menggunakan panas sama sekali saat menyeduh", "Iced Coffee lebih pekat", "Tidak ada perbedaan"],
+              "answer": "Cold Brew tidak menggunakan panas sama sekali saat menyeduh"
+            },
+            {
+              "question": "Berapa lama waktu perendaman yang umum untuk membuat Cold Brew?",
+              "options": ["5-10 menit", "30-60 menit", "2-4 jam", "12-24 jam"],
+              "answer": "12-24 jam"
+            },
+            {
+              "question": "Ukuran gilingan kopi yang paling ideal untuk Cold Brew adalah...",
+              "options": ["Sangat halus (fine)", "Medium", "Sangat kasar (extra coarse)", "Tidak perlu digiling"],
+              "answer": "Sangat kasar (extra coarse)"
+            },
+            {
+              "question": "Bagaimana karakteristik rasa dari Cold Brew?",
+              "options": ["Sangat asam dan pahit", "Keasaman rendah, halus, dan sedikit manis", "Hambar dan encer", "Sangat kuat dan smoky"],
+              "answer": "Keasaman rendah, halus, dan sedikit manis"
+            },
+            {
+              "question": "Hasil akhir dari proses pembuatan Cold Brew adalah...",
+              "options": ["Minuman siap minum", "Ampas kopi", "Konsentrat kopi yang pekat", "Kopi instan"],
+              "answer": "Konsentrat kopi yang pekat"
+            },
+            {
+              "question": "Mengapa rasa Cold Brew tidak sepahit kopi seduh panas?",
+              "options": ["Karena menggunakan biji kopi khusus", "Karena senyawa pahit kurang larut dalam air dingin", "Karena disaring berulang kali", "Karena ditambah gula"],
+              "answer": "Karena senyawa pahit kurang larut dalam air dingin"
+            },
+            {
+              "question": "Bagaimana cara menyajikan konsentrat Cold Brew?",
+              "options": ["Diminum langsung tanpa campuran", "Dicampur dengan air panas", "Diencerkan dengan air dingin atau susu", "Digunakan sebagai bumbu masak"],
+              "answer": "Diencerkan dengan air dingin atau susu"
+            },
+            {
+              "question": "Jika Anda menggunakan 50 gram kopi dengan rasio 1:8 untuk Cold Brew, berapa banyak air yang dibutuhkan?",
+              "options": ["50 gram", "80 gram", "400 gram", "500 gram"],
+              "answer": "400 gram"
+            },
+            {
+              "question": "Manakah alat yang TIDAK umum digunakan untuk membuat Cold Brew di rumah?",
+              "options": ["Toples besar", "French Press", "Mesin Espresso", "Kain katun untuk menyaring"],
+              "answer": "Mesin Espresso"
+            },
+            {
+              "question": "Di mana sebaiknya Anda menyimpan konsentrat Cold Brew yang sudah jadi?",
+              "options": ["Di suhu ruang", "Di dalam botol tertutup di kulkas", "Di dalam freezer", "Di bawah sinar matahari"],
+              "answer": "Di dalam botol tertutup di kulkas"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-7", 
+          "title": "Grind Size: Kunci Konsistensi", 
+          "content": "Ukuran gilingan (Grind Size) adalah salah satu variabel paling berpengaruh dalam menentukan hasil akhir seduhan kopi Anda. Menggunakan ukuran gilingan yang tepat untuk metode seduh yang Anda pilih adalah kunci untuk mencapai ekstraksi yang seimbang dan rasa yang konsisten.\n\n**Mengapa Grind Size Sangat Penting?**\nUkuran gilingan menentukan **luas permukaan total** bubuk kopi yang bersentuhan dengan air. Semakin halus gilingan, semakin besar luas permukaannya, dan semakin cepat air dapat mengekstrak rasa. Sebaliknya, semakin kasar gilingan, semakin kecil luas permukaannya, dan semakin lambat proses ekstraksi.\n\nHubungan antara ukuran gilingan dan waktu seduh sangat erat:\n*   **Waktu Seduh Cepat (misal: Espresso) -> Butuh Gilingan HALUS.**\n*   **Waktu Seduh Lama (misal: Cold Brew) -> Butuh Gilingan KASAR.**\n\nJika ukuran gilingan tidak sesuai, Anda akan mengalami salah satu dari dua masalah ini:\n1.  **Under-extraction (Ekstraksi Kurang):** Terjadi jika gilingan terlalu kasar untuk waktu seduh yang singkat. Air melewati bubuk kopi terlalu cepat dan tidak punya cukup waktu untuk melarutkan senyawa rasa yang baik. **Hasilnya:** Kopi terasa **asam**, asin, mentah, dan kurang manis.\n2.  **Over-extraction (Ekstraksi Berlebih):** Terjadi jika gilingan terlalu halus untuk waktu seduh yang lama. Air bersentuhan dengan bubuk kopi terlalu lama dan mulai melarutkan senyawa pahit yang tidak diinginkan. **Hasilnya:** Kopi terasa **sangat pahit**, kering (astringent), dan kosong (hollow).\n\n**Panduan Umum Ukuran Gilingan:**\n*   **Extra Coarse (Sangat Kasar):** Seperti merica pecah. Cocok untuk **Cold Brew**.\n*   **Coarse (Kasar):** Seperti remahan roti kasar atau garam laut. Cocok untuk **French Press**.\n*   **Medium-Coarse (Sedang-Kasar):** Sedikit lebih halus dari gilingan kasar. Cocok untuk Chemex.\n*   **Medium (Sedang):** Seperti gula pasir. Cocok untuk Drip Coffee Machine otomatis dan beberapa metode pour-over seperti Kalita Wave.\n*   **Medium-Fine (Sedang-Halus):** Sedikit lebih halus dari gula pasir. Cocok untuk **Pour Over (V60, AeroPress)**.\n*   **Fine (Halus):** Jauh lebih halus, hampir seperti garam meja. Cocok untuk **Espresso** dan Moka Pot.\n*   **Extra Fine (Sangat Halus):** Seperti tepung atau bubuk. Hanya digunakan untuk **Turkish Coffee**.\n\n**Pentingnya Grinder yang Baik:**\nUntuk mendapatkan ukuran gilingan yang konsisten, berinvestasi pada *grinder* (penggiling) yang baik sangatlah penting. *Burr grinder* jauh lebih superior dibandingkan *blade grinder*. *Burr grinder* menghancurkan biji kopi menjadi partikel-partikel dengan ukuran yang seragam, sementara *blade grinder* hanya mencacahnya secara acak, menghasilkan campuran bubuk halus dan bongkahan kasar yang menyebabkan ekstraksi tidak merata.",
+          "quiz": [
+            {
+              "question": "Hubungan antara waktu seduh dan ukuran gilingan adalah...",
+              "options": ["Waktu cepat butuh gilingan kasar", "Waktu lama butuh gilingan halus", "Waktu cepat butuh gilingan halus, waktu lama butuh gilingan kasar", "Tidak ada hubungan"],
+              "answer": "Waktu cepat butuh gilingan halus, waktu lama butuh gilingan kasar"
+            },
+            {
+              "question": "Kopi yang terasa sangat pahit, kering, dan kosong kemungkinan besar mengalami...",
+              "options": ["Under-extraction", "Over-extraction", "Perfect extraction", "No extraction"],
+              "answer": "Over-extraction"
+            },
+            {
+              "question": "Under-extraction biasanya disebabkan oleh ukuran gilingan yang...",
+              "options": ["Terlalu halus untuk waktu seduhnya", "Terlalu kasar untuk waktu seduhnya", "Sesuai dengan waktu seduhnya", "Terlalu gelap"],
+              "answer": "Terlalu kasar untuk waktu seduhnya"
+            },
+            {
+              "question": "Metode seduh manakah yang membutuhkan ukuran gilingan paling kasar?",
+              "options": ["Espresso", "V60", "French Press", "Cold Brew"],
+              "answer": "Cold Brew"
+            },
+            {
+              "question": "Ukuran gilingan untuk French Press biasanya dideskripsikan seperti...",
+              "options": ["Tepung", "Gula pasir", "Remahan roti kasar", "Pasir halus"],
+              "answer": "Remahan roti kasar"
+            },
+            {
+              "question": "Metode seduh manakah yang membutuhkan ukuran gilingan paling halus?",
+              "options": ["French Press", "Cold Brew", "Pour Over", "Espresso"],
+              "answer": "Espresso"
+            },
+            {
+              "question": "Mengapa 'Burr Grinder' lebih baik daripada 'Blade Grinder'?",
+              "options": ["Lebih murah", "Menghasilkan gilingan yang lebih seragam", "Lebih cepat", "Lebih kecil"],
+              "answer": "Menghasilkan gilingan yang lebih seragam"
+            },
+            {
+              "question": "Jika kopi Anda terasa asam dan mentah, ini adalah tanda dari...",
+              "options": ["Over-extraction", "Under-extraction", "Biji kopi yang salah", "Suhu air terlalu tinggi"],
+              "answer": "Under-extraction"
+            },
+            {
+              "question": "Ukuran gilingan medium-fine seperti gula pasir adalah yang paling cocok untuk metode...",
+              "options": ["Cold Brew", "French Press", "V60 / AeroPress", "Turkish Coffee"],
+              "answer": "V60 / AeroPress"
+            },
+            {
+              "question": "Semakin halus gilingan kopi, maka luas permukaan totalnya akan...",
+              "options": ["Semakin kecil", "Semakin besar", "Tetap sama", "Tidak bisa diukur"],
+              "answer": "Semakin besar"
+            }
+          ] 
+        },
+        { 
+          "id": "materi-2-8", 
+          "title": "Troubleshooting Seduhan Anda", 
+          "content": "Kadang-kadang, secangkir kopi yang kita buat tidak sesuai dengan harapan. Jangan khawatir, ini adalah bagian dari proses belajar! Dengan memahami beberapa masalah umum dan cara mengatasinya, Anda bisa 'mendiagnosis' seduhan Anda dan memperbaikinya di waktu berikutnya.\n\nVariabel utama yang bisa Anda ubah adalah **Ukuran Gilingan (Grind Size)** dan **Waktu Seduh (Brew Time)**. Keduanya saling terkait.\n\n**Masalah 1: Kopi Terasa Terlalu Pahit, Kering, atau Kosong (Hollow)**\n*   **Diagnosis:** Ini adalah gejala klasik dari **Over-extraction**. Artinya, air mengambil terlalu banyak senyawa dari kopi, termasuk senyawa pahit yang tidak diinginkan.\n*   **Penyebab Umum:**\n    1.  Ukuran gilingan terlalu halus.\n    2.  Waktu seduh terlalu lama.\n    3.  Suhu air terlalu panas (di atas 96°C).\n*   **Solusi:**\n    *   **Langkah Pertama:** Buat gilingan Anda **sedikit lebih kasar**. Ini adalah penyesuaian yang paling efektif. Gilingan yang lebih kasar akan mempercepat aliran air dan mengurangi waktu kontak.\n    *   **Langkah Kedua (jika perlu):** Kurangi waktu seduh Anda. Untuk French Press, kurangi waktu rendam (misalnya dari 4 menit menjadi 3:30). Untuk pour-over, tuang air sedikit lebih cepat.\n\n**Masalah 2: Kopi Terasa Terlalu Asam (Sour), Asin, atau Kurang Berasa (Thin)**\n*   **Diagnosis:** Ini adalah gejala dari **Under-extraction**. Artinya, air tidak punya cukup waktu atau kemampuan untuk melarutkan senyawa rasa manis dan kompleks dari kopi.\n*   **Penyebab Umum:**\n    1.  Ukuran gilingan terlalu kasar.\n    2.  Waktu seduh terlalu singkat.\n    3.  Suhu air terlalu dingin (di bawah 90°C).\n    4.  *Channeling* (air menemukan jalur cepat melewati bubuk kopi tanpa mengekstraksi secara merata).\n*   **Solusi:**\n    *   **Langkah Pertama:** Buat gilingan Anda **sedikit lebih halus**. Ini akan memperlambat aliran air dan memberi lebih banyak waktu untuk ekstraksi.\n    *   **Langkah Kedua (jika perlu):** Perpanjang waktu seduh Anda. Untuk French Press, rendam lebih lama. Untuk pour-over, tuang lebih lambat untuk meningkatkan waktu kontak.\n    *   Pastikan suhu air Anda cukup panas (antara 90-96°C).\n    *   Untuk pour-over, pastikan permukaan bubuk kopi rata sebelum menyeduh untuk mencegah *channeling*.\n\n**Metode Dialing-In:**\nProses menemukan pengaturan yang sempurna untuk biji kopi baru disebut **'dialing-in'**. Kuncinya adalah **mengubah hanya satu variabel pada satu waktu**. Misalnya, jika kopi Anda *under-extracted*, coba haluskan gilingan Anda satu setelan, tetapi jaga rasio, suhu, dan teknik tuang tetap sama. Catat hasilnya. Dengan cara ini, Anda bisa memahami dampak dari setiap perubahan yang Anda buat.\n\nMenyeduh kopi adalah perjalanan, bukan tujuan. Setiap cangkir adalah kesempatan untuk belajar dan menjadi lebih baik. Selamat bereksperimen!",
+          "quiz": [
+            {
+              "question": "Rasa kopi yang sangat pahit dan kering adalah tanda dari...",
+              "options": ["Under-extraction", "Over-extraction", "Suhu air terlalu dingin", "Kopi yang sempurna"],
+              "answer": "Over-extraction"
+            },
+            {
+              "question": "Jika kopi Anda terasa asam (sour) dan kurang berasa, apa yang harus Anda lakukan pertama kali?",
+              "options": ["Menggiling lebih kasar", "Menggiling lebih halus", "Mengurangi waktu seduh", "Menurunkan suhu air"],
+              "answer": "Menggiling lebih halus"
+            },
+            {
+              "question": "Over-extraction biasanya disebabkan oleh ukuran gilingan yang...",
+              "options": ["Terlalu kasar", "Terlalu halus", "Sedang", "Tidak konsisten"],
+              "answer": "Terlalu halus"
+            },
+            {
+              "question": "Jika kopi Anda over-extracted, solusi yang paling efektif adalah...",
+              "options": ["Menambah jumlah kopi", "Menggiling lebih kasar", "Menyeduh lebih lama", "Menaikkan suhu air"],
+              "answer": "Menggiling lebih kasar"
+            },
+            {
+              "question": "Apa itu 'Channeling' dalam proses seduh kopi?",
+              "options": ["Menonton saluran TV saat menyeduh", "Air menemukan jalur cepat melewati bubuk kopi secara tidak merata", "Menggunakan corong untuk menuang", "Bubuk kopi yang gosong"],
+              "answer": "Air menemukan jalur cepat melewati bubuk kopi secara tidak merata"
+            },
+            {
+              "question": "Proses menemukan pengaturan (gilingan, waktu, dll) yang sempurna untuk biji kopi baru disebut...",
+              "options": ["Troubleshooting", "Calibrating", "Dialing-in", "Brewing"],
+              "answer": "Dialing-in"
+            },
+            {
+              "question": "Suhu air yang terlalu dingin (di bawah 90°C) dapat menyebabkan...",
+              "options": ["Over-extraction", "Under-extraction", "Rasa gosong", "Crema yang tebal"],
+              "answer": "Under-extraction"
+            },
+            {
+              "question": "Saat melakukan 'dialing-in', prinsip utamanya adalah...",
+              "options": ["Mengubah semua variabel sekaligus", "Mengubah hanya satu variabel pada satu waktu", "Selalu menyalahkan biji kopinya", "Hanya mengubah suhu air"],
+              "answer": "Mengubah hanya satu variabel pada satu waktu"
+            },
+            {
+              "question": "Rasa asam yang tidak menyenangkan (sour) berbeda dengan keasaman yang cerah (acidity). Rasa 'sour' adalah tanda dari...",
+              "options": ["Ekstraksi sempurna", "Over-extraction", "Under-extraction", "Roasting yang gelap"],
+              "answer": "Under-extraction"
+            },
+            {
+              "question": "Jika waktu seduh pour-over Anda terlalu lama dan rasanya pahit, apa yang harus Anda ubah?",
+              "options": ["Giling lebih halus", "Tuang lebih lambat", "Giling lebih kasar", "Tambah jumlah kopi"],
+              "answer": "Giling lebih kasar"
+            }
+          ] 
+        }
       ]
     },
     {
@@ -484,14 +932,462 @@
       "title": "Bab 3: Dunia Espresso",
       "description": "Selami dunia espresso yang kaya dan kompleks. Pelajari cara kerja mesin, teknik dasar, dan cara membuat minuman turunan espresso seperti Latte dan Cappuccino.",
        "materials": [
-        { "id": "materi-3-1", "title": "Apa itu Espresso?", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-2", "title": "Anatomi Mesin Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-3", "title": "Dosing, Tamping, dan Ekstraksi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-4", "title": "Membaca Shot Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-5", "title": "Steaming Susu: Menciptakan Microfoam", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-6", "title": "Membuat Latte dan Cappuccino", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-7", "title": "Minuman Turunan Espresso Lainnya", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-3-8", "title": "Perawatan Dasar Mesin Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] }
+        { 
+          "id": "materi-3-1", 
+          "title": "Apa itu Espresso?", 
+          "content": "Espresso adalah jantung dari banyak minuman kopi populer. Namun, espresso bukanlah jenis biji, jenis sangrai, atau campuran tertentu. Espresso adalah **metode seduh kopi**.\n\nSecara definisi, espresso adalah minuman kopi pekat bervolume sekitar 25-35ml yang dibuat dengan **memaksa air panas (sekitar 90-96°C) bertekanan tinggi (sekitar 9 bar) melewati bubuk kopi yang digiling sangat halus dan dipadatkan (sekitar 18-20 gram)** dalam waktu yang relatif singkat (sekitar 25-30 detik).\n\nProses yang intens ini menghasilkan minuman dengan karakteristik unik yang tidak ditemukan pada metode seduh lain:\n\n1.  **Konsentrasi Tinggi:** Espresso sangat pekat. Semua rasa dan aroma dari kopi diekstrak ke dalam volume cairan yang sangat kecil.\n2.  **Crema:** Lapisan busa berwarna cokelat keemasan di atas espresso. Crema terbentuk dari emulsi minyak kopi dengan gelembung CO2 yang dilepaskan selama ekstraksi di bawah tekanan tinggi. Crema yang baik menunjukkan biji kopi yang segar dan ekstraksi yang tepat. Crema menambahkan tekstur dan aroma pada espresso.\n3.  **Body yang Kental:** Karena konsentrasinya yang tinggi, espresso memiliki body yang jauh lebih kental dan 'syrupy' dibandingkan kopi filter.\n4.  **Rasa yang Kompleks:** Espresso yang diekstraksi dengan baik memiliki keseimbangan rasa antara **manis (sweetness)**, **asam (acidity)**, dan **pahit (bitterness)**. Rasanya intens, kaya, dan memiliki aftertaste yang panjang.\n\n**Bagian-bagian dari sebuah Shot Espresso:**\nSebuah shot espresso tidak homogen; ia terbagi menjadi tiga lapisan utama jika dilihat saat ekstraksi:\n*   **The Heart (Jantung):** Bagian bawah yang paling gelap, mengandung rasa pahit dan fondasi dari shot tersebut.\n*   **The Body (Badan):** Bagian tengah yang berwarna karamel, memberikan kekentalan dan keseimbangan rasa.\n*   **The Crema (Krema):** Bagian atas yang berbusa, membawa aroma dan rasa manis awal.\n\nKarena konsentrasinya, espresso menjadi dasar yang sempurna untuk berbagai minuman. Saat dicampur dengan susu, air panas, atau sirup, kekayaan rasanya tetap menonjol. Inilah mengapa minuman seperti Latte, Cappuccino, Americano, dan Macchiato semuanya dimulai dengan satu atau dua shot espresso.",
+          "quiz": [
+            {
+              "question": "Apa definisi paling akurat dari espresso?",
+              "options": ["Jenis biji kopi dari Italia", "Metode seduh kopi menggunakan tekanan tinggi", "Kopi yang sangat pahit", "Kopi dengan susu"],
+              "answer": "Metode seduh kopi menggunakan tekanan tinggi"
+            },
+            {
+              "question": "Berapa tekanan yang umumnya digunakan untuk membuat espresso?",
+              "options": ["1 bar", "3 bar", "9 bar", "15 bar"],
+              "answer": "9 bar"
+            },
+            {
+              "question": "Lapisan busa berwarna cokelat keemasan di atas espresso disebut...",
+              "options": ["Foam", "Head", "Crema", "Bubble"],
+              "answer": "Crema"
+            },
+            {
+              "question": "Berapa lama waktu ekstraksi yang ideal untuk satu shot espresso?",
+              "options": ["5-10 detik", "25-30 detik", "1 menit", "3 menit"],
+              "answer": "25-30 detik"
+            },
+            {
+              "question": "Crema pada espresso terbentuk dari emulsi minyak kopi dan...",
+              "options": ["Uap air", "Gula", "Gas Karbon Dioksida (CO2)", "Susu"],
+              "answer": "Gas Karbon Dioksida (CO2)"
+            },
+            {
+              "question": "Espresso yang diekstraksi dengan baik memiliki keseimbangan rasa antara manis, pahit, dan...",
+              "options": ["Asin", "Asam (Acidity)", "Hambar", "Pedas"],
+              "answer": "Asam (Acidity)"
+            },
+            {
+              "question": "Manakah minuman yang TIDAK menggunakan espresso sebagai dasarnya?",
+              "options": ["Latte", "Cappuccino", "Cold Brew", "Americano"],
+              "answer": "Cold Brew"
+            },
+            {
+              "question": "Bagian tengah dari shot espresso yang memberikan kekentalan disebut...",
+              "options": ["The Crema", "The Heart", "The Soul", "The Body"],
+              "answer": "The Body"
+            },
+            {
+              "question": "Crema yang baik dan tebal biasanya menandakan bahwa...",
+              "options": ["Kopi sudah lama", "Biji kopi segar dan ekstraksi baik", "Air terlalu panas", "Gilingan terlalu kasar"],
+              "answer": "Biji kopi segar dan ekstraksi baik"
+            },
+            {
+              "question": "Ukuran gilingan kopi untuk espresso adalah...",
+              "options": ["Sangat kasar", "Sedang", "Sangat halus", "Tidak digiling"],
+              "answer": "Sangat halus"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-2", 
+          "title": "Anatomi Mesin Espresso", 
+          "content": "Meskipun tampak rumit, prinsip dasar semua mesin espresso adalah sama: memanaskan air dan menekannya melalui bubuk kopi. Memahami komponen-komponen utamanya akan membantu Anda memahami cara kerja mesin dan membuat espresso yang lebih baik.\n\n**Komponen Utama Mesin Espresso:**\n\n1.  **Water Reservoir / Water Line:** Ini adalah sumber air untuk mesin. Pada mesin rumahan, ini biasanya berupa tangki air (reservoir) yang bisa dilepas dan diisi ulang. Pada mesin komersial, biasanya terhubung langsung ke saluran air (water line).\n\n2.  **Pump (Pompa):** Ini adalah jantung dari mesin. Pompa bertugas menciptakan tekanan tinggi (biasanya sekitar 9 bar atau 130 PSI) yang diperlukan untuk memaksa air melewati bubuk kopi yang padat. Ada dua jenis pompa utama: *vibratory pump* (lebih umum di mesin rumahan) dan *rotary pump* (lebih umum di mesin komersial).\n\n3.  **Boiler (Pemanas):** Boiler adalah tangki logam yang memanaskan air ke suhu ideal untuk menyeduh (90-96°C) dan menghasilkan uap untuk *steaming* susu. Ada beberapa konfigurasi boiler:\n    *   **Single Boiler:** Satu boiler untuk menyeduh dan membuat uap. Anda harus bergantian fungsi dan menunggu suhu berubah.\n    *   **Heat Exchanger:** Satu boiler besar yang dijaga pada suhu uap. Air untuk menyeduh melewati pipa terpisah (heat exchanger) di dalam boiler, memanaskannya secara cepat. Memungkinkan menyeduh dan steaming susu secara bersamaan.\n    *   **Dual Boiler:** Dua boiler terpisah, satu untuk menyeduh dan satu untuk uap. Memberikan kontrol suhu paling presisi dan stabil. Umumnya ditemukan pada mesin kelas atas.\n\n4.  **Group Head (Kepala Grup):** Ini adalah bagian di depan mesin tempat Anda mengunci *portafilter*. Air panas dari boiler dialirkan melalui *group head* untuk menyebar secara merata ke bubuk kopi. Stabilitas suhu di *group head* sangat penting untuk ekstraksi yang konsisten.\n\n5.  **Portafilter (Gagang Filter):** Sebuah gagang dengan keranjang filter (*filter basket*) di dalamnya untuk menampung bubuk kopi. Portafilter dikunci ke *group head* untuk memulai proses ekstraksi.\n\n6.  **Steam Wand (Pipa Uap):** Pipa logam yang mengeluarkan uap panas bertekanan tinggi dari boiler. Digunakan untuk memanaskan dan membuat busa susu (*microfoam*) untuk minuman seperti latte dan cappuccino.\n\n7.  **Hot Water Dispenser:** Beberapa mesin memiliki keran terpisah yang mengeluarkan air panas langsung dari boiler. Berguna untuk membuat Americano atau teh.\n\n8.  **Drip Tray (Nampan Tetes):** Nampan yang dapat dilepas di bagian bawah mesin untuk menampung tumpahan air atau kopi.",
+          "quiz": [
+            {
+              "question": "Komponen mesin espresso yang bertugas menciptakan tekanan tinggi adalah...",
+              "options": ["Boiler", "Group Head", "Pump (Pompa)", "Portafilter"],
+              "answer": "Pump (Pompa)"
+            },
+            {
+              "question": "Apa fungsi dari 'Steam Wand'?",
+              "options": ["Mengeluarkan air panas untuk Americano", "Memanaskan dan membuat busa susu", "Menampung bubuk kopi", "Menyeduh espresso"],
+              "answer": "Memanaskan dan membuat busa susu"
+            },
+            {
+              "question": "Di bagian mana Anda mengunci portafilter?",
+              "options": ["Boiler", "Group Head", "Drip Tray", "Steam Wand"],
+              "answer": "Group Head"
+            },
+            {
+              "question": "Jenis konfigurasi boiler yang memungkinkan menyeduh espresso dan steaming susu secara bersamaan adalah...",
+              "options": ["Single Boiler saja", "Heat Exchanger dan Dual Boiler", "Hanya Dual Boiler", "Tidak ada"],
+              "answer": "Heat Exchanger dan Dual Boiler"
+            },
+            {
+              "question": "Apa nama gagang yang berisi keranjang filter untuk menampung bubuk kopi?",
+              "options": ["Group Head", "Portafilter", "Tamper", "Steam Wand"],
+              "answer": "Portafilter"
+            },
+            {
+              "question": "Konfigurasi boiler yang memberikan kontrol suhu paling presisi dan stabil adalah...",
+              "options": ["Single Boiler", "Heat Exchanger", "Dual Boiler", "No Boiler"],
+              "answer": "Dual Boiler"
+            },
+            {
+              "question": "Fungsi utama boiler pada mesin espresso adalah...",
+              "options": ["Memompa air", "Memanaskan air dan menghasilkan uap", "Mendinginkan mesin", "Menyaring kopi"],
+              "answer": "Memanaskan air dan menghasilkan uap"
+            },
+            {
+              "question": "Nampan di bagian bawah mesin untuk menampung tumpahan air disebut...",
+              "options": ["Water Reservoir", "Drip Tray", "Group Head", "Boiler"],
+              "answer": "Drip Tray"
+            },
+            {
+              "question": "Mesin espresso komersial biasanya terhubung ke...",
+              "options": ["Tangki air (reservoir)", "Botol air mineral", "Saluran air (water line)", "Ember"],
+              "answer": "Saluran air (water line)"
+            },
+            {
+              "question": "Dua jenis pompa yang umum digunakan pada mesin espresso adalah...",
+              "options": ["Manual dan Otomatis", "Besar dan Kecil", "Vibratory dan Rotary", "Panas dan Dingin"],
+              "answer": "Vibratory dan Rotary"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-3", 
+          "title": "Dosing, Tamping, dan Ekstraksi", 
+          "content": "Membuat espresso yang lezat melibatkan rutinitas yang presisi. Tiga langkah kunci sebelum Anda menekan tombol 'brew' adalah **dosing, distribution, dan tamping**. Menguasai ketiganya adalah fondasi untuk ekstraksi yang rata dan konsisten.\n\n**1. Dosing (Menakar):**\n*Dosing* adalah proses menimbang dan memasukkan jumlah bubuk kopi yang tepat ke dalam keranjang filter (*filter basket*) di portafilter Anda. \n*   **Mengapa Penting?** Konsistensi adalah kunci. Menggunakan jumlah kopi yang sama setiap saat memastikan bahwa variabel lain (seperti waktu dan hasil) dapat diandalkan. Dosis yang umum untuk *double shot* espresso adalah antara **16-20 gram**.\n*   **Alat:** Gunakan timbangan digital untuk akurasi tertinggi.\n\n**2. Distribution (Meratakan):**\nSetelah kopi ada di portafilter, bubuk kopi tersebut seringkali menumpuk tidak merata. *Distribution* adalah proses meratakan bubuk kopi tersebut sebelum dipadatkan. Tujuannya adalah untuk memastikan kepadatan bubuk kopi seragam di seluruh keranjang.\n*   **Mengapa Penting?** Jika bubuk kopi tidak rata, air akan menemukan jalur yang paling mudah untuk dilewati (*channeling*). Ini menyebabkan sebagian kopi *over-extracted* (pahit) dan sebagian lagi *under-extracted* (asam), menghasilkan shot yang tidak seimbang.\n*   **Teknik:**\n    *   **Metode Ketuk:** Ketuk portafilter dengan lembut di meja atau telapak tangan Anda untuk meratakan tumpukan kopi.\n    *   **WDT (Weiss Distribution Technique):** Menggunakan alat dengan jarum-jarum tipis (disebut WDT tool) untuk mengaduk bubuk kopi di portafilter, memecah gumpalan dan meratakannya secara efektif. Ini adalah metode yang sangat populer.\n\n**3. Tamping (Memadatkan):**\n*Tamping* adalah tindakan menekan bubuk kopi yang sudah rata menggunakan alat yang disebut *tamper*. Tujuannya adalah untuk menciptakan sebuah 'puck' kopi yang padat dan rata, yang akan memberikan perlawanan yang seragam terhadap air bertekanan.\n*   **Mengapa Penting?** Puck yang padat dan rata memaksa air untuk melewati seluruh bagian kopi secara merata, memastikan ekstraksi yang konsisten.\n*   **Teknik:**\n    1.  Pegang tamper seperti Anda memegang gagang pintu, dengan siku membentuk sudut 90 derajat.\n    2.  Letakkan tamper di atas bubuk kopi, pastikan tamper lurus dan sejajar dengan portafilter.\n    3.  Tekan ke bawah dengan tekanan yang **konsisten dan rata**. Tidak perlu menekan terlalu keras (sekitar 15-30 lbs tekanan sudah cukup). Konsistensi tekanan lebih penting daripada kekuatan.\n    4.  Putar tamper sedikit tanpa menekan untuk 'memoles' permukaan puck.\n    5.  Angkat tamper lurus ke atas.\n\nSetelah *dosing*, *distribution*, dan *tamping* selesai, segera kunci portafilter ke group head dan mulai proses ekstraksi. Menunda terlalu lama bisa mempengaruhi suhu puck kopi Anda.",
+          "quiz": [
+            {
+              "question": "Proses menimbang dan memasukkan jumlah bubuk kopi yang tepat ke portafilter disebut...",
+              "options": ["Tamping", "Distribution", "Dosing", "Brewing"],
+              "answer": "Dosing"
+            },
+            {
+              "question": "Apa tujuan utama dari 'distribution' (meratakan) bubuk kopi?",
+              "options": ["Membuatnya terlihat bagus", "Mencegah 'channeling' dengan memastikan kepadatan seragam", "Mendinginkan kopi", "Memadatkan kopi"],
+              "answer": "Mencegah 'channeling' dengan memastikan kepadatan seragam"
+            },
+            {
+              "question": "Alat dengan jarum tipis untuk mengaduk dan meratakan bubuk kopi disebut...",
+              "options": ["Tamper", "Portafilter", "WDT Tool", "Grinder"],
+              "answer": "WDT Tool"
+            },
+            {
+              "question": "Apa itu 'tamping' dalam proses pembuatan espresso?",
+              "options": ["Menuangkan air ke kopi", "Memadatkan bubuk kopi di portafilter", "Menggiling biji kopi", "Memanaskan susu"],
+              "answer": "Memadatkan bubuk kopi di portafilter"
+            },
+            {
+              "question": "Mengapa 'channeling' buruk untuk ekstraksi espresso?",
+              "options": ["Membuat espresso tidak seimbang (campuran asam dan pahit)", "Membuat mesin rusak", "Membuat kopi terlalu panas", "Tidak ada masalah"],
+              "answer": "Membuat espresso tidak seimbang (campuran asam dan pahit)"
+            },
+            {
+              "question": "Dosis yang umum digunakan untuk membuat 'double shot' espresso adalah...",
+              "options": ["5-8 gram", "10-12 gram", "16-20 gram", "30-40 gram"],
+              "answer": "16-20 gram"
+            },
+            {
+              "question": "Manakah yang lebih penting dalam tamping?",
+              "options": ["Menekan sekuat mungkin", "Menekan dengan tekanan yang konsisten dan rata", "Menekan dengan tamper yang panas", "Menekan sambil memutar"],
+              "answer": "Menekan dengan tekanan yang konsisten dan rata"
+            },
+            {
+              "question": "Puck kopi yang padat dan rata setelah ditamping berfungsi untuk...",
+              "options": ["Memperlambat ekstraksi secara total", "Memberikan perlawanan seragam terhadap air bertekanan", "Menyerap lebih banyak air", "Membuat kopi lebih manis"],
+              "answer": "Memberikan perlawanan seragam terhadap air bertekanan"
+            },
+            {
+              "question": "Apa alat yang paling akurat untuk melakukan 'dosing'?",
+              "options": ["Sendok", "Gelas ukur", "Insting", "Timbangan digital"],
+              "answer": "Timbangan digital"
+            },
+            {
+              "question": "Setelah selesai tamping, apa langkah selanjutnya yang harus segera dilakukan?",
+              "options": ["Menunggu 5 menit", "Membersihkan mesin", "Mengunci portafilter ke group head dan memulai ekstraksi", "Menyiapkan susu"],
+              "answer": "Mengunci portafilter ke group head dan memulai ekstraksi"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-4", 
+          "title": "Membaca Shot Espresso", 
+          "content": "Sebuah shot espresso yang baik adalah hasil dari keseimbangan yang cermat antara berbagai variabel. Dengan mengamati proses ekstraksi dan hasil akhirnya, Anda bisa 'membaca' shot Anda untuk mendiagnosis apakah ekstraksinya sudah benar, *under-extracted*, atau *over-extracted*.\n\nParameter emas yang sering digunakan sebagai titik awal adalah:\n*   **Dosis Kering:** 18 gram kopi\n*   **Hasil Cairan:** 36 gram espresso (rasio 1:2)\n*   **Waktu Ekstraksi:** 25-30 detik\n\n**Tanda-tanda Ekstraksi yang Baik (Balanced Shot):**\n*   **Aliran:** Aliran espresso keluar dari spout portafilter terlihat seperti 'ekor tikus' (mouse tail) yang hangat, warnanya coklat kemerahan seperti madu.\n*   **Waktu:** Mencapai hasil 36g dalam waktu 25-30 detik.\n*   **Crema:** Tebal, berwarna cokelat keemasan, dan tahan lama.\n*   **Rasa:** Seimbang antara rasa manis, asam yang matang (seperti buah, bukan cuka), dan sedikit rasa pahit yang menyenangkan. Aftertaste-nya panjang dan nikmat.\n\n**Tanda-tanda Under-extraction (Ekstraksi Kurang):**\nIni terjadi ketika air mengalir terlalu cepat melewati kopi.\n*   **Aliran:** Mengalir sangat cepat, encer, dan warnanya pucat (blonde).\n*   **Waktu:** Mencapai hasil 36g dalam waktu sangat singkat (misal, < 20 detik).\n*   **Crema:** Tipis, pucat, dan cepat hilang.\n*   **Rasa:** Dominan **asam (sour)** seperti lemon, terasa asin, dan kurang ber-body. Rasanya tidak berkembang dan cepat hilang.\n*   **Penyebab & Solusi:** Kemungkinan besar **gilingan terlalu kasar**. Solusinya adalah **buat gilingan lebih halus** untuk shot berikutnya.\n\n**Tanda-tanda Over-extraction (Ekstraksi Berlebih):**\nIni terjadi ketika air mengalir terlalu lambat melewati kopi.\n*   **Aliran:** Aliran hanya menetes atau terlihat sangat lambat dan gelap. Terkadang aliran berhenti lalu menetes lagi.\n*   **Waktu:** Membutuhkan waktu yang sangat lama untuk mencapai 36g (misal, > 35 detik).\n*   **Crema:** Sangat gelap, berbintik-bintik, dan terkadang tipis atau bergelembung besar.\n*   **Rasa:** Dominan **pahit**, gosong, dan terasa kering (astringent) di mulut. Rasa manis dan asamnya hilang.\n*   **Penyebab & Solusi:** Kemungkinan besar **gilingan terlalu halus**. Solusinya adalah **buat gilingan lebih kasar** untuk shot berikutnya.\n\nDengan memperhatikan tiga indikator utama—**waktu, tampilan aliran, dan rasa**—Anda dapat secara sistematis menyesuaikan ukuran gilingan Anda untuk 'mengarahkan' shot Anda ke tengah-tengah spektrum ekstraksi, menghasilkan secangkir espresso yang lezat dan seimbang setiap saat.",
+          "quiz": [
+            {
+              "question": "Rasio dosis kopi kering terhadap hasil cairan espresso yang umum digunakan sebagai titik awal adalah...",
+              "options": ["1:1", "1:2", "1:3", "1:4"],
+              "answer": "1:2"
+            },
+            {
+              "question": "Jika shot espresso Anda terasa sangat asam (sour) dan encer, ini adalah tanda dari...",
+              "options": ["Over-extraction", "Under-extraction", "Ekstraksi sempurna", "Kopi basi"],
+              "answer": "Under-extraction"
+            },
+            {
+              "question": "Solusi utama untuk mengatasi 'under-extraction' adalah...",
+              "options": ["Menggiling lebih kasar", "Menggiling lebih halus", "Mengurangi dosis kopi", "Menaikkan suhu air"],
+              "answer": "Menggiling lebih halus"
+            },
+            {
+              "question": "Shot espresso yang terasa sangat pahit dan gosong adalah tanda dari...",
+              "options": ["Over-extraction", "Under-extraction", "Ekstraksi sempurna", "Biji kopi light roast"],
+              "answer": "Over-extraction"
+            },
+            {
+              "question": "Solusi utama untuk mengatasi 'over-extraction' adalah...",
+              "options": ["Menggiling lebih halus", "Menambah waktu ekstraksi", "Menggiling lebih kasar", "Menambah dosis kopi"],
+              "answer": "Menggiling lebih kasar"
+            },
+            {
+              "question": "Aliran espresso yang ideal sering dideskripsikan seperti...",
+              "options": ["Air terjun", "Aliran keran", "Ekor tikus (mouse tail)", "Tetesan hujan"],
+              "answer": "Ekor tikus (mouse tail)"
+            },
+            {
+              "question": "Waktu ekstraksi ideal untuk mendapatkan 36g espresso dari 18g kopi adalah...",
+              "options": ["10-15 detik", "25-30 detik", "45-50 detik", "1 menit"],
+              "answer": "25-30 detik"
+            },
+            {
+              "question": "Crema yang tipis, pucat, dan cepat hilang adalah ciri dari shot yang...",
+              "options": ["Over-extracted", "Sempurna", "Under-extracted", "Terlalu panas"],
+              "answer": "Under-extracted"
+            },
+            {
+              "question": "Jika dari 18g kopi, Anda mendapatkan 36g espresso hanya dalam 15 detik, apa artinya?",
+              "options": ["Shot tersebut over-extracted", "Shot tersebut sempurna", "Shot tersebut under-extracted", "Mesin Anda rusak"],
+              "answer": "Shot tersebut under-extracted"
+            },
+            {
+              "question": "Apa tiga indikator utama yang harus diperhatikan untuk 'membaca' shot espresso?",
+              "options": ["Warna cangkir, merek mesin, harga kopi", "Suhu ruangan, kelembapan, waktu", "Waktu, tampilan aliran, dan rasa", "Dosis, tekanan, dan suara mesin"],
+              "answer": "Waktu, tampilan aliran, dan rasa"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-5", 
+          "title": "Steaming Susu: Menciptakan Microfoam", 
+          "content": "Membuat busa susu yang lembut dan mengkilap—dikenal sebagai **microfoam**—adalah keterampilan penting untuk membuat latte dan cappuccino berkualitas. Proses ini, yang disebut *steaming*, tidak hanya memanaskan susu tetapi juga mengintroduksi udara untuk menciptakan tekstur yang sempurna.\n\n**Apa itu Microfoam?**\nMicrofoam adalah susu yang diisi dengan jutaan gelembung udara yang sangat kecil dan seragam. Secara visual, ia terlihat seperti **cat basah yang mengkilap**, bukan busa sabun yang kaku dengan gelembung besar. Teksturnya lembut, manis, dan menyatu sempurna dengan espresso.\n\n**Dua Tahap Utama Steaming:**\n\n**1. Stretching (Mengembangkan / Aerasi):**\n*   **Tujuan:** Mengintroduksi udara ke dalam susu untuk menciptakan volume (busa).\n*   **Teknik:**\n    1.  Isi *milk jug* (wadah susu dari stainless steel) dengan susu dingin hingga tepat di bawah pangkal corongnya.\n    2.  Posisikan ujung *steam wand* tepat di bawah permukaan susu. Anda tidak ingin terlalu dalam atau terlalu dangkal.\n    3.  Nyalakan *steam wand* sepenuhnya. Anda akan mendengar suara **'cssshhh' atau 'ripping' seperti kertas disobek**. Ini adalah suara udara yang masuk ke dalam susu. Inilah tahap *stretching*.\n    4.  Jaga ujung *steam wand* tetap di posisi ini, sambil menurunkan *milk jug* secara perlahan seiring volume susu bertambah, agar ujung *wand* selalu berada tipis di bawah permukaan.\n    5.  Lakukan tahap ini hingga susu mencapai suhu sekitar **37°C (suhu tubuh)** atau hingga volume susu bertambah sekitar 30-50%, tergantung apakah Anda membuat latte (busa lebih tipis) atau cappuccino (busa lebih tebal).\n\n**2. Texturing / Spinning (Memutar / Menghaluskan):**\n*   **Tujuan:** Memutar susu untuk memecah gelembung-gelembung udara yang besar menjadi microfoam yang halus dan homogen.\n*   **Teknik:**\n    1.  Setelah tahap *stretching* selesai, angkat *milk jug* sedikit sehingga ujung *steam wand* **tenggelam lebih dalam** ke dalam susu (sekitar 1-2 cm di bawah permukaan).\n    2.  Posisikan *steam wand* sedikit miring dan tidak di tengah untuk menciptakan **pusaran air (vortex)**. Anda tidak akan mendengar suara 'cssshhh' lagi. Susu sekarang akan berputar seperti pusaran air di dalam jug.\n    3.  Terus panaskan susu sambil menjaga pusaran ini hingga *milk jug* terasa **terlalu panas untuk disentuh** dengan nyaman (sekitar 60-65°C). Jangan sampai susu mendidih (di atas 70°C), karena akan merusak rasa manisnya dan membuat busa pecah.\n    4.  Matikan *steam wand*, lalu keluarkan dari susu.\n\n**Finishing:**\n*   Segera bersihkan *steam wand* dengan lap basah.\n*   Ketuk *milk jug* di meja untuk memecah gelembung besar yang mungkin tersisa.\n*   Goyangkan *milk jug* dengan gerakan memutar untuk menjaga susu dan busanya tetap menyatu dan mengkilap.\n*   Susu microfoam Anda siap untuk dituangkan di atas espresso!",
+          "quiz": [
+            {
+              "question": "Busa susu yang lembut dan mengkilap untuk latte art disebut...",
+              "options": ["Busa sabun", "Bubble foam", "Microfoam", "Macrofoam"],
+              "answer": "Microfoam"
+            },
+            {
+              "question": "Tahap pertama dalam steaming susu di mana udara diintroduksi disebut...",
+              "options": ["Spinning", "Heating", "Stretching (Aerasi)", "Texturing"],
+              "answer": "Stretching (Aerasi)"
+            },
+            {
+              "question": "Suara 'cssshhh' seperti kertas disobek menandakan tahap apa yang sedang berlangsung?",
+              "options": ["Susu sudah matang", "Stretching (udara sedang masuk)", "Texturing (susu sedang berputar)", "Susu akan mendidih"],
+              "answer": "Stretching (udara sedang masuk)"
+            },
+            {
+              "question": "Apa tujuan dari tahap 'spinning' atau 'texturing'?",
+              "options": ["Menambah udara sebanyak mungkin", "Memecah gelembung besar menjadi microfoam yang halus", "Mendinginkan susu", "Membuat gelembung besar"],
+              "answer": "Memecah gelembung besar menjadi microfoam yang halus"
+            },
+            {
+              "question": "Pada tahap texturing, di mana posisi ujung steam wand seharusnya?",
+              "options": ["Tepat di permukaan susu", "Tenggelam lebih dalam ke dalam susu", "Di atas permukaan susu", "Menyentuh dasar milk jug"],
+              "answer": "Tenggelam lebih dalam ke dalam susu"
+            },
+            {
+              "question": "Gerakan pusaran air (vortex) saat texturing berfungsi untuk...",
+              "options": ["Memanaskan susu lebih cepat", "Menghaluskan tekstur susu", "Menciptakan banyak busa", "Mendinginkan susu"],
+              "answer": "Menghaluskan tekstur susu"
+            },
+            {
+              "question": "Kapan sebaiknya Anda berhenti memanaskan susu?",
+              "options": ["Saat mulai hangat", "Saat milk jug terlalu panas untuk disentuh (60-65°C)", "Saat susu sudah mendidih", "Setelah 10 detik"],
+              "answer": "Saat milk jug terlalu panas untuk disentuh (60-65°C)"
+            },
+            {
+              "question": "Apa yang terjadi jika Anda memanaskan susu hingga mendidih (di atas 70°C)?",
+              "options": ["Rasanya menjadi lebih manis", "Teksturnya menjadi lebih baik", "Rasa manisnya rusak dan busa pecah", "Tidak terjadi apa-apa"],
+              "answer": "Rasa manisnya rusak dan busa pecah"
+            },
+            {
+              "question": "Microfoam yang baik memiliki tampilan visual seperti...",
+              "options": ["Busa sabun cuci", "Cat basah yang mengkilap", "Awan", "Kapas"],
+              "answer": "Cat basah yang mengkilap"
+            },
+            {
+              "question": "Apa langkah pertama yang harus dilakukan setelah selesai steaming susu?",
+              "options": ["Langsung menuang susu", "Membersihkan steam wand dengan lap basah", "Meminum susunya", "Mendinginkan milk jug"],
+              "answer": "Membersihkan steam wand dengan lap basah"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-6", 
+          "title": "Membuat Latte dan Cappuccino", 
+          "content": "Latte dan Cappuccino adalah dua minuman berbasis espresso paling populer di dunia. Keduanya menggunakan bahan yang sama: **espresso dan susu steam**, namun perbedaan utamanya terletak pada **rasio dan tekstur susu**.\n\n**Bahan Dasar:**\n*   **Espresso:** Biasanya satu atau dua *shot* espresso segar sebagai dasar.\n*   **Susu:** Susu segar yang dingin.\n*   **Cangkir:** Cangkir yang sesuai ukuran. Cappuccino tradisional disajikan di cangkir 5-6oz (150-180ml), sementara latte seringkali di cangkir yang lebih besar 8oz (240ml) atau lebih.\n\n--- \n\n**Cappuccino: Keseimbangan Tiga Lapis**\nCappuccino tradisional adalah minuman yang seimbang antara espresso, susu panas, dan busa susu tebal.\n\n*   **Komposisi:** Kira-kira **1/3 espresso, 1/3 susu panas (steamed milk), dan 1/3 busa susu (milk foam)**.\n*   **Tekstur Busa:** Busa pada cappuccino lebih tebal, kaku, dan lebih kering. Volume busa bisa mencapai 1-2 cm di atas cangkir. Saat di-steam, tahap *stretching* (aerasi) dilakukan sedikit lebih lama untuk menciptakan volume busa yang lebih banyak.\n*   **Rasa:** Rasa espresso masih kuat dan menonjol, berpadu dengan manisnya susu dan tekstur busa yang ringan.\n*   **Cara Membuat:**\n    1.  Buat satu *shot* espresso di cangkir cappuccino.\n    2.  *Steam* susu, lakukan *stretching* lebih lama untuk mendapatkan lapisan busa yang tebal.\n    3.  Tuangkan susu ke tengah espresso. Anda bisa menggunakan sendok untuk menahan busa di awal, lalu menuangkannya di bagian akhir untuk menciptakan 'topi' busa yang khas.\n\n--- \n\n**Caffè Latte: Lembut dan Creamy**\nLatte (yang berarti 'susu' dalam bahasa Italia) adalah minuman yang lebih didominasi oleh susu, dengan rasa kopi yang lebih lembut.\n\n*   **Komposisi:** Satu *shot* espresso dengan porsi susu steam yang jauh lebih banyak, dan hanya lapisan tipis *microfoam* di atasnya (sekitar 0.5-1 cm).\n*   **Tekstur Busa:** Busa pada latte adalah *microfoam* yang sejati: sangat halus, basah, dan menyatu dengan susunya, seperti cat basah. Saat di-steam, tahap *stretching* dilakukan lebih singkat.\n*   **Rasa:** Rasa kopi lebih lembut dan 'melebur' dengan rasa manis dari susu. Teksturnya sangat halus dan *creamy*.\n*   **Cara Membuat:**\n    1.  Buat satu *shot* espresso di cangkir latte.\n    2.  *Steam* susu, lakukan *stretching* singkat untuk menciptakan *microfoam* yang halus.\n    3.  Miringkan cangkir, tuangkan susu steam dari jarak yang agak tinggi di awal untuk membuat susu masuk ke bawah espresso, lalu dekatkan *milk jug* ke permukaan saat cangkir mulai penuh untuk 'menggambar' dengan *microfoam* di atasnya. Ini adalah dasar dari *latte art*.\n\nSingkatnya: **Cappuccino = Rasa kopi kuat + Busa tebal**. **Latte = Rasa susu dominan + Busa tipis dan halus**.",
+          "quiz": [
+            {
+              "question": "Apa perbedaan utama antara Latte dan Cappuccino?",
+              "options": ["Jenis biji kopinya", "Rasio dan tekstur susu", "Suhu espresso", "Asal negara"],
+              "answer": "Rasio dan tekstur susu"
+            },
+            {
+              "question": "Minuman manakah yang memiliki lapisan busa susu paling tebal?",
+              "options": ["Latte", "Cappuccino", "Americano", "Espresso Macchiato"],
+              "answer": "Cappuccino"
+            },
+            {
+              "question": "Komposisi tradisional dari cappuccino adalah...",
+              "options": ["1/2 espresso, 1/2 susu", "1/4 espresso, 3/4 susu", "1/3 espresso, 1/3 susu panas, 1/3 busa", "Semuanya susu"],
+              "answer": "1/3 espresso, 1/3 susu panas, 1/3 busa"
+            },
+            {
+              "question": "Tekstur busa pada latte yang ideal adalah...",
+              "options": ["Kering dan kaku", "Microfoam yang halus dan menyatu dengan susu", "Tidak ada busa sama sekali", "Gelembung besar seperti busa sabun"],
+              "answer": "Microfoam yang halus dan menyatu dengan susu"
+            },
+            {
+              "question": "Jika Anda ingin rasa espresso lebih menonjol, minuman mana yang sebaiknya Anda pilih?",
+              "options": ["Latte", "Susu Panas", "Cappuccino", "Hot Chocolate"],
+              "answer": "Cappuccino"
+            },
+            {
+              "question": "Saat membuat susu untuk cappuccino, tahap 'stretching' (aerasi) dilakukan...",
+              "options": ["Lebih singkat dari latte", "Lebih lama dari latte", "Sama seperti latte", "Tidak ada tahap stretching"],
+              "answer": "Lebih lama dari latte"
+            },
+            {
+              "question": "Latte art lebih umum dibuat pada minuman apa?",
+              "options": ["Cappuccino", "Latte", "Americano", "French Press"],
+              "answer": "Latte"
+            },
+            {
+              "question": "Kata 'Latte' dalam bahasa Italia berarti...",
+              "options": ["Kopi", "Busa", "Cangkir", "Susu"],
+              "answer": "Susu"
+            },
+            {
+              "question": "Ukuran cangkir yang umum untuk menyajikan cappuccino tradisional adalah...",
+              "options": ["1-2oz (30-60ml)", "5-6oz (150-180ml)", "12oz (360ml) atau lebih", "20oz (600ml)"],
+              "answer": "5-6oz (150-180ml)"
+            },
+            {
+              "question": "Manakah pernyataan yang paling tepat?",
+              "options": ["Latte lebih kuat dari Cappuccino", "Cappuccino lebih banyak susu daripada Latte", "Latte lebih lembut dan creamy, Cappuccino lebih seimbang dengan busa tebal", "Keduanya tidak menggunakan espresso"],
+              "answer": "Latte lebih lembut dan creamy, Cappuccino lebih seimbang dengan busa tebal"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-7", 
+          "title": "Minuman Turunan Espresso Lainnya", 
+          "content": "Selain Latte dan Cappuccino, ada banyak sekali minuman populer yang dibuat menggunakan espresso sebagai dasarnya. Memahami resep-resep dasar ini akan memperluas repertoar Anda sebagai barista rumahan.\n\n**Minuman Hitam (Tanpa Susu):**\n\n*   **Ristretto:** Sebuah 'shot pendek'. Menggunakan jumlah kopi yang sama dengan espresso biasa, namun diekstraksi dengan air setengahnya (rasio 1:1) dan waktu yang lebih singkat. Hasilnya sangat pekat, manis, dan kurang pahit.\n*   **Lungo:** Sebuah 'shot panjang'. Menggunakan jumlah kopi yang sama, namun diekstraksi dengan air dua kali lebih banyak (rasio 1:4). Hasilnya lebih encer, lebih pahit, dan memiliki body yang lebih ringan daripada espresso biasa.\n*   **Americano:** Dibuat dengan menambahkan air panas ke dalam satu atau dua shot espresso. Ini adalah cara untuk menikmati kompleksitas rasa espresso dalam volume yang lebih besar, mirip dengan kopi filter. Rasio umumnya adalah 1 bagian espresso dan 2-3 bagian air panas. **Penting: espresso dulu, baru air panas**.\n*   **Long Black:** Mirip dengan Americano, namun urutannya terbalik: air panas dulu, baru shot espresso dituang di atasnya. Metode ini menjaga crema espresso tetap utuh di permukaan.\n\n**Minuman dengan Susu:**\n\n*   **Macchiato:** Dalam bahasa Italia, *macchiato* berarti 'bertanda' atau 'bernoda'. Ini adalah satu shot espresso yang 'ditandai' dengan sedikit sekali busa susu (sekitar satu sendok). Ini untuk mereka yang ingin rasa espresso dominan dengan sedikit sentuhan lembut susu.\n*   **Cortado / Piccolo:** Minuman yang berada di antara Macchiato dan Cappuccino. Dibuat dengan rasio espresso dan susu steam **1:1**. Disajikan di gelas kecil (sekitar 4.5oz). Rasa kopi dan susu sangat seimbang.\n*   **Flat White:** Sangat mirip dengan Latte, namun biasanya disajikan di cangkir yang sedikit lebih kecil dan menggunakan *microfoam* yang lebih tipis dan lebih 'basah'. Rasa espressonya sedikit lebih menonjol daripada Latte.\n*   **Mocha (Mochaccino):** Pada dasarnya adalah sebuah Latte dengan tambahan cokelat. Dibuat dengan mencampurkan shot espresso dengan sirup cokelat atau bubuk kakao, lalu ditambahkan susu steam seperti membuat Latte.",
+          "quiz": [
+            {
+              "question": "Minuman apa yang dibuat dengan menambahkan air panas ke dalam shot espresso?",
+              "options": ["Lungo", "Long Black", "Americano", "Ristretto"],
+              "answer": "Americano"
+            },
+            {
+              "question": "Apa perbedaan utama antara Americano dan Long Black?",
+              "options": ["Jenis kopinya", "Jumlah espresso", "Urutan pencampuran air dan espresso", "Suhu airnya"],
+              "answer": "Urutan pencampuran air dan espresso"
+            },
+            {
+              "question": "Sebuah shot espresso yang 'ditandai' dengan sedikit sekali busa susu disebut...",
+              "options": ["Latte", "Cortado", "Macchiato", "Flat White"],
+              "answer": "Macchiato"
+            },
+            {
+              "question": "Minuman manakah yang merupakan 'shot pendek' dengan rasio kopi dan air sekitar 1:1?",
+              "options": ["Espresso", "Lungo", "Ristretto", "Americano"],
+              "answer": "Ristretto"
+            },
+            {
+              "question": "Cortado atau Piccolo memiliki rasio espresso dan susu steam sekitar...",
+              "options": ["1:10", "1:5", "1:1", "1:3"],
+              "answer": "1:1"
+            },
+            {
+              "question": "Minuman apa yang pada dasarnya adalah Latte dengan tambahan cokelat?",
+              "options": ["Macchiato", "Flat White", "Mocha", "Cappuccino"],
+              "answer": "Mocha"
+            },
+            {
+              "question": "Manakah deskripsi yang paling tepat untuk Lungo?",
+              "options": ["Shot espresso dengan sedikit susu", "Shot espresso yang diekstraksi dengan lebih banyak air (rasio 1:4)", "Espresso yang dicampur air panas", "Shot espresso yang sangat pekat"],
+              "answer": "Shot espresso yang diekstraksi dengan lebih banyak air (rasio 1:4)"
+            },
+            {
+              "question": "Flat White paling mirip dengan minuman apa?",
+              "options": ["Cappuccino", "Macchiato", "Americano", "Latte"],
+              "answer": "Latte"
+            },
+            {
+              "question": "Dalam bahasa Italia, 'macchiato' berarti...",
+              "options": ["Susu", "Kopi", "Bertanda / Bernoda", "Manis"],
+              "answer": "Bertanda / Bernoda"
+            },
+            {
+              "question": "Minuman manakah yang TIDAK menggunakan susu sama sekali?",
+              "options": ["Flat White", "Cortado", "Long Black", "Macchiato"],
+              "answer": "Long Black"
+            }
+          ]
+        },
+        { 
+          "id": "materi-3-8", 
+          "title": "Perawatan Dasar Mesin Espresso", 
+          "content": "Merawat mesin espresso Anda dengan baik adalah kunci untuk memastikan mesin awet dan, yang lebih penting, kopi Anda selalu terasa lezat. Sisa-sisa kopi dan penumpukan mineral dapat merusak mesin dan membuat rasa kopi menjadi tidak enak.\n\nBerikut adalah rutinitas perawatan dasar yang harus dilakukan:\n\n**Setiap Selesai Digunakan:**\n\n1.  **Bersihkan Steam Wand:** **SEGERA** setelah selesai *steaming* susu, lap *steam wand* dengan kain basah yang bersih untuk menghilangkan sisa susu. Kemudian, nyalakan uap sebentar (*purge*) untuk membersihkan sisa susu di dalam ujung *wand*. Sisa susu yang mengering akan sangat sulit dibersihkan dan tidak higienis.\n2.  **Bersihkan Portafilter:** Setelah ekstraksi, buang *puck* (ampas kopi) dari portafilter. Lap keranjang filter dengan kain kering untuk menghilangkan sisa ampas dan minyak.\n3.  **Flush Group Head:** Kunci portafilter kosong ke *group head*, lalu jalankan air panas selama beberapa detik. Lepas lagi, lalu jalankan air panas sekali lagi tanpa portafilter untuk membilas sisa-sisa kopi dari *shower screen* (saringan di group head).\n\n**Perawatan Harian (Di Akhir Hari):**\n\n1.  **Backflushing dengan Air:**\n    *   Gunakan *filter basket* khusus yang tidak memiliki lubang, disebut **blind basket**.\n    *   Masukkan *blind basket* ke dalam portafilter dan kunci ke *group head*.\n    *   Jalankan pompa selama 5-10 detik. Air akan mengisi ruang di atas portafilter dan tidak bisa keluar, menciptakan tekanan balik.\n    *   Matikan pompa. Tekanan akan dilepaskan melalui katup tiga arah (jika mesin Anda memilikinya), membuang air kotor ke *drip tray*.\n    *   Ulangi proses ini 4-5 kali. Ini membersihkan saluran internal *group head* dari minyak kopi.\n2.  **Rendam Portafilter dan Basket:** Rendam portafilter (hanya bagian logam) dan *filter basket* dalam larutan air panas dan pembersih khusus mesin espresso untuk melarutkan minyak kopi yang menumpuk. Bilas hingga bersih sesudahnya.\n3.  **Bersihkan Drip Tray:** Kosongkan dan cuci *drip tray* dengan sabun.\n\n**Perawatan Mingguan/Bulanan:**\n\n1.  **Backflushing dengan Sabun:** Lakukan proses *backflushing* yang sama seperti di atas, tetapi tambahkan sedikit bubuk pembersih khusus mesin espresso (seperti Cafiza atau Puly Caff) ke dalam *blind basket*. Ini akan melarutkan penumpukan minyak yang lebih membandel. **Penting:** Setelah selesai, lakukan *backflushing* lagi beberapa kali hanya dengan air bersih untuk memastikan tidak ada sisa sabun yang tertinggal.\n2.  **Descale (Menghilangkan Kerak Mineral):** Jika Anda menggunakan air sadah (tinggi mineral), kerak kapur (limescale) akan menumpuk di dalam boiler dan pipa. Lakukan proses *descaling* sesuai dengan instruksi pabrik mesin Anda menggunakan larutan *descaler*. Frekuensinya tergantung pada kesadahan air Anda. Menggunakan air yang sudah difilter atau air kemasan dapat mengurangi kebutuhan untuk *descaling*.",
+          "quiz": [
+            {
+              "question": "Apa langkah pertama yang harus dilakukan SEGERA setelah selesai steaming susu?",
+              "options": ["Mematikan mesin", "Membuat espresso lagi", "Membersihkan steam wand dengan lap basah dan melakukan purge", "Mencuci milk jug"],
+              "answer": "Membersihkan steam wand dengan lap basah dan melakukan purge"
+            },
+            {
+              "question": "Proses membersihkan group head dengan tekanan balik menggunakan basket tanpa lubang disebut...",
+              "options": ["Flushing", "Purging", "Backflushing", "Rinsing"],
+              "answer": "Backflushing"
+            },
+            {
+              "question": "Keranjang filter khusus yang tidak memiliki lubang untuk backflushing disebut...",
+              "options": ["Naked basket", "Single basket", "Blind basket", "Double basket"],
+              "answer": "Blind basket"
+            },
+            {
+              "question": "Mengapa penting untuk membersihkan steam wand dengan cepat?",
+              "options": ["Agar tidak berkarat", "Karena sisa susu yang mengering sangat sulit dibersihkan", "Agar mesin tetap dingin", "Tidak penting"],
+              "answer": "Karena sisa susu yang mengering sangat sulit dibersihkan"
+            },
+            {
+              "question": "Tujuan utama dari 'backflushing' adalah...",
+              "options": ["Membersihkan bagian luar mesin", "Membersihkan boiler", "Membersihkan saluran internal group head dari minyak kopi", "Memanaskan mesin"],
+              "answer": "Membersihkan saluran internal group head dari minyak kopi"
+            },
+            {
+              "question": "Kapan sebaiknya Anda melakukan backflushing dengan sabun pembersih khusus?",
+              "options": ["Setiap kali membuat kopi", "Setiap hari", "Secara mingguan atau bulanan", "Tidak pernah"],
+              "answer": "Secara mingguan atau bulanan"
+            },
+            {
+              "question": "Proses menghilangkan kerak kapur (limescale) dari boiler dan pipa disebut...",
+              "options": ["Backflushing", "Degreasing", "Descaling", "Polishing"],
+              "answer": "Descaling"
+            },
+            {
+              "question": "Apa itu 'puck' dalam konteks espresso?",
+              "options": ["Alat pemadat kopi", "Ampas kopi padat setelah ekstraksi", "Busa di atas espresso", "Jenis biji kopi"],
+              "answer": "Ampas kopi padat setelah ekstraksi"
+            },
+            {
+              "question": "Apa yang harus dilakukan setelah selesai backflushing dengan sabun?",
+              "options": ["Langsung mematikan mesin", "Melakukan backflushing lagi dengan air bersih untuk membilas sisa sabun", "Membuat espresso untuk menguji rasa", "Membiarkan sabun di dalam mesin"],
+              "answer": "Melakukan backflushing lagi dengan air bersih untuk membilas sisa sabun"
+            },
+            {
+              "question": "Cara terbaik untuk mengurangi penumpukan kerak mineral (limescale) di mesin adalah...",
+              "options": ["Menggunakan air keran biasa", "Jarang membersihkan mesin", "Menggunakan air yang sudah difilter atau air kemasan", "Sering melakukan backflushing"],
+              "answer": "Menggunakan air yang sudah difilter atau air kemasan"
+            }
+          ]
+        }
       ]
     },
     {
@@ -499,15 +1395,465 @@
       "title": "Bab 4: Keterampilan Barista Tingkat Lanjut",
       "description": "Tingkatkan permainan kopi Anda dengan mempelajari tentang Latte Art, kalibrasi grinder, dan cara melakukan uji cita rasa (cupping) seperti seorang profesional.",
       "materials": [
-        { "id": "materi-4-1", "title": "Dasar-dasar Latte Art", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4-2", "title": "Kalibrasi Grinder Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4-3", "title": "Memahami Roda Cita Rasa Kopi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4-4", "title": "Protokol Cupping Kopi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4.5", "title": "Air untuk Kopi: TDS dan Komposisi Mineral", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4-6", "title": "Variabel Ekstraksi Lanjutan", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4-7", "title": "Pengenalan Varietas Kopi Eksotis", "content": "Konten akan segera ditambahkan.", "quiz": [] },
-        { "id": "materi-4-8", "title": "Persiapan Kompetisi Barista", "content": "Konten akan segera ditambahkan.", "quiz": [] }
+        { 
+          "id": "materi-4-1", 
+          "title": "Dasar-dasar Latte Art", 
+          "content": "Latte art adalah seni menuangkan susu steam (microfoam) ke dalam shot espresso untuk menciptakan pola atau desain di permukaan latte. Ini adalah tanda dari seorang barista yang terampil dan susu yang di-steam dengan baik. Meskipun terlihat rumit, prinsip dasarnya dapat dipelajari.\n\n**Tiga Komponen Kunci:**\n1.  **Espresso yang Baik:** Anda memerlukan shot espresso dengan crema yang tebal dan stabil sebagai kanvas Anda.\n2.  **Microfoam Sempurna:** Susu harus memiliki tekstur seperti cat basah yang mengkilap, tidak terlalu tebal dan tidak terlalu encer. Gelembung besar harus dihindari.\n3.  **Teknik Penuangan yang Tepat:** Ini melibatkan kontrol ketinggian, posisi, dan aliran saat menuang.\n\n**Dua Pola Dasar Fondasi:**\nSemua pola latte art yang kompleks pada dasarnya adalah kombinasi atau variasi dari dua pola dasar ini:\n\n**1. The Heart (Hati):**\nIni adalah pola yang paling fundamental. Menguasai pola hati adalah langkah pertama.\n*   **Teknik:**\n    1.  Mulai dengan menuang dari posisi yang agak tinggi. Ini memungkinkan susu mengalir ke bawah espresso tanpa merusak crema.\n    2.  Isi cangkir sekitar setengah hingga dua pertiga penuh dengan cara ini.\n    3.  Turunkan ujung *milk jug* Anda sedekat mungkin dengan permukaan kopi.\n    4.  Tingkatkan aliran tuangan. Sebuah titik putih (busa) akan mulai muncul di permukaan.\n    5.  Terus tuang di titik yang sama untuk memperbesar bulatan putih tersebut.\n    6.  Saat cangkir hampir penuh, angkat sedikit *milk jug* dan kurangi aliran, lalu tarik garis lurus melewati tengah bulatan untuk 'menarik' bentuk hati.\n\n**2. The Rosetta (Daun):**\nRosetta adalah pola yang lebih kompleks yang melibatkan gerakan maju-mundur.\n*   **Teknik:**\n    1.  Sama seperti hati, mulai dengan menuang dari posisi tinggi untuk mengisi dasar cangkir.\n    2.  Saat cangkir sekitar dua pertiga penuh, turunkan *milk jug* sangat dekat ke permukaan.\n    3.  Mulai di bagian belakang cangkir (yang paling jauh dari Anda), mulailah gerakan 'menggoyangkan' pergelangan tangan Anda dari sisi ke sisi sambil bergerak mundur secara perlahan.\n    4.  Gerakan goyang ini akan menciptakan lapisan-lapisan daun.\n    5.  Setelah Anda mencapai bagian depan cangkir, angkat *milk jug* dan tarik garis lurus melewati tengah pola untuk menciptakan 'tangkai' daun.\n\n**Tips untuk Pemula:**\n*   **Latihan dengan Air:** Sebelum menggunakan susu, coba latih gerakan menuang Anda menggunakan air. Ini membantu membangun memori otot.\n*   **Konsistensi Susu:** Fokuslah untuk mendapatkan tekstur susu yang sama setiap saat. Ini lebih penting daripada mencoba pola yang rumit di awal.\n*   **Kontrol Aliran:** Belajarlah untuk mengontrol kecepatan aliran susu dari *milk jug* Anda. Aliran yang stabil adalah kunci.\n*   **Sabar:** Latte art membutuhkan banyak latihan. Jangan berkecil hati jika percobaan pertama Anda tidak sempurna. Nikmati prosesnya!",
+          "quiz": [
+            {
+              "question": "Apa tiga komponen kunci untuk membuat latte art?",
+              "options": ["Espresso, gula, dan air", "Espresso, microfoam, dan teknik penuangan", "Kopi instan, susu, dan cangkir", "Crema, busa tebal, dan cokelat"],
+              "answer": "Espresso, microfoam, dan teknik penuangan"
+            },
+            {
+              "question": "Tekstur microfoam yang ideal untuk latte art dideskripsikan seperti...",
+              "options": ["Busa sabun yang kaku", "Sangat encer seperti air", "Cat basah yang mengkilap", "Krim kocok"],
+              "answer": "Cat basah yang mengkilap"
+            },
+            {
+              "question": "Apa dua pola dasar yang menjadi fondasi dari semua latte art?",
+              "options": ["Angsa dan Naga", "Bunga dan Pohon", "Hati dan Rosetta (Daun)", "Kotak dan Lingkaran"],
+              "answer": "Hati dan Rosetta (Daun)"
+            },
+            {
+              "question": "Saat memulai penuangan, dari mana sebaiknya Anda mulai menuang susu?",
+              "options": ["Dari posisi sangat dekat dengan kopi", "Dari posisi yang agak tinggi", "Dari samping cangkir", "Tidak masalah"],
+              "answer": "Dari posisi yang agak tinggi"
+            },
+            {
+              "question": "Tujuan menuang dari posisi tinggi di awal adalah...",
+              "options": ["Agar susu mengalir ke bawah espresso tanpa merusak crema", "Untuk mendinginkan kopi", "Untuk membuat gelembung besar", "Agar terlihat keren"],
+              "answer": "Agar susu mengalir ke bawah espresso tanpa merusak crema"
+            },
+            {
+              "question": "Kapan sebaiknya Anda menurunkan milk jug sangat dekat dengan permukaan kopi?",
+              "options": ["Tepat di awal", "Setelah cangkir sekitar setengah hingga dua pertiga penuh", "Setelah cangkir penuh", "Tidak pernah"],
+              "answer": "Setelah cangkir sekitar setengah hingga dua pertiga penuh"
+            },
+            {
+              "question": "Langkah terakhir untuk membentuk pola hati dan rosetta adalah...",
+              "options": ["Mengaduk kopi", "Mengangkat jug dan menarik garis lurus melewati tengah pola", "Menambahkan bubuk cokelat", "Menuang lebih banyak susu"],
+              "answer": "Mengangkat jug dan menarik garis lurus melewati tengah pola"
+            },
+            {
+              "question": "Gerakan apa yang diperlukan untuk menciptakan lapisan-lapisan pada pola rosetta?",
+              "options": ["Gerakan memutar", "Gerakan menggoyangkan pergelangan tangan dari sisi ke sisi", "Gerakan naik-turun", "Tidak ada gerakan, hanya tuang"],
+              "answer": "Gerakan menggoyangkan pergelangan tangan dari sisi ke sisi"
+            },
+            {
+              "question": "Apa tips yang baik untuk pemula yang ingin belajar latte art?",
+              "options": ["Langsung mencoba pola yang paling sulit", "Fokus pada konsistensi tekstur susu terlebih dahulu", "Menggunakan susu panas mendidih", "Tidak perlu latihan"],
+              "answer": "Fokus pada konsistensi tekstur susu terlebih dahulu"
+            },
+            {
+              "question": "Apa itu 'kanvas' dalam konteks latte art?",
+              "options": ["Milk jug", "Cangkir", "Crema pada espresso", "Meja barista"],
+              "answer": "Crema pada espresso"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-2", 
+          "title": "Kalibrasi Grinder Espresso", 
+          "content": "**Kalibrasi grinder**, atau yang lebih dikenal dengan istilah **'dialing in'** grinder espresso, adalah proses menyesuaikan tingkat kehalusan gilingan untuk mencapai ekstraksi espresso yang ideal. Ini adalah salah satu tugas paling penting dan rutin bagi seorang barista.\n\n**Mengapa Perlu Dikalibrasi?**\nBiji kopi terus berubah. Faktor-faktor seperti **tingkat sangrai (roast level)**, **kesegaran (umur biji setelah roasting)**, dan bahkan **kelembapan udara** di sekitar dapat mempengaruhi cara biji kopi pecah saat digiling. Gilingan yang kemarin menghasilkan shot sempurna, mungkin hari ini menghasilkan shot yang terlalu cepat atau terlalu lambat. Oleh karena itu, grinder perlu 'dikalibrasi' setiap hari, atau bahkan beberapa kali sehari.\n\n**Tujuan Dialing In:**\nTujuannya adalah untuk menemukan **ukuran gilingan (grind size)** yang, dengan **dosis (jumlah kopi)** yang konsisten, menghasilkan **hasil cairan (yield)** yang ditargetkan dalam **waktu (time)** yang spesifik.\n\nContoh resep standar (titik awal):\n*   **Dose:** 18 gram kopi\n*   **Yield:** 36 gram espresso cair (rasio 1:2)\n*   **Time:** 25-30 detik\n\n**Proses Dialing In Langkah-demi-Langkah:**\n\n1.  **Tetapkan Variabel Tetap:** Mulailah dengan dosis yang konsisten. Timbang **18 gram** biji kopi dengan akurat.\n\n2.  **Giling dan Buat Shot Pertama:** Giling kopi dengan pengaturan yang Anda perkirakan mendekati benar. Lakukan rutinitas *dosing, distribution, tamping* dengan baik, lalu ekstraksi shot sambil meletakkan cangkir di atas timbangan. Jalankan stopwatch secara bersamaan.\n\n3.  **Evaluasi Shot Pertama:** Hentikan ekstraksi saat timbangan menunjukkan angka 36 gram. Sekarang lihat stopwatch Anda.\n    *   **Kasus A: Waktu < 25 detik (Shot Terlalu Cepat / Under-extracted)**\n        *   **Diagnosis:** Gilingan Anda **TERLALU KASAR**. Air mengalir terlalu mudah.\n        *   **Tindakan:** Buat pengaturan grinder **LEBIH HALUS** (adjust finer).\n    *   **Kasus B: Waktu > 30 detik (Shot Terlalu Lambat / Over-extracted)**\n        *   **Diagnosis:** Gilingan Anda **TERLALU HALUS**. Air kesulitan melewati puck kopi.\n        *   **Tindakan:** Buat pengaturan grinder **LEBIH KASAR** (adjust coarser).\n    *   **Kasus C: Waktu antara 25-30 detik.**\n        *   **Diagnosis:** Selamat! Anda berada di rentang yang ideal. Sekarang, cicipi espressonya.\n\n4.  **Ulangi dan Cicipi:** Buang shot pertama, sesuaikan pengaturan grinder Anda sesuai diagnosis di atas, dan buat shot kedua dengan dosis yang sama persis. Ulangi proses hingga Anda mencapai target waktu 25-30 detik. Setelah parameter waktu dan hasil tercapai, cicipi. Apakah rasanya seimbang? Jika terasa sedikit asam, Anda bisa mencoba memperpanjang waktu sedikit (misal ke 32 detik) dengan menghaluskan gilingan sedikit lagi. Jika sedikit pahit, perpendek waktu (misal ke 24 detik) dengan mengasarkan gilingan. \n\nKalibrasi adalah proses iteratif yang membutuhkan kesabaran. Dengan memahami hubungan sebab-akibat antara ukuran gilingan, waktu, dan rasa, Anda akan mampu menghasilkan espresso yang konsisten dan lezat setiap saat.",
+          "quiz": [
+            {
+              "question": "Apa tujuan utama dari 'dialing in' atau kalibrasi grinder espresso?",
+              "options": ["Membersihkan grinder", "Menemukan ukuran gilingan yang tepat untuk ekstraksi ideal", "Mempercepat kerja grinder", "Menghemat biji kopi"],
+              "answer": "Menemukan ukuran gilingan yang tepat untuk ekstraksi ideal"
+            },
+            {
+              "question": "Jika shot espresso Anda mencapai hasil 36g hanya dalam 18 detik, apa artinya?",
+              "options": ["Gilingan terlalu halus", "Gilingan terlalu kasar", "Dosis terlalu banyak", "Suhu air terlalu rendah"],
+              "answer": "Gilingan terlalu kasar"
+            },
+            {
+              "question": "Apa tindakan yang harus Anda ambil jika shot espresso berjalan terlalu cepat (under-extracted)?",
+              "options": ["Membuat gilingan lebih kasar", "Membuat gilingan lebih halus", "Mengurangi jumlah kopi", "Menambah jumlah air"],
+              "answer": "Membuat gilingan lebih halus"
+            },
+            {
+              "question": "Jika shot espresso Anda berjalan terlalu lambat (misal 40 detik), apa artinya?",
+              "options": ["Gilingan terlalu kasar", "Gilingan terlalu halus", "Dosis terlalu sedikit", "Suhu air terlalu panas"],
+              "answer": "Gilingan terlalu halus"
+            },
+            {
+              "question": "Apa tindakan yang harus Anda ambil jika shot espresso berjalan terlalu lambat (over-extracted)?",
+              "options": ["Membuat gilingan lebih halus", "Membuat gilingan lebih kasar", "Menambah jumlah kopi", "Menyeduh lebih lama"],
+              "answer": "Membuat gilingan lebih kasar"
+            },
+            {
+              "question": "Manakah parameter yang dijadikan titik awal dalam resep espresso standar?",
+              "options": ["Dose 10g, Yield 20g, Time 15s", "Dose 18g, Yield 36g, Time 25-30s", "Dose 25g, Yield 50g, Time 40s", "Dose 15g, Yield 45g, Time 20s"],
+              "answer": "Dose 18g, Yield 36g, Time 25-30s"
+            },
+            {
+              "question": "Manakah dari faktor berikut yang TIDAK terlalu mempengaruhi kebutuhan untuk kalibrasi grinder?",
+              "options": ["Umur biji kopi setelah roasting", "Kelembapan udara", "Tingkat sangrai (roast level)", "Merek mesin espresso"],
+              "answer": "Merek mesin espresso"
+            },
+            {
+              "question": "Setelah parameter waktu dan hasil tercapai, apa langkah terakhir yang paling penting?",
+              "options": ["Membersihkan mesin", "Mencicipi espresso untuk mengevaluasi rasa", "Membuat latte art", "Mengubah dosis"],
+              "answer": "Mencicipi espresso untuk mengevaluasi rasa"
+            },
+            {
+              "question": "Mengapa barista perlu mengkalibrasi grinder setiap hari?",
+              "options": ["Karena aturan dari pemilik kedai kopi", "Karena biji kopi dan kondisi lingkungan selalu bisa berubah", "Agar grinder tidak cepat rusak", "Untuk membuang kopi lama"],
+              "answer": "Karena biji kopi dan kondisi lingkungan selalu bisa berubah"
+            },
+            {
+              "question": "Saat melakukan dialing-in, variabel apa yang harus dijaga tetap konsisten?",
+              "options": ["Ukuran gilingan", "Waktu ekstraksi", "Dosis (jumlah kopi)", "Rasa"],
+              "answer": "Dosis (jumlah kopi)"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-3", 
+          "title": "Memahami Roda Cita Rasa Kopi", 
+          "content": "Pernahkah Anda membaca deskripsi kopi yang menyebutkan rasa 'melati, lemon, dan cokelat' dan bertanya-tanya dari mana datangnya rasa itu? Kopi tidak diberi perasa tambahan. Rasa-rasa tersebut adalah deskriptor dari senyawa aromatik kompleks yang ada di dalam biji kopi itu sendiri. Untuk membantu para pencicip kopi mengidentifikasi dan mengartikulasikan rasa ini, Specialty Coffee Association (SCA) menciptakan sebuah alat standar: **The Coffee Taster's Flavor Wheel (Roda Cita Rasa Kopi)**.\n\n**Apa itu Flavor Wheel?**\nFlavor Wheel adalah diagram melingkar yang mengorganisir kosakata untuk mendeskripsikan rasa dan aroma kopi. Ini adalah alat yang paling ikonik dan penting dalam industri kopi spesialti. Tujuannya adalah untuk memberikan bahasa yang seragam bagi para profesional (dan penikmat kopi) di seluruh dunia.\n\n**Bagaimana Cara Membacanya?**\nRoda ini dibaca dari **tengah ke luar**.\n1.  **Pusat (Center):** Di bagian paling tengah, terdapat kategori rasa yang paling umum dan luas. Ada sembilan kategori utama: **Fruity (Buah), Floral (Bunga), Sweet (Manis), Nutty/Cocoa (Kacang/Cokelat), Spices (Rempah), Roasted (Sangrai), Other (Lainnya), Vegetal (Sayuran), dan Sour/Fermented (Asam/Fermentasi)**.\n\n2.  **Lapisan Tengah (Middle Layer):** Saat Anda bergerak keluar, kategori-kategori ini dipecah menjadi deskripsi yang lebih spesifik. Misalnya:\n    *   **Fruity** dipecah menjadi *Berry*, *Citrus Fruit*, *Stone Fruit*, dll.\n    *   **Sweet** dipecah menjadi *Brown Sugar*, *Molasses*, *Maple Syrup*, *Honey*, dll.\n\n3.  **Lapisan Luar (Outer Layer):** Lapisan terluar memberikan deskriptor yang paling spesifik dan konkret. Misalnya:\n    *   *Berry* bisa dipecah lagi menjadi *Blackberry*, *Raspberry*, *Blueberry*, atau *Strawberry*.\n    *   *Citrus Fruit* bisa menjadi *Grapefruit*, *Orange*, *Lemon*, atau *Lime*.\n\n**Bagaimana Cara Menggunakannya?**\nFlavor Wheel bukanlah alat untuk 'mencari' rasa, melainkan alat untuk **'mengkonfirmasi' dan 'mendefinisikan'** rasa yang Anda alami.\n1.  **Cicipi Kopi Anda:** Seruput kopi Anda dan biarkan rasanya menyebar di seluruh mulut. Fokus pada kesan pertama.\n2.  **Mulai dari Tengah:** Tanyakan pada diri Anda, 'Secara umum, ini rasanya apa? Apakah lebih ke arah buah-buahan (fruity)? Atau lebih seperti kacang (nutty)?'\n3.  **Bergerak ke Luar:** Jika Anda memutuskan rasanya 'fruity', tanyakan lagi, 'Buah seperti apa? Apakah seperti buah beri (berry) atau seperti jeruk (citrus)?'\n4.  **Menuju Spesifik:** Jika Anda merasa rasanya seperti 'citrus', coba cicipi lagi. 'Apakah ini lebih mirip lemon yang asam, atau jeruk yang manis?'\n\nProses ini melatih langit-langit mulut (palate) Anda untuk menjadi lebih peka. Mungkin pada awalnya Anda hanya bisa mendeteksi rasa 'kopi'. Namun, dengan latihan dan menggunakan Flavor Wheel sebagai panduan, Anda akan mulai bisa mengidentifikasi nuansa-nuansa rasa yang lebih spesifik, mengubah pengalaman minum kopi Anda dari sekadar kebiasaan menjadi sebuah petualangan rasa.",
+          "quiz": [
+            {
+              "question": "Apa tujuan utama dari Coffee Taster's Flavor Wheel?",
+              "options": ["Menentukan harga kopi", "Memberikan bahasa yang seragam untuk mendeskripsikan rasa kopi", "Membuat kopi terasa lebih enak", "Memilih biji kopi terbaik"],
+              "answer": "Memberikan bahasa yang seragam untuk mendeskripsikan rasa kopi"
+            },
+            {
+              "question": "Bagaimana cara membaca Flavor Wheel?",
+              "options": ["Dari luar ke dalam", "Dari kiri ke kanan", "Dari tengah ke luar", "Dari atas ke bawah"],
+              "answer": "Dari tengah ke luar"
+            },
+            {
+              "question": "Manakah dari berikut ini yang merupakan salah satu dari sembilan kategori rasa utama di bagian tengah roda?",
+              "options": ["Woody (Kayu)", "Spicy (Pedas)", "Fruity (Buah)", "Smoky (Asap)"],
+              "answer": "Fruity (Buah)"
+            },
+            {
+              "question": "Jika Anda mengidentifikasi rasa 'Fruity', langkah selanjutnya di lapisan tengah roda mungkin adalah...",
+              "options": ["Cokelat atau Vanila", "Melati atau Mawar", "Berry, Citrus Fruit, atau Stone Fruit", "Kacang Almond atau Hazelnut"],
+              "answer": "Berry, Citrus Fruit, atau Stone Fruit"
+            },
+            {
+              "question": "Deskriptor rasa yang paling spesifik ditemukan di lapisan mana pada roda?",
+              "options": ["Lapisan tengah", "Lapisan luar", "Pusat roda", "Di luar roda"],
+              "answer": "Lapisan luar"
+            },
+            {
+              "question": "Flavor Wheel adalah alat untuk...",
+              "options": ["Menambah perasa pada kopi", "Mengkonfirmasi dan mendefinisikan rasa yang dialami", "Mencari resep kopi baru", "Menilai suhu kopi"],
+              "answer": "Mengkonfirmasi dan mendefinisikan rasa yang dialami"
+            },
+            {
+              "question": "Siapakah organisasi yang menciptakan dan mempublikasikan Flavor Wheel?",
+              "options": ["International Coffee Organization (ICO)", "Fair Trade", "World Coffee Research (WCR)", "Specialty Coffee Association (SCA)"],
+              "answer": "Specialty Coffee Association (SCA)"
+            },
+            {
+              "question": "Jika rasa kopi mengingatkan Anda pada madu, kategori umum mana yang pertama kali Anda lihat di roda?",
+              "options": ["Fruity", "Floral", "Sweet", "Nutty/Cocoa"],
+              "answer": "Sweet"
+            },
+            {
+              "question": "Menggunakan Flavor Wheel secara teratur dapat membantu...",
+              "options": ["Membuat Anda lebih cepat minum kopi", "Melatih kepekaan langit-langit mulut (palate) Anda", "Mengurangi kadar kafein", "Menaikkan harga jual kopi"],
+              "answer": "Melatih kepekaan langit-langit mulut (palate) Anda"
+            },
+            {
+              "question": "Deskriptor seperti 'Lemon' atau 'Orange' berada di bawah kategori menengah apa?",
+              "options": ["Berry", "Dried Fruit", "Citrus Fruit", "Other Fruit"],
+              "answer": "Citrus Fruit"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-4", 
+          "title": "Protokol Cupping Kopi", 
+          "content": "**Cupping** adalah protokol standar yang digunakan di seluruh dunia oleh para profesional kopi—dari petani, importir, hingga roaster dan barista—untuk mengevaluasi dan membandingkan kualitas dan rasa dari sampel kopi yang berbeda secara objektif.\n\nProses ini dirancang untuk meminimalkan variabel dari metode seduh, sehingga yang benar-benar dinilai adalah potensi intrinsik dari biji kopi itu sendiri. Meskipun terlihat formal, Anda juga bisa melakukannya di rumah untuk melatih palate Anda.\n\n**Peralatan Dasar untuk Cupping:**\n*   **Cangkir atau mangkuk kecil:** Beberapa buah, dengan ukuran dan bahan yang sama.\n*   **Sendok Cupping:** Sendok yang dalam dan bulat, mirip sendok sup.\n*   **Kopi:** Beberapa sampel berbeda yang ingin Anda bandingkan, digiling dengan ukuran **medium-coarse**.\n*   **Timbangan Digital.**\n*   **Air Panas:** Sekitar 93°C.\n*   **Gelas berisi air bersih:** Untuk membilas sendok.\n\n**Protokol Cupping Langkah-demi-Langkah:**\n\n**1. Evaluasi Fragrance (Aroma Kering):**\n*   Letakkan bubuk kopi kering di setiap cangkir (dosis standar adalah sekitar 11 gram untuk 200 ml air).\n*   Cium aroma dari setiap sampel kopi kering. Catat kesan pertama Anda. Apakah aromanya manis, seperti bunga, atau earthy? Ini adalah *fragrance*.\n\n**2. Penuangan Air dan Evaluasi Aroma:**\n*   Mulai stopwatch dan tuangkan air panas (sekitar 200 ml) langsung ke atas bubuk kopi di setiap cangkir, pastikan semua bubuk terendam.\n*   Lapisan bubuk kopi akan terbentuk di permukaan, ini disebut 'crust'.\n*   Sekarang, dekatkan hidung Anda ke permukaan cangkir dan cium lagi. Aroma yang keluar saat bubuk kopi basah disebut *aroma*.\n\n**3. Breaking the Crust (Memecah Kerak):**\n*   Setelah **4 menit**, kerak di permukaan harus dipecah. Gunakan sendok cupping Anda, dorong kerak ke bagian belakang cangkir sebanyak tiga kali, sambil mencium aroma intens yang dilepaskan saat kerak pecah. Ini seringkali merupakan momen di mana aroma paling kuat tercium.\n*   Bilas sendok Anda di gelas air bersih setiap kali berpindah ke cangkir lain untuk menghindari kontaminasi silang.\n\n**4. Skimming (Membersihkan Permukaan):**\n*   Setelah kerak dipecah, gunakan dua sendok untuk membersihkan sisa busa dan partikel kopi yang mengambang di permukaan. Ini akan menghasilkan 'cairan' yang lebih bersih untuk dicicipi.\n\n**5. Tasting (Mencicipi):**\n*   Biarkan kopi mendingin selama beberapa menit hingga mencapai suhu yang nyaman untuk dicicipi (sekitar 10-12 menit dari awal penuangan).\n*   Ambil sedikit sampel kopi dengan sendok cupping Anda. **Seruput (slurp)** kopi dari sendok dengan cepat dan kuat. Tujuan dari *slurping* adalah untuk menyemprotkan kopi ke seluruh langit-langit mulut Anda, memungkinkan Anda merasakan rasa dan aroma secara bersamaan.\n*   Perhatikan kesan pertama: rasa (flavor), rasa akhir (aftertaste), keasaman (acidity), dan kekentalan (body).\n*   Anda bisa menelan kopi tersebut atau meludahkannya ke dalam cangkir terpisah (seperti yang dilakukan profesional saat mencicipi puluhan sampel).\n\n**6. Evaluasi Lanjutan:**\n*   Terus cicipi kopi saat suhunya semakin turun. Karakter rasa kopi seringkali berubah dan menjadi lebih jelas saat dingin. Catat bagaimana rasanya berubah.\n\nCupping mungkin terasa aneh pada awalnya, tetapi ini adalah cara terbaik untuk benar-benar fokus pada nuansa rasa dari berbagai jenis kopi secara berdampingan.",
+          "quiz": [
+            {
+              "question": "Apa tujuan utama dari 'cupping' kopi?",
+              "options": ["Membuat kopi untuk diminum sehari-hari", "Mengevaluasi dan membandingkan kualitas kopi secara objektif", "Menemukan resep latte art baru", "Membuat kopi yang sangat pekat"],
+              "answer": "Mengevaluasi dan membandingkan kualitas kopi secara objektif"
+            },
+            {
+              "question": "Aroma yang dicium dari bubuk kopi kering sebelum diseduh disebut...",
+              "options": ["Aroma", "Flavor", "Fragrance", "Scent"],
+              "answer": "Fragrance"
+            },
+            {
+              "question": "Lapisan bubuk kopi yang terbentuk di permukaan setelah air dituang disebut...",
+              "options": ["Foam", "Skin", "Crust", "Scum"],
+              "answer": "Crust"
+            },
+            {
+              "question": "Kapan waktu yang tepat untuk melakukan 'breaking the crust'?",
+              "options": ["Segera setelah air dituang", "Setelah 1 menit", "Setelah 4 menit", "Setelah kopi dingin"],
+              "answer": "Setelah 4 menit"
+            },
+            {
+              "question": "Mengapa para pencicip kopi 'menyeruput' (slurp) kopi dengan kuat dari sendok?",
+              "options": ["Agar tidak panas", "Hanya untuk gaya", "Untuk menyemprotkan kopi ke seluruh langit-langit mulut, merasakan rasa dan aroma bersamaan", "Agar kopi cepat habis"],
+              "answer": "Untuk menyemprotkan kopi ke seluruh langit-langit mulut, merasakan rasa dan aroma bersamaan"
+            },
+            {
+              "question": "Mengapa sendok harus dibilas setiap kali berpindah cangkir?",
+              "options": ["Agar tetap dingin", "Untuk menghindari kontaminasi silang antar sampel kopi", "Agar terlihat profesional", "Supaya sendok mengkilap"],
+              "answer": "Untuk menghindari kontaminasi silang antar sampel kopi"
+            },
+            {
+              "question": "Ukuran gilingan yang umum digunakan untuk cupping adalah...",
+              "options": ["Sangat halus", "Medium", "Medium-coarse", "Sangat kasar"],
+              "answer": "Medium-coarse"
+            },
+            {
+              "question": "Proses membersihkan sisa busa dan partikel di permukaan setelah 'breaking the crust' disebut...",
+              "options": ["Cleaning", "Filtering", "Skimming", "Washing"],
+              "answer": "Skimming"
+            },
+            {
+              "question": "Mengapa penting untuk terus mencicipi kopi saat suhunya turun?",
+              "options": ["Karena kopi panas tidak enak", "Karena karakter rasa seringkali berubah dan lebih jelas saat dingin", "Untuk membuang-buang waktu", "Agar kopi tidak basi"],
+              "answer": "Karena karakter rasa seringkali berubah dan lebih jelas saat dingin"
+            },
+            {
+              "question": "Aroma yang dicium saat bubuk kopi sudah basah oleh air disebut...",
+              "options": ["Fragrance", "Aroma", "Bouquet", "Essence"],
+              "answer": "Aroma"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-5", 
+          "title": "Air untuk Kopi: TDS dan Komposisi Mineral", 
+          "content": "Kopi yang Anda seduh terdiri dari sekitar **98% air**. Ini berarti kualitas air yang Anda gunakan memiliki dampak yang sangat besar pada hasil akhir rasa di cangkir. Menggunakan air yang salah dapat membuat biji kopi spesialti termahal sekalipun terasa datar dan tidak enak.\n\n**Mengapa Air Penting?**\nAir bukanlah sekadar H2O. Air mengandung berbagai mineral dan senyawa terlarut. Air bertindak sebagai **pelarut (solvent)** yang mengekstrak senyawa-senyawa rasa (seperti asam, gula, minyak) dari bubuk kopi. Kemampuan air untuk mengekstrak rasa dengan baik bergantung pada komposisi mineralnya.\n\n**Konsep Utama dalam Air Kopi:**\n\n1.  **TDS (Total Dissolved Solids):**\n    *   TDS adalah ukuran total dari semua zat padat (mineral, garam, logam) yang terlarut dalam air, diukur dalam **parts per million (ppm)**.\n    *   **Air dengan TDS terlalu rendah (misal: air suling/destilasi, < 50 ppm):** Air ini terlalu 'kosong' dan agresif. Ia akan mengekstrak rasa secara tidak seimbang, seringkali menghasilkan kopi yang terasa asam, tajam, dan kurang manis.\n    *   **Air dengan TDS terlalu tinggi (misal: air keran sadah, > 250 ppm):** Air ini sudah terlalu 'penuh' dengan mineral. Kemampuannya untuk melarutkan senyawa rasa dari kopi menjadi berkurang. Ini menghasilkan ekstraksi yang lambat dan tidak efisien, membuat kopi terasa **datar, keruh, dan kurang hidup**.\n    *   **Standar SCA:** Specialty Coffee Association (SCA) merekomendasikan air dengan target TDS **150 ppm**, dengan rentang ideal antara 75-250 ppm.\n\n2.  **Komposisi Mineral (Hardness):**\n    Dua mineral utama yang paling berpengaruh adalah **Magnesium (Mg)** dan **Kalsium (Ca)**. Keduanya penting untuk ekstraksi rasa.\n    *   **Magnesium:** Sangat efektif dalam 'menarik' senyawa rasa fruity dan floral yang lebih halus dari kopi.\n    *   **Kalsium:** Cenderung menonjolkan rasa yang lebih 'berat' dan creamy.\n    *   Tingkat kekerasan (hardness) air yang ideal menurut SCA adalah sekitar **68 ppm**.\n\n3.  **Alkalinitas (Buffer):**\n    Alkalinitas, yang terutama berasal dari bikarbonat, berfungsi sebagai 'penyangga' (buffer) yang menetralkan asam. \n    *   Jika alkalinitas terlalu tinggi, ia akan menetralkan semua *acidity* cerah yang kita inginkan dari kopi, membuat rasanya datar.\n    *   Jika terlalu rendah, rasa asamnya bisa menjadi terlalu tajam.\n    *   Standar SCA untuk alkalinitas adalah sekitar **40 ppm**.\n\n**Solusi Praktis di Rumah:**\n*   **Hindari Air Keran Langsung (Jika Sadah):** Air keran di banyak tempat terlalu sadah dan mengandung klorin yang akan merusak rasa kopi.\n*   **Gunakan Air Saring (Filtered Water):** Menggunakan filter air sederhana seperti Brita atau filter karbon aktif lainnya adalah langkah awal yang baik untuk menghilangkan klorin dan beberapa mineral berlebih.\n*   **Gunakan Air Kemasan:** Mencari air mineral kemasan dengan TDS di rentang 100-200 ppm bisa menjadi solusi yang mudah dan konsisten.\n*   **Buat Air Sendiri (Untuk Penggiat Serius):** Penggemar kopi yang paling serius seringkali membuat air mereka sendiri dengan menambahkan paket konsentrat mineral (seperti Third Wave Water atau Perfect Coffee Water) ke dalam air suling (distilled water) untuk menciptakan profil mineral yang sempurna sesuai standar SCA.",
+          "quiz": [
+            {
+              "question": "Berapa persen kira-kira komposisi air dalam secangkir kopi seduh?",
+              "options": ["50%", "75%", "85%", "Lebih dari 98%"],
+              "answer": "Lebih dari 98%"
+            },
+            {
+              "question": "Apa kepanjangan dari TDS dalam konteks air?",
+              "options": ["Total Dissolved Solutions", "Total Dissolved Solids", "Total Drinkable Substances", "Total Delicious Spices"],
+              "answer": "Total Dissolved Solids"
+            },
+            {
+              "question": "Menggunakan air suling (TDS sangat rendah) untuk menyeduh kopi akan menghasilkan rasa yang cenderung...",
+              "options": ["Datar dan keruh", "Asam, tajam, dan kurang manis", "Sangat pahit", "Sempurna dan seimbang"],
+              "answer": "Asam, tajam, dan kurang manis"
+            },
+            {
+              "question": "Menggunakan air yang terlalu sadah (TDS sangat tinggi) akan menghasilkan rasa kopi yang cenderung...",
+              "options": ["Datar, keruh, dan kurang hidup", "Sangat asam dan fruity", "Sangat manis", "Sangat ringan"],
+              "answer": "Datar, keruh, dan kurang hidup"
+            },
+            {
+              "question": "Berapa target TDS yang direkomendasikan oleh Specialty Coffee Association (SCA)?",
+              "options": ["10 ppm", "50 ppm", "150 ppm", "500 ppm"],
+              "answer": "150 ppm"
+            },
+            {
+              "question": "Dua mineral utama dalam air yang paling berpengaruh pada ekstraksi rasa kopi adalah...",
+              "options": ["Sodium dan Potasium", "Besi dan Seng", "Magnesium dan Kalsium", "Klorin dan Fluorida"],
+              "answer": "Magnesium dan Kalsium"
+            },
+            {
+              "question": "Fungsi alkalinitas dalam air kopi adalah sebagai...",
+              "options": ["Penambah rasa manis", "Peningkat kafein", "Penyangga (buffer) yang menetralkan asam", "Pemberi warna"],
+              "answer": "Penyangga (buffer) yang menetralkan asam"
+            },
+            {
+              "question": "Mineral manakah yang lebih efektif dalam mengekstrak rasa fruity dan floral?",
+              "options": ["Kalsium", "Magnesium", "Sodium", "Besi"],
+              "answer": "Magnesium"
+            },
+            {
+              "question": "Apa solusi paling praktis dan mudah untuk mendapatkan air seduh yang lebih baik di rumah?",
+              "options": ["Merebus air keran selama 1 jam", "Menggunakan air saring atau air mineral kemasan dengan TDS yang sesuai", "Menambahkan garam ke air keran", "Menggunakan air suling murni"],
+              "answer": "Menggunakan air saring atau air mineral kemasan dengan TDS yang sesuai"
+            },
+            {
+              "question": "Apa yang dimaksud dengan 'membuat air sendiri' dalam dunia kopi spesialti?",
+              "options": ["Menciptakan air dari hidrogen dan oksigen", "Menambahkan paket konsentrat mineral ke dalam air suling", "Menyaring air hujan", "Mengambil air dari sumber mata air rahasia"],
+              "answer": "Menambahkan paket konsentrat mineral ke dalam air suling"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-6", 
+          "title": "Variabel Ekstraksi Lanjutan", 
+          "content": "Anda telah menguasai dasar-dasar ekstraksi—rasio, ukuran gilingan, dan waktu. Sekarang, mari kita selami beberapa variabel lanjutan yang dapat Anda manipulasi untuk menyempurnakan seduhan Anda lebih jauh lagi.\n\n**1. Suhu Air (Water Temperature):**\nSuhu air adalah pengatur utama kecepatan ekstraksi. Aturan umumnya adalah:\n*   **Suhu Lebih Panas:** Ekstraksi lebih cepat dan lebih banyak. Menonjolkan rasa cokelat, kacang, dan 'roasted'. Jika terlalu panas, bisa menyebabkan rasa pahit dan gosong.\n*   **Suhu Lebih Dingin:** Ekstraksi lebih lambat dan lebih sedikit. Menonjolkan rasa asam (acidity) dan nuansa fruity/floral. Jika terlalu dingin, bisa menyebabkan rasa asam yang tidak matang (sour) dan under-extracted.\n*   **Rekomendasi:** Rentang **90-96°C (195-205°F)** adalah standar industri. Untuk biji kopi *dark roast* yang cenderung pahit, coba gunakan suhu lebih rendah (90-92°C). Untuk biji *light roast* yang padat dan asam, gunakan suhu lebih tinggi (94-96°C) untuk membantu 'membuka' rasanya.\n\n**2. Agitasi (Agitation):**\nAgitasi adalah pergerakan fisik dari bubuk kopi selama proses seduhan. Ini dapat meningkatkan kecepatan ekstraksi secara signifikan.\n*   **Cara:** Agitasi bisa berupa **mengaduk** (seperti pada AeroPress atau French Press), **menggoyangkan** dripper (seperti pada V60), atau bahkan dari **turbulensi** yang diciptakan oleh penuangan air itu sendiri.\n*   **Efek:** Lebih banyak agitasi = ekstraksi lebih cepat dan lebih banyak. Terlalu banyak agitasi dapat dengan mudah menyebabkan *over-extraction* dan rasa pahit.\n*   **Aplikasi:** Jika kopi Anda terasa *under-extracted*, menambahkan sedikit adukan atau penuangan yang sedikit lebih 'agresif' dapat membantu. Jika *over-extracted*, coba kurangi adukan atau tuang dengan lebih lembut.\n\n**3. Blooming:**\nBlooming adalah proses pembasahan awal bubuk kopi untuk melepaskan gas CO2 yang terperangkap. Biji kopi segar mengandung banyak CO2.\n*   **Mengapa Penting?** Gas CO2 ini dapat menolak air, menghalangi ekstraksi yang merata. Dengan melakukan blooming, Anda memberikan jalan bagi air untuk berinteraksi secara efektif dengan partikel kopi sejak awal.\n*   **Teknik:** Gunakan air sekitar 2-3 kali berat kopi Anda (misal: 30-45g air untuk 15g kopi). Pastikan semua bubuk basah dan diamkan selama 30-45 detik hingga gelembung gas berhenti muncul.\n\n**4. Bypass Brewing:**\nBypass adalah menambahkan air ke dalam konsentrat kopi **setelah** proses seduh selesai. Minuman Americano adalah contoh paling umum dari *bypass brewing*.\n*   **Tujuan:** Anda bisa mengekstrak kopi pada rasio yang lebih pekat (untuk mendapatkan rasa manis dan body yang kaya) lalu mengencerkannya ke kekuatan (strength) yang diinginkan tanpa risiko *over-extracting* di akhir proses seduh. Beberapa resep pour-over juga menggunakan teknik bypass untuk mengontrol hasil akhir.\n\nMenguasai variabel-variabel ini membutuhkan eksperimen. Cobalah mengubah satu hal pada satu waktu dan cicipi hasilnya. Inilah cara Anda benar-benar memahami bagaimana setiap elemen berkontribusi pada secangkir kopi yang sempurna.",
+          "quiz": [
+            {
+              "question": "Bagaimana suhu air yang lebih panas mempengaruhi ekstraksi kopi?",
+              "options": ["Memperlambat ekstraksi", "Mempercepat dan meningkatkan ekstraksi", "Tidak ada efek", "Menghilangkan rasa asam"],
+              "answer": "Mempercepat dan meningkatkan ekstraksi"
+            },
+            {
+              "question": "Untuk biji kopi light roast yang cenderung asam, suhu air seperti apa yang direkomendasikan?",
+              "options": ["Suhu lebih dingin (di bawah 90°C)", "Suhu lebih tinggi (94-96°C)", "Suhu kamar", "Tidak masalah"],
+              "answer": "Suhu lebih tinggi (94-96°C)"
+            },
+            {
+              "question": "Pergerakan fisik bubuk kopi selama proses seduhan disebut...",
+              "options": ["Agitasi", "Sedimentasi", "Temperatur", "Bypass"],
+              "answer": "Agitasi"
+            },
+            {
+              "question": "Terlalu banyak agitasi dapat menyebabkan...",
+              "options": ["Under-extraction", "Over-extraction dan rasa pahit", "Kopi menjadi dingin", "Rasa asam yang kuat"],
+              "answer": "Over-extraction dan rasa pahit"
+            },
+            {
+              "question": "Apa tujuan utama dari proses 'blooming'?",
+              "options": ["Memanaskan cangkir", "Melepaskan gas CO2 untuk ekstraksi yang lebih merata", "Membuat kopi lebih kental", "Mempercepat waktu seduh"],
+              "answer": "Melepaskan gas CO2 untuk ekstraksi yang lebih merata"
+            },
+            {
+              "question": "Berapa lama waktu blooming yang umum direkomendasikan?",
+              "options": ["5 detik", "10 detik", "30-45 detik", "2 menit"],
+              "answer": "30-45 detik"
+            },
+            {
+              "question": "Menambahkan air ke konsentrat kopi setelah proses seduh selesai disebut...",
+              "options": ["Agitasi", "Blooming", "Bypass Brewing", "Pre-infusion"],
+              "answer": "Bypass Brewing"
+            },
+            {
+              "question": "Minuman manakah yang merupakan contoh paling umum dari 'Bypass Brewing'?",
+              "options": ["Espresso", "Latte", "French Press", "Americano"],
+              "answer": "Americano"
+            },
+            {
+              "question": "Jika kopi Anda terasa sedikit under-extracted, selain menghaluskan gilingan, apa yang bisa Anda coba?",
+              "options": ["Mengurangi agitasi", "Menurunkan suhu air", "Menambah sedikit agitasi (misal: mengaduk)", "Mempercepat penuangan"],
+              "answer": "Menambah sedikit agitasi (misal: mengaduk)"
+            },
+            {
+              "question": "Gas apa yang dilepaskan oleh biji kopi segar selama proses blooming?",
+              "options": ["Oksigen (O2)", "Nitrogen (N2)", "Karbon Dioksida (CO2)", "Hidrogen (H2)"],
+              "answer": "Karbon Dioksida (CO2)"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-7", 
+          "title": "Pengenalan Varietas Kopi Eksotis", 
+          "content": "Dunia kopi spesialti terus berkembang, dengan penemuan dan pengembangan varietas-varietas kopi baru yang menawarkan profil rasa yang unik dan luar biasa. Di luar Arabika dan Robusta secara umum, ada banyak sekali sub-varietas. Mengenal beberapa di antaranya akan membuka cakrawala baru dalam petualangan rasa kopi Anda.\n\nBerikut adalah beberapa varietas eksotis yang paling terkenal dan dicari:\n\n**1. Gesha / Geisha:**\n*   **Asal:** Awalnya ditemukan di hutan Gesha, Ethiopia, pada tahun 1930-an. Namun, ia menjadi terkenal secara global setelah ditanam di **Panama** oleh perkebunan Hacienda La Esmeralda.\n*   **Profil Rasa:** Sangat aromatik dan kompleks. Dikenal dengan aroma **bunga melati (jasmine) dan bergamot (seperti teh Earl Grey)** yang intens, serta rasa buah-buahan tropis, buah berbiji (stone fruit), dan keasaman yang sangat jernih. Bodynya seringkali ringan seperti teh.\n*   **Mengapa Spesial:** Profil rasanya sangat unik dan elegan, tidak seperti kopi lainnya. Karena hasil panennya yang rendah dan permintaan yang sangat tinggi, Gesha adalah salah satu kopi termahal di dunia.\n\n**2. SL-28 & SL-34:**\n*   **Asal:** Dikembangkan di **Kenya** pada tahun 1930-an oleh Scott Laboratories (SL). Varietas ini adalah hasil seleksi dari jenis Bourbon.\n*   **Profil Rasa:** Sangat khas Kenya. Dikenal dengan keasaman yang tajam, juicy, dan kompleks, seringkali dideskripsikan seperti **tomat, blackcurrant (sejenis beri hitam), atau anggur**. Memiliki body yang berat dan rasa manis yang intens.\n*   **Mengapa Spesial:** Kopi Kenya, terutama dari varietas ini, menawarkan profil rasa asam-manis yang sangat kuat dan unik yang menjadi favorit banyak pecinta kopi.\n\n**3. Pacamara:**\n*   **Asal:** Sebuah hibrida atau persilangan antara varietas Pacas dan Maragogipe, yang diciptakan di **El Salvador**.\n*   **Profil Rasa:** Kompleks dan bisa sangat bervariasi tergantung pada proses pasca-panen. Bisa memiliki rasa manis cokelat dan butterscotch, hingga rasa buah tropis dan floral yang kompleks.\n*   **Mengapa Spesial:** Ukuran bijinya sangat besar (warisan dari Maragogipe), dan menawarkan keseimbangan yang baik antara rasa manis dan asam.\n\n**4. Sudan Rume:**\n*   **Asal:** Varietas kuno yang berasal dari hutan kopi di **Sudan Selatan**, dekat perbatasan Ethiopia.\n*   **Profil Rasa:** Mirip dengan Gesha, namun seringkali dengan rasa yang lebih 'creamy' dan manis. Bisa memiliki nuansa rasa bubblegum, mawar, dan buah-buahan manis.\n*   **Mengapa Spesial:** Dianggap sebagai 'sepupu' dari Gesha dan memiliki potensi genetik yang penting untuk masa depan kopi. Hasil panennya sangat rendah, membuatnya langka dan mahal.\n\nMenemukan dan mencicipi kopi dari varietas-varietas ini adalah pengalaman yang sangat berharga. Ini menunjukkan betapa beragamnya dunia rasa yang bisa ditawarkan oleh secangkir kopi, jauh melampaui rasa 'pahit' yang umum dikenal.",
+          "quiz": [
+            {
+              "question": "Varietas kopi manakah yang terkenal dengan aroma melati (jasmine) dan bergamot?",
+              "options": ["Pacamara", "Gesha / Geisha", "SL-28", "Bourbon"],
+              "answer": "Gesha / Geisha"
+            },
+            {
+              "question": "Meskipun berasal dari Ethiopia, varietas Gesha menjadi terkenal secara global setelah ditanam di negara mana?",
+              "options": ["Kolombia", "Kenya", "Kosta Rika", "Panama"],
+              "answer": "Panama"
+            },
+            {
+              "question": "Profil rasa seperti tomat atau blackcurrant adalah ciri khas dari kopi asal negara mana dan varietas apa?",
+              "options": ["Panama Gesha", "Kenya SL-28/SL-34", "El Salvador Pacamara", "Brazil Catuai"],
+              "answer": "Kenya SL-28/SL-34"
+            },
+            {
+              "question": "Pacamara adalah persilangan antara varietas Pacas dan...",
+              "options": ["Typica", "Maragogipe", "Caturra", "Gesha"],
+              "answer": "Maragogipe"
+            },
+            {
+              "question": "Varietas apa yang dikenal karena ukuran bijinya yang sangat besar?",
+              "options": ["Gesha", "SL-28", "Pacamara", "Sudan Rume"],
+              "answer": "Pacamara"
+            },
+            {
+              "question": "Varietas Sudan Rume berasal dari negara...",
+              "options": ["Sudan Selatan", "Panama", "El Salvador", "Kenya"],
+              "answer": "Sudan Selatan"
+            },
+            {
+              "question": "Mengapa kopi Gesha menjadi salah satu kopi termahal di dunia?",
+              "options": ["Karena kandungan kafeinnya tertinggi", "Karena hasil panen rendah dan permintaan tinggi", "Karena hanya bisa diseduh dengan mesin mahal", "Karena warnanya emas"],
+              "answer": "Karena hasil panen rendah dan permintaan tinggi"
+            },
+            {
+              "question": "Varietas SL-28 dan SL-34 dikembangkan oleh Scott Laboratories di negara mana?",
+              "options": ["Ethiopia", "Tanzania", "Kenya", "Rwanda"],
+              "answer": "Kenya"
+            },
+            {
+              "question": "Body yang ringan seperti teh adalah karakteristik dari varietas...",
+              "options": ["Pacamara", "Robusta", "Gesha", "SL-34"],
+              "answer": "Gesha"
+            },
+            {
+              "question": "Varietas Pacamara pertama kali diciptakan di negara...",
+              "options": ["Guatemala", "Honduras", "El Salvador", "Nikaragua"],
+              "answer": "El Salvador"
+            }
+          ]
+        },
+        { 
+          "id": "materi-4-8", 
+          "title": "Persiapan Kompetisi Barista", 
+          "content": "Kompetisi barista, seperti World Barista Championship (WBC), adalah puncak dari keahlian dan dedikasi dalam menyajikan kopi. Ini bukan hanya tentang membuat kopi enak, tetapi juga tentang presentasi, inovasi, dan kemampuan bercerita.\n\nWalaupun Anda mungkin belum berencana untuk berkompetisi, memahami apa yang dinilai dapat memberikan wawasan mendalam tentang elemen-elemen yang membentuk pengalaman kopi yang luar biasa.\n\nDalam format WBC, seorang barista memiliki waktu **15 menit** untuk menyajikan tiga set minuman kepada empat juri sensorik. Setiap set terdiri dari empat minuman identik:\n\n**1. Espresso Course:**\n*   **Apa yang disajikan:** Empat shot espresso.\n*   **Apa yang dinilai:** Barista harus menjelaskan biji kopi yang mereka gunakan (asal, varietas, proses) dan profil rasa yang diharapkan oleh juri. Juri akan menilai apakah deskripsi tersebut cocok dengan rasa espresso yang mereka cicipi. Keseimbangan, aftertaste, dan kualitas crema semuanya dinilai secara ketat.\n\n**2. Milk Beverage Course (Minuman Susu):**\n*   **Apa yang disajikan:** Empat minuman susu berbasis espresso (biasanya seperti cappuccino atau latte, tanpa topping atau perasa tambahan).\n*   **Apa yang dinilai:** Kualitas *steaming* susu adalah kunci. Juri mencari *microfoam* yang sempurna, suhu yang tepat (tidak terlalu panas), dan harmoni antara rasa manis susu dengan rasa espresso. Latte art yang simetris dan kontras tinggi juga memberikan poin.\n\n**3. Signature Beverage Course (Minuman Khas):**\n*   **Apa yang disajikan:** Ini adalah kesempatan barista untuk berkreasi. Mereka harus membuat empat minuman non-alkohol berbasis espresso yang unik dan inovatif. Minuman ini boleh menggunakan berbagai bahan, sirup buatan sendiri, atau teknik penyajian yang tidak biasa.\n*   **Apa yang dinilai:** Kreativitas, sinergi rasa antara kopi dan bahan lain, presentasi, dan yang terpenting, apakah minuman tersebut menonjolkan atau melengkapi rasa espresso, bukan menutupinya.\n\n**Elemen Penilaian Lainnya:**\n*   **Penilaian Teknis:** Ada juri teknis yang mengamati setiap gerakan barista, menilai kebersihan area kerja, konsistensi dalam *dosing* dan *tamping*, pembuangan kopi (*wastage*), dan alur kerja yang efisien.\n*   **Presentasi dan Profesionalisme:** Kemampuan barista untuk menjelaskan kopi mereka dengan percaya diri, bercerita tentang perjalanan kopi tersebut, dan memberikan pelayanan yang ramah adalah bagian besar dari penilaian keseluruhan.\n*   **Konsistensi:** Keempat minuman dalam setiap set harus terasa dan terlihat identik. Ini menunjukkan kontrol dan keterampilan tingkat tinggi.\n\nMempelajari format kompetisi mengajarkan kita bahwa kopi yang hebat lebih dari sekadar minuman. Ini adalah tentang pemahaman mendalam terhadap bahan baku, presisi teknis, kreativitas, dan hasrat untuk berbagi pengalaman rasa dengan orang lain.",
+          "quiz": [
+            {
+              "question": "Berapa lama waktu yang diberikan kepada seorang barista untuk presentasi dalam format World Barista Championship (WBC)?",
+              "options": ["10 menit", "15 menit", "20 menit", "30 menit"],
+              "answer": "15 menit"
+            },
+            {
+              "question": "Berapa banyak set minuman yang harus disajikan oleh seorang kontestan?",
+              "options": ["1", "2", "3", "4"],
+              "answer": "3"
+            },
+            {
+              "question": "Tiga set minuman yang harus disajikan adalah Espresso, Minuman Susu, dan...",
+              "options": ["Kopi Filter", "Minuman Khas (Signature Beverage)", "Cold Brew", "Teh"],
+              "answer": "Minuman Khas (Signature Beverage)"
+            },
+            {
+              "question": "Di Signature Beverage Course, apa yang paling dicari oleh juri?",
+              "options": ["Penggunaan alkohol", "Rasa kopi yang tertutup oleh bahan lain", "Kreativitas dan sinergi rasa yang menonjolkan espresso", "Resep yang paling rumit"],
+              "answer": "Kreativitas dan sinergi rasa yang menonjolkan espresso"
+            },
+            {
+              "question": "Apa tugas utama juri teknis?",
+              "options": ["Mencicipi rasa kopi", "Menilai presentasi barista", "Mengamati kebersihan, konsistensi, dan efisiensi kerja", "Memberikan skor untuk latte art"],
+              "answer": "Mengamati kebersihan, konsistensi, dan efisiensi kerja"
+            },
+            {
+              "question": "Dalam Milk Beverage Course, kualitas apa yang menjadi penilaian utama?",
+              "options": ["Susu yang paling panas", "Kualitas microfoam dan harmoni rasa susu dengan espresso", "Hiasan di atas busa", "Cangkir yang paling unik"],
+              "answer": "Kualitas microfoam dan harmoni rasa susu dengan espresso"
+            },
+            {
+              "question": "Mengapa konsistensi (membuat 4 minuman identik) sangat penting dalam kompetisi?",
+              "options": ["Agar juri tidak iri", "Ini menunjukkan kontrol dan keterampilan tingkat tinggi", "Agar lebih cepat selesai", "Tidak terlalu penting"],
+              "answer": "Ini menunjukkan kontrol dan keterampilan tingkat tinggi"
+            },
+            {
+              "question": "Pada Espresso Course, barista harus menjelaskan profil rasa yang diharapkan. Apa yang dinilai juri terkait hal ini?",
+              "options": ["Apakah deskripsinya terdengar puitis", "Apakah deskripsi tersebut cocok dengan rasa espresso yang dicicipi", "Panjangnya deskripsi", "Hanya rasa espressonya saja"],
+              "answer": "Apakah deskripsi tersebut cocok dengan rasa espresso yang dicicipi"
+            },
+            {
+              "question": "Manakah yang TIDAK termasuk dalam penilaian teknis?",
+              "options": ["Kebersihan area kerja", "Konsistensi dosing dan tamping", "Pembuangan kopi (wastage)", "Cerita di balik biji kopi"],
+              "answer": "Cerita di balik biji kopi"
+            },
+            {
+              "question": "Mempelajari format kompetisi mengajarkan kita bahwa kopi yang hebat adalah tentang pemahaman, presisi teknis, kreativitas, dan...",
+              "options": ["Harga yang mahal", "Mesin yang canggih", "Hasrat untuk berbagi pengalaman rasa", "Kecepatan dalam menyajikan"],
+              "answer": "Hasrat untuk berbagi pengalaman rasa"
+            }
+          ]
+        }
       ]
     }
   ]
 }
+
+    
