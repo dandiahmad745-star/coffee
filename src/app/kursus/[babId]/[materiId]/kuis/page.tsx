@@ -28,6 +28,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
+import { useUser } from '@/context/UserContext';
 
 type Question = {
   question: string;
@@ -47,7 +48,7 @@ type Chapter = {
   materials: Material[];
 };
 
-const PROGRESS_KEY = 'kopiStartProgress';
+const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
 const PASSING_SCORE = 75;
 
 type ProgressData = {
@@ -55,6 +56,7 @@ type ProgressData = {
 }
 
 export default function QuizPage() {
+  const { user, isLoading: isUserLoading } = useUser();
   const params = useParams();
   const router = useRouter();
   const { babId, materiId } = params as { babId: string; materiId: string };
@@ -71,6 +73,12 @@ export default function QuizPage() {
 
   useEffect(() => {
     setIsMounted(true);
+    if (!isUserLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isUserLoading, router]);
+
+  useEffect(() => {
     const chapterData = initialData.chapters.find(c => c.id === babId) as Chapter | undefined;
     if (chapterData) {
       const materialData = chapterData.materials.find(m => m.id === materiId) as Material | undefined;
@@ -92,7 +100,7 @@ export default function QuizPage() {
   };
 
   const handleSubmit = () => {
-    if (!material) return;
+    if (!material || !user) return;
     
     let correctAnswers = 0;
     material.quiz.forEach((q, index) => {
@@ -109,12 +117,13 @@ export default function QuizPage() {
 
     if (passed) {
       try {
-        const savedProgress = localStorage.getItem(PROGRESS_KEY);
+        const progressKey = `${PROGRESS_KEY_PREFIX}${user.email}`;
+        const savedProgress = localStorage.getItem(progressKey);
         let progress: ProgressData = savedProgress ? JSON.parse(savedProgress) : { completedMaterials: [] };
         
         if (!progress.completedMaterials.includes(materiId)) {
             progress.completedMaterials.push(materiId);
-            localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+            localStorage.setItem(progressKey, JSON.stringify(progress));
         }
       } catch (error) {
         console.error("Failed to save progress", error);
@@ -134,7 +143,7 @@ export default function QuizPage() {
     }
   };
 
-  if (!isMounted) {
+  if (!isMounted || isUserLoading || !user) {
     return (
       <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
         <Header />

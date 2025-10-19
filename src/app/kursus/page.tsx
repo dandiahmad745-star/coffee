@@ -1,6 +1,7 @@
 
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -8,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, BookCheck, Lock, Award } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
+import { useUser } from '@/context/UserContext';
 
 type Chapter = {
   id: string;
@@ -16,28 +18,35 @@ type Chapter = {
   materials: { id: string; title: string }[];
 };
 
-const PROGRESS_KEY = 'kopiStartProgress';
-
-type Progress = {
-    completedMaterials: string[];
-}
+const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
 
 export default function CoursePage() {
+  const { user, isLoading: isUserLoading } = useUser();
+  const router = useRouter();
   const [chapters] = useState<Chapter[]>(initialData.chapters);
-  const [progress, setProgress] = useState<Progress>({ completedMaterials: [] });
+  const [progress, setProgress] = useState<{ completedMaterials: string[] }>({ completedMaterials: [] });
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-    try {
-      const savedProgress = localStorage.getItem(PROGRESS_KEY);
-      if (savedProgress) {
-        setProgress(JSON.parse(savedProgress));
-      }
-    } catch (error) {
-      console.error("Failed to load progress from localStorage", error);
+    if (!isUserLoading && !user) {
+      router.push('/login');
     }
-  }, []);
+  }, [user, isUserLoading, router]);
+
+  useEffect(() => {
+    if (user) {
+      try {
+        const progressKey = `${PROGRESS_KEY_PREFIX}${user.email}`;
+        const savedProgress = localStorage.getItem(progressKey);
+        if (savedProgress) {
+          setProgress(JSON.parse(savedProgress));
+        }
+      } catch (error) {
+        console.error("Failed to load progress from localStorage", error);
+      }
+    }
+  }, [user]);
   
   const allMaterialsCount = chapters.reduce((acc, chapter) => acc + chapter.materials.length, 0);
   const isCourseCompleted = progress.completedMaterials.length >= allMaterialsCount;
@@ -48,19 +57,22 @@ export default function CoursePage() {
     return chapter.materials.filter(m => progress.completedMaterials.includes(m.id));
   };
   
-  if (!isMounted) {
+  if (isUserLoading || !user) {
      return (
        <div className="flex flex-col min-h-screen bg-background text-foreground">
         <Header />
-        <main className="flex-grow pt-24 sm:pt-32">
-            <div className="container mx-auto px-4 text-center">
-                <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary">Memuat Kurikulum...</h1>
+        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
+            <div className="text-center">
+                <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary">Memuat...</h1>
+                <p className="mt-2 text-muted-foreground">Mengarahkan ke halaman login jika belum masuk.</p>
             </div>
         </main>
         <Footer />
        </div>
     )
   }
+
+  if (!isMounted) return null;
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -73,7 +85,7 @@ export default function CoursePage() {
                 Kurikulum KopiStart
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan. Selesaikan semua bab untuk mendapatkan sertifikat.
+                Selamat datang, {user.name}! Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan.
               </p>
             </div>
 

@@ -16,6 +16,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { useUser } from '@/context/UserContext';
 
 type Material = {
   id: string;
@@ -30,8 +31,9 @@ type Chapter = {
 };
 
 export default function MaterialDetailPage() {
-  const params = useParams();
+  const { user, isLoading: isUserLoading } = useUser();
   const router = useRouter();
+  const params = useParams();
   const { babId, materiId } = params as { babId: string; materiId: string };
   
   const [chapter, setChapter] = useState<Chapter | null>(null);
@@ -40,6 +42,12 @@ export default function MaterialDetailPage() {
 
   useEffect(() => {
     setIsMounted(true);
+    if (!isUserLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isUserLoading, router]);
+
+  useEffect(() => {
     const chapterData = initialData.chapters.find(c => c.id === babId);
     if (chapterData) {
       const materialData = chapterData.materials.find(m => m.id === materiId) as Material | undefined;
@@ -51,7 +59,7 @@ export default function MaterialDetailPage() {
   }, [babId, materiId]);
 
 
-  if (!isMounted) {
+  if (!isMounted || isUserLoading || !user) {
     return (
        <div className="flex flex-col min-h-screen bg-background text-foreground">
         <Header />

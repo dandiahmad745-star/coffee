@@ -1,6 +1,7 @@
 
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
@@ -8,19 +9,27 @@ import { Download, Award, Coffee, ArrowLeft } from 'lucide-react';
 import { format } from 'date-fns';
 import id from 'date-fns/locale/id';
 import Link from 'next/link';
+import { useUser } from '@/context/UserContext';
 
 export default function CertificatePage() {
+    const { user, isLoading: isUserLoading } = useUser();
+    const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     
     useEffect(() => {
         setIsMounted(true);
-    }, []);
+        // We allow access for admins previewing, but for direct access, we check user.
+        // A more robust logic would check completion status from context/backend.
+        if (process.env.NODE_ENV === 'production' && !isUserLoading && !user) {
+            router.push('/login');
+        }
+    }, [user, isUserLoading, router]);
 
     const handleDownload = () => {
         window.print();
     };
 
-    if (!isMounted) {
+    if (!isMounted || isUserLoading) {
         return (
             <div className="flex flex-col min-h-screen bg-background text-foreground">
                 <Header />
@@ -37,6 +46,7 @@ export default function CertificatePage() {
     
     const today = new Date();
     const formattedDate = format(today, "d MMMM yyyy", { locale: id });
+    const userName = user?.name || "Sobat KopiStart";
 
     return (
         <div className="flex flex-col min-h-screen bg-muted/40 text-foreground print:bg-white">
@@ -77,7 +87,7 @@ export default function CertificatePage() {
                             
                             <div className="my-8 flex-grow flex items-center justify-center">
                                 <p className="text-5xl md:text-6xl font-headline font-bold text-primary border-b-2 border-primary/50 pb-4 px-8">
-                                    Sobat KopiStart
+                                    {userName}
                                 </p>
                             </div>
                             

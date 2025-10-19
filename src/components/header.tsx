@@ -1,11 +1,13 @@
 
-import { Coffee } from 'lucide-react';
+import { Coffee, LogOut, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { useUser } from '@/context/UserContext';
 
 export default function Header({ className }: { className?: string }) {
+  const { user, logout } = useUser();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -35,23 +37,41 @@ export default function Header({ className }: { className?: string }) {
               KopiStart
             </h1>
           </Link>
-          <nav className="hidden md:flex items-center gap-1">
-            <Button variant="ghost" asChild>
-                <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-                <Link href="/teknik" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Teknik</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-                <Link href="/tools" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
-            </Button>
-             <Button variant="ghost" asChild>
-                <Link href="/kursus" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Kursus</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-                <Link href="/glosarium" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Glosarium</Link>
-            </Button>
-          </nav>
+          <div className="flex items-center gap-2">
+            <nav className="hidden md:flex items-center gap-1">
+              <Button variant="ghost" asChild>
+                  <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                  <Link href="/teknik" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Teknik</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                  <Link href="/tools" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                  <Link href="/kursus" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Kursus</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                  <Link href="/glosarium" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Glosarium</Link>
+              </Button>
+            </nav>
+            {user ? (
+              <div className="flex items-center gap-2">
+                  <span className={cn("hidden sm:inline text-sm font-semibold", isScrolled ? 'text-foreground' : 'text-white')}>{user.name}</span>
+                  <Button variant="outline" size="sm" onClick={logout}>
+                      <LogOut className="h-4 w-4" />
+                      <span className="ml-2 hidden sm:inline">Logout</span>
+                  </Button>
+              </div>
+            ) : (
+                <Button variant="outline" size="sm" asChild>
+                    <Link href="/login">
+                        <User className="h-4 w-4" />
+                        <span className="ml-2 hidden sm:inline">Login</span>
+                    </Link>
+                </Button>
+            )}
+          </div>
         </div>
       </div>
     </header>

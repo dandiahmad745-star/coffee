@@ -18,6 +18,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Progress } from '@/components/ui/progress';
+import { useUser } from '@/context/UserContext';
 
 type Material = {
   id: string;
@@ -31,15 +32,16 @@ type Chapter = {
   materials: Material[];
 };
 
-const PROGRESS_KEY = 'kopiStartProgress';
+const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
 
 type ProgressData = {
     completedMaterials: string[];
 }
 
 export default function ChapterDetailPage() {
-  const params = useParams();
+  const { user, isLoading: isUserLoading } = useUser();
   const router = useRouter();
+  const params = useParams();
   const babId = params.babId as string;
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [progress, setProgress] = useState<ProgressData>({ completedMaterials: [] });
@@ -47,20 +49,29 @@ export default function ChapterDetailPage() {
 
   useEffect(() => {
     setIsMounted(true);
+    if (!isUserLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isUserLoading, router]);
+
+  useEffect(() => {
     const chapterData = initialData.chapters.find(c => c.id === babId);
     if (chapterData) {
       setChapter(chapterData);
     }
 
-    try {
-      const savedProgress = localStorage.getItem(PROGRESS_KEY);
-      if (savedProgress) {
-        setProgress(JSON.parse(savedProgress));
+    if (user) {
+      try {
+        const progressKey = `${PROGRESS_KEY_PREFIX}${user.email}`;
+        const savedProgress = localStorage.getItem(progressKey);
+        if (savedProgress) {
+          setProgress(JSON.parse(savedProgress));
+        }
+      } catch (error) {
+          console.error("Failed to load progress from localStorage", error);
       }
-    } catch (error) {
-        console.error("Failed to load progress from localStorage", error);
     }
-  }, [babId]);
+  }, [babId, user]);
 
   const handleMaterialClick = (materialId: string, isLocked: boolean) => {
     if (!isLocked) {
@@ -68,19 +79,19 @@ export default function ChapterDetailPage() {
     }
   };
   
-  if (!isMounted) {
+  if (isUserLoading || !user) {
      return (
        <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
         <Header />
-        <main className="flex-grow pt-24 sm:pt-32">
-            <div className="container mx-auto px-4 text-center">
-                <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Memuat Bab...</h1>
-            </div>
+        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Memuat...</h1>
         </main>
         <Footer />
        </div>
     )
   }
+
+  if (!isMounted) return null;
 
   if (!chapter) {
     return notFound();
