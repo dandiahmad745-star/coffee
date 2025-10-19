@@ -9,19 +9,459 @@
         { 
           "id": "materi-1-1", 
           "title": "Sejarah Singkat Kopi Dunia",
-          "content": "Kopi memiliki sejarah yang kaya dan panjang, dimulai dari dataran tinggi Ethiopia. Legenda mengatakan bahwa seorang penggembala kambing bernama Kaldi menemukan kambingnya menjadi sangat energik setelah memakan buah beri dari pohon tertentu. Penemuan ini menyebar ke Semenanjung Arab, di mana kopi pertama kali dibudidayakan dan diperdagangkan. Pada abad ke-15, kopi ditanam di distrik Yaman di Arab dan pada abad ke-16, kopi telah dikenal di Persia, Mesir, Suriah, dan Turki. Kedai kopi, atau 'qahveh khaneh', muncul di kota-kota di seluruh Timur Dekat dan dengan cepat menjadi pusat aktivitas sosial dan pertukaran informasi."
+          "content": "Kopi memiliki sejarah yang kaya dan panjang, dimulai dari dataran tinggi Ethiopia. Legenda yang paling terkenal menceritakan tentang seorang penggembala kambing bernama Kaldi pada abad ke-9. Ia memperhatikan kambing-kambingnya menjadi sangat energik dan tidak tidur di malam hari setelah memakan buah beri merah dari sebuah pohon yang tidak dikenal.\n\nMerasa penasaran, Kaldi mencoba buah beri itu sendiri dan merasakan efek stimulasi yang sama. Ia kemudian membawa penemuannya ke seorang biksu di sebuah biara terdekat. Awalnya, biksu tersebut tidak setuju dan melemparkan buah beri itu ke dalam api, yang kemudian menyebabkan aroma harum dari biji yang terpanggang menyebar. Biji-biji tersebut kemudian diambil dari api, digiling, dan dilarutkan dalam air panas, menciptakan cikal bakal minuman kopi pertama.\n\nDari Ethiopia, pengetahuan tentang kopi menyebar ke Semenanjung Arab. Pada abad ke-15, kopi sudah dibudidayakan secara massal di distrik Yaman. Pada abad ke-16, kopi telah menjadi minuman populer di Persia, Mesir, Suriah, dan Turki. Kedai kopi publik pertama, yang disebut 'qahveh khaneh', muncul di kota-kota di seluruh Timur Dekat. Kedai-kedai ini dengan cepat menjadi pusat aktivitas sosial, tempat orang berkumpul untuk minum kopi, mendengarkan musik, bermain catur, dan bertukar informasi penting. Popularitasnya membuat kedai kopi dijuluki 'Sekolah Orang Bijak'.",
+          "quiz": [
+            {
+              "question": "Menurut legenda populer, siapa yang pertama kali menemukan efek dari buah kopi?",
+              "options": ["Seorang pedagang dari Yaman", "Seorang biksu dari biara", "Penggembala kambing bernama Kaldi", "Seorang raja dari Persia"],
+              "answer": "Penggembala kambing bernama Kaldi"
+            },
+            {
+              "question": "Di negara mana kopi pertama kali ditemukan?",
+              "options": ["Yaman", "Turki", "Ethiopia", "Mesir"],
+              "answer": "Ethiopia"
+            },
+            {
+              "question": "Apa nama kedai kopi publik pertama di Timur Dekat?",
+              "options": ["Coffee House", "Kopitiam", "Qahveh Khaneh", "Warung Kopi"],
+              "answer": "Qahveh Khaneh"
+            },
+            {
+              "question": "Apa yang dilakukan Kaldi setelah melihat kambingnya menjadi energik?",
+              "options": ["Menjual buah beri tersebut", "Membawanya ke seorang biksu", "Menanamnya di kebunnya sendiri", "Membiarkannya saja"],
+              "answer": "Membawanya ke seorang biksu"
+            },
+            {
+              "question": "Pada abad ke-15, di mana kopi mulai dibudidayakan secara massal?",
+              "options": ["Persia", "Yaman", "Suriah", "Turki"],
+              "answer": "Yaman"
+            },
+            {
+              "question": "Apa julukan yang diberikan kepada kedai kopi karena menjadi pusat pertukaran informasi?",
+              "options": ["Rumah Cerdas", "Pusat Gosip", "Sekolah Orang Bijak", "Kafe Pengetahuan"],
+              "answer": "Sekolah Orang Bijak"
+            },
+            {
+              "question": "Bagaimana cikal bakal minuman kopi pertama kali dibuat menurut legenda?",
+              "options": ["Buah beri direbus langsung", "Biji kopi dipanggang, digiling, lalu dilarutkan di air panas", "Buah beri dimakan mentah-mentah", "Biji kopi dijemur lalu diseduh"],
+              "answer": "Biji kopi dipanggang, digiling, lalu dilarutkan di air panas"
+            },
+            {
+              "question": "Hewan apa yang pertama kali diamati memakan buah kopi dalam legenda?",
+              "options": ["Domba", "Sapi", "Unta", "Kambing"],
+              "answer": "Kambing"
+            },
+            {
+              "question": "Kopi menyebar dari Ethiopia ke wilayah mana selanjutnya?",
+              "options": ["Eropa", "Asia", "Semenanjung Arab", "Amerika"],
+              "answer": "Semenanjung Arab"
+            },
+            {
+              "question": "Aktivitas apa yang TIDAK umum dilakukan di qahveh khaneh?",
+              "options": ["Minum kopi", "Bermain catur", "Bertukar informasi", "Bekerja di kantor"],
+              "answer": "Bekerja di kantor"
+            }
+          ]
         },
         { 
           "id": "materi-1-2", 
           "title": "Mengenal Arabika vs. Robusta",
-          "content": "Dua spesies kopi yang paling dominan di dunia adalah Arabika (Coffea arabica) dan Robusta (Coffea canephora).\n\n**Arabika:** Tumbuh paling baik di dataran tinggi, memiliki profil rasa yang kompleks dengan tingkat keasaman (acidity) yang lebih tinggi dan aroma yang kaya. Biji Arabika cenderung lebih oval. Varietas ini mendominasi pasar kopi spesialti.\n\n**Robusta:** Seperti namanya, tanaman ini lebih 'kuat' dan tahan terhadap penyakit. Tumbuh di dataran yang lebih rendah, Robusta memiliki rasa yang lebih kuat, pahit, dengan kandungan kafein hampir dua kali lipat dari Arabika. Biji Robusta lebih bulat dan sering digunakan untuk espresso blend dan kopi instan."
+          "content": "Meskipun ada lebih dari 100 spesies kopi, dua yang paling dominan dan diperdagangkan secara global adalah Coffea Arabica (Arabika) dan Coffea Canephora (Robusta). Keduanya memiliki perbedaan yang sangat signifikan yang mempengaruhi segala hal mulai dari rasa hingga cara penanamannya.\n\n**Arabika (Coffea Arabica):**\n*   **Rasa:** Dianggap sebagai varietas 'premium'. Arabika memiliki profil rasa yang jauh lebih kompleks dan beragam. Ciri khasnya adalah tingkat keasaman (acidity) yang lebih tinggi, memberikan sensasi 'bright' atau 'fruity'. Aromanya juga lebih kaya, seringkali dengan nuansa bunga (floral) atau buah.\n*   **Kafein:** Kandungan kafein Arabika lebih rendah, sekitar 1.5% dari beratnya.\n*   **Kondisi Tumbuh:** Tanaman ini lebih manja. Ia membutuhkan dataran tinggi (sekitar 1.000 - 2.000 meter di atas permukaan laut), suhu yang sejuk, dan curah hujan yang teratur. Tanaman Arabika juga lebih rentan terhadap penyakit.\n*   **Bentuk Biji:** Biji Arabika cenderung lebih lonjong atau oval, dengan celah di tengahnya yang sedikit melengkung.\n*   **Harga:** Karena proses penanamannya yang lebih sulit dan permintaan yang tinggi di pasar kopi spesialti, harga Arabika cenderung lebih mahal. Sekitar 60% atau lebih dari produksi kopi dunia adalah Arabika.\n\n**Robusta (Coffea Canephora):**\n*   **Rasa:** Seperti namanya, Robusta memiliki rasa yang lebih 'kuat', pahit, dan sering dideskripsikan memiliki rasa seperti karet atau cokelat pekat. Bodynya lebih tebal dan rasanya tidak sekompleks Arabika.\n*   **Kafein:** Kandungan kafeinnya sangat tinggi, bisa mencapai 2.5% atau lebih dari beratnya, hampir dua kali lipat dari Arabika. Inilah yang memberikan 'tendangan' ekstra.\n*   **Kondisi Tumbuh:** Tanaman ini sangat kuat dan tahan banting. Ia bisa tumbuh di dataran yang lebih rendah, suhu yang lebih panas, dan lebih tahan terhadap penyakit.\n*   **Bentuk Biji:** Biji Robusta cenderung lebih bulat dengan celah di tengah yang lurus.\n*   **Harga:** Karena lebih mudah ditanam dan hasilnya lebih banyak, harga Robusta umumnya lebih murah. Robusta sering digunakan untuk kopi instan dan sebagai campuran dalam espresso blend untuk menghasilkan crema yang tebal dan kaya.",
+          "quiz": [
+             {
+              "question": "Spesies kopi manakah yang memiliki kandungan kafein lebih tinggi?",
+              "options": ["Arabika", "Robusta", "Liberika", "Excelsa"],
+              "answer": "Robusta"
+            },
+            {
+              "question": "Ciri khas rasa dari kopi Arabika adalah...",
+              "options": ["Pahit dan kuat", "Keasaman tinggi dan aroma kompleks", "Rendah kafein dan hambar", "Rasa seperti karet"],
+              "answer": "Keasaman tinggi dan aroma kompleks"
+            },
+            {
+              "question": "Bagaimana bentuk biji Robusta pada umumnya?",
+              "options": ["Lonjong dengan celah melengkung", "Bulat dengan celah lurus", "Berbentuk segitiga", "Tidak beraturan"],
+              "answer": "Bulat dengan celah lurus"
+            },
+            {
+              "question": "Kopi jenis apa yang sering digunakan untuk membuat kopi instan?",
+              "options": ["Arabika", "Robusta", "Keduanya", "Tidak keduanya"],
+              "answer": "Robusta"
+            },
+            {
+              "question": "Mengapa harga kopi Arabika cenderung lebih mahal?",
+              "options": ["Karena lebih pahit", "Karena proses penanamannya lebih sulit dan rentan penyakit", "Karena kandungan kafeinnya lebih tinggi", "Karena warnanya lebih gelap"],
+              "answer": "Karena proses penanamannya lebih sulit dan rentan penyakit"
+            },
+            {
+              "question": "Di mana kondisi ideal untuk pertumbuhan kopi Arabika?",
+              "options": ["Dataran rendah dan panas", "Dataran tinggi dan sejuk", "Gurun pasir", "Pantai"],
+              "answer": "Dataran tinggi dan sejuk"
+            },
+            {
+              "question": "Apa fungsi utama penambahan Robusta dalam espresso blend?",
+              "options": ["Menambah rasa buah", "Menghasilkan crema yang tebal", "Mengurangi rasa pahit", "Membuatnya lebih wangi"],
+              "answer": "Menghasilkan crema yang tebal"
+            },
+            {
+              "question": "Berapa persen kira-kira produksi kopi dunia yang merupakan jenis Arabika?",
+              "options": ["Kurang dari 20%", "Sekitar 30%", "Sekitar 40%", "60% atau lebih"],
+              "answer": "60% atau lebih"
+            },
+            {
+              "question": "Manakah yang BUKAN merupakan deskripsi rasa dari Robusta?",
+              "options": ["Pahit", "Kuat", "Seperti karet", "Aroma bunga (floral)"],
+              "answer": "Aroma bunga (floral)"
+            },
+            {
+              "question": "Tingkat keasaman (acidity) pada kopi Arabika memberikan sensasi rasa seperti...",
+              "options": ["Manis seperti madu", "Pahit seperti cokelat hitam", "Cerah dan seperti buah (fruity)", "Hambar seperti air"],
+              "answer": "Cerah dan seperti buah (fruity)"
+            }
+          ]
         },
-        { "id": "materi-1-3", "title": "Perjalanan Biji Kopi: Dari Panen ke Cangkir", "content": "Perjalanan biji kopi sangat panjang. Dimulai dengan pemetikan buah kopi (cherry) yang matang, baik secara manual atau mekanis. Setelah itu, buah kopi diproses untuk memisahkan biji dari daging buahnya melalui metode seperti proses basah (washed), proses kering (natural), atau proses madu (honey). Setiap metode proses memberikan karakter rasa yang berbeda. Biji kopi yang sudah diproses kemudian dikeringkan, disortir, dan dikemas dalam karung sebagai 'green beans'. Green beans inilah yang kemudian diekspor dan akhirnya di-roasting (sangrai) untuk mengembangkan ratusan senyawa aroma dan rasa sebelum akhirnya siap untuk diseduh." },
-        { "id": "materi-1-4", "title": "Anatomi Buah Kopi (Coffee Cherry)", "content": "Buah kopi, atau cherry, terdiri dari beberapa lapisan. Lapisan terluar adalah kulit (skin/exocarp). Di bawahnya adalah daging buah (pulp/mesocarp) yang manis, diikuti oleh lapisan lendir (mucilage) yang kaya gula. Kemudian ada lapisan pelindung seperti kertas yang disebut 'parchment' (endocarp). Di dalam parchment, terdapat satu atau dua biji kopi yang dilapisi oleh selaput tipis lain yang disebut 'silver skin'. Biji inilah yang kita kenal dan proses menjadi minuman." },
-        { "id": "materi-1-5", "title": "Apa itu 'Specialty Coffee'?", "content": "Specialty coffee (kopi spesialti) adalah istilah yang digunakan untuk merujuk pada kopi dengan kualitas tertinggi. Menurut Specialty Coffee Association (SCA), kopi dianggap 'spesialti' jika mendapat skor 80 poin atau lebih pada skala penilaian 100 poin oleh seorang penilai kopi bersertifikat (Q Grader). Penilaian ini mencakup atribut seperti aroma, rasa, aftertaste, acidity, body, dan balance. Kopi spesialti menekankan pada ketertelusuran (traceability), dari petani mana kopi berasal hingga bagaimana kopi tersebut diproses." },
-        { "id": "materi-1-6", "title": "Faktor yang Mempengaruhi Rasa: Terroir", "content": "Terroir adalah konsep dari bahasa Prancis yang mencakup semua faktor lingkungan yang memengaruhi tanaman kopi. Ini termasuk komposisi tanah, ketinggian (altitude), iklim, jumlah curah hujan, dan paparan sinar matahari. Kopi yang ditanam di dataran tinggi (di atas 1.200 mdpl) cenderung memiliki keasaman yang lebih cerah dan rasa yang lebih kompleks karena suhu yang lebih dingin memperlambat pematangan buah, memungkinkan rasa berkembang lebih penuh." },
-        { "id": "materi-1-7", "title": "Tingkatan Roasting (Light, Medium, Dark)", "content": "Proses roasting atau sangrai adalah proses kunci yang mengubah biji kopi hijau menjadi biji cokelat yang beraroma. Tingkat roasting sangat mempengaruhi rasa akhir.\n\n**Light Roast:** Warna cokelat muda, tidak berminyak. Cenderung memiliki keasaman tertinggi dan menonjolkan karakter asli dari biji kopi.\n\n**Medium Roast:** Warna cokelat sedang, sedikit atau tanpa minyak di permukaan. Rasa lebih seimbang antara keasaman dan body, dengan rasa manis yang mulai berkembang.\n\n**Dark Roast:** Warna cokelat gelap hingga hitam, permukaan biji berminyak. Rasa cenderung pahit, 'smoky', dengan body yang tebal dan keasaman yang rendah." },
-        { "id": "materi-1-8", "title": "Menyimpan Biji Kopi dengan Benar", "content": "Musuh utama biji kopi adalah oksigen, cahaya, kelembapan, dan panas. Untuk menjaga kesegarannya, simpan biji kopi di wadah kedap udara yang tidak tembus cahaya. Letakkan di tempat yang sejuk dan gelap, seperti lemari dapur. Hindari menyimpan kopi di dalam kulkas atau freezer karena dapat menyebabkan kondensasi yang merusak rasa. Sebaiknya, beli kopi dalam jumlah yang akan Anda habiskan dalam 1-2 minggu dan giling biji kopi sesaat sebelum menyeduh untuk hasil terbaik." }
+        { 
+          "id": "materi-1-3", 
+          "title": "Perjalanan Biji Kopi: Dari Panen ke Cangkir", 
+          "content": "Perjalanan biji kopi dari perkebunan hingga menjadi minuman di cangkir Anda adalah sebuah proses yang panjang dan rumit. Setiap langkah memainkan peran penting dalam membentuk rasa akhir.\n\n**1. Panen (Harvesting):**\nProses dimulai dengan pemetikan buah kopi, yang disebut 'cherry', saat sudah matang sempurna (biasanya berwarna merah terang). Ada dua metode utama: *Selective Picking*, di mana hanya cherry matang yang dipetik satu per satu dengan tangan (menghasilkan kualitas terbaik), dan *Strip Picking*, di mana semua cherry dalam satu cabang dipetik sekaligus, baik matang maupun mentah.\n\n**2. Pengolahan (Processing):**\nSetelah dipanen, cherry harus segera diproses untuk memisahkan biji dari daging buahnya agar tidak busuk. Ada tiga metode utama:\n*   **Proses Basah (Washed Process):** Daging buah dihilangkan dengan mesin sebelum biji difermentasi di dalam air untuk menghilangkan lapisan lendir (mucilage). Proses ini menghasilkan kopi dengan rasa yang 'bersih' (clean) dan keasaman yang cerah.\n*   **Proses Kering (Natural Process):** Cherry kopi langsung dijemur di bawah sinar matahari hingga kering. Daging buah yang mengering bersama bijinya memberikan rasa manis, seperti buah (fruity), dan body yang lebih tebal pada kopi.\n*   **Proses Madu (Honey Process):** Ini adalah metode hibrida. Kulit dan sebagian daging buah dihilangkan, namun sebagian atau seluruh lapisan lendir dibiarkan menempel pada biji saat dijemur. Proses ini memberikan rasa manis yang intens pada kopi.\n\n**3. Pengeringan (Drying):**\nBiji kopi (yang kini disebut 'parchment coffee') harus dikeringkan hingga kadar airnya mencapai sekitar 11%. Pengeringan bisa dilakukan di atas para-para jemur (raised beds) atau lantai beton.\n\n**4. Penyortiran (Sorting & Grading):**\nBiji kopi yang sudah kering disortir berdasarkan ukuran, kepadatan, dan cacat fisik. Biji yang cacat dapat memberikan rasa yang tidak enak pada seduhan. Tahap ini sangat penting untuk kopi spesialti.\n\n**5. Pengiriman (Exporting):**\nBiji kopi yang telah disortir, kini disebut 'green beans' atau kopi biji hijau, dikemas dalam karung goni dan siap untuk diekspor ke seluruh dunia.\n\n**6. Penyangraian (Roasting):**\nDi negara tujuan, roaster akan menyangrai green beans. Proses pemanasan inilah yang mengubah biji kopi secara kimiawi, mengembangkan ratusan senyawa aroma dan rasa yang kompleks. Profil roasting (suhu dan waktu) akan menentukan karakter akhir kopi.\n\n**7. Penyeduhan (Brewing):**\nLangkah terakhir adalah menggiling biji kopi yang sudah disangrai dan menyeduhnya dengan air panas untuk mengekstrak rasa dan aromanya menjadi minuman yang kita nikmati.",
+          "quiz": [
+             {
+              "question": "Apa nama buah kopi yang dipetik dari pohonnya?",
+              "options": ["Bean", "Cherry", "Seed", "Berry"],
+              "answer": "Cherry"
+            },
+            {
+              "question": "Metode panen yang hanya memetik buah kopi yang sudah matang disebut...",
+              "options": ["Strip Picking", "Machine Harvesting", "Selective Picking", "Bulk Picking"],
+              "answer": "Selective Picking"
+            },
+            {
+              "question": "Proses pengolahan yang menghasilkan kopi dengan rasa paling 'bersih' dan keasaman cerah adalah...",
+              "options": ["Proses Kering (Natural)", "Proses Madu (Honey)", "Proses Basah (Washed)", "Proses Giling Basah (Wet-Hulled)"],
+              "answer": "Proses Basah (Washed)"
+            },
+            {
+              "question": "Pada proses kering (natural), apa yang terjadi pada buah kopi setelah dipanen?",
+              "options": ["Langsung digiling", "Daging buahnya dikupas", "Direndam dalam air", "Langsung dijemur hingga kering"],
+              "answer": "Langsung dijemur hingga kering"
+            },
+            {
+              "question": "Berapa kadar air ideal biji kopi sebelum diekspor?",
+              "options": ["5%", "11%", "25%", "50%"],
+              "answer": "11%"
+            },
+            {
+              "question": "Biji kopi yang siap diekspor setelah diproses dan dikeringkan disebut...",
+              "options": ["Roasted Beans", "Cherry Coffee", "Green Beans", "Parchment Coffee"],
+              "answer": "Green Beans"
+            },
+            {
+              "question": "Tahapan mana yang paling bertanggung jawab dalam mengembangkan aroma dan rasa kompleks pada biji kopi?",
+              "options": ["Panen", "Pengeringan", "Penyangraian (Roasting)", "Penyortiran"],
+              "answer": "Penyangraian (Roasting)"
+            },
+            {
+              "question": "Metode proses 'Honey' adalah hibrida antara proses basah dan kering. Apa yang dibiarkan menempel pada biji saat dijemur?",
+              "options": ["Kulit luar", "Lapisan lendir (mucilage)", "Daun kopi", "Ampas kopi"],
+              "answer": "Lapisan lendir (mucilage)"
+            },
+            {
+              "question": "Mengapa penyortiran biji kopi penting, terutama untuk kopi spesialti?",
+              "options": ["Agar warnanya seragam", "Agar harganya lebih murah", "Untuk membuang biji cacat yang bisa merusak rasa", "Agar lebih cepat kering"],
+              "answer": "Untuk membuang biji cacat yang bisa merusak rasa"
+            },
+            {
+              "question": "Apa langkah terakhir dalam perjalanan biji kopi sebelum bisa dinikmati?",
+              "options": ["Pengemasan", "Penyangraian", "Ekspor", "Penyeduhan"],
+              "answer": "Penyeduhan"
+            }
+          ]
+        },
+        { 
+          "id": "materi-1-4", 
+          "title": "Anatomi Buah Kopi (Coffee Cherry)", 
+          "content": "Untuk memahami kopi secara mendalam, penting untuk mengetahui dari mana ia berasal. Biji kopi yang kita kenal sebenarnya adalah biji dari buah yang disebut 'Coffee Cherry'. Seperti buah ceri pada umumnya, ia memiliki beberapa lapisan yang melindungi biji berharga di dalamnya.\n\nMari kita bedah dari luar ke dalam:\n\n1.  **Exocarp (Kulit Luar / Skin):** Ini adalah lapisan terluar dari cherry. Warnanya berubah dari hijau saat mentah, menjadi merah terang, kuning, atau bahkan ungu saat matang sempurna. Warna inilah yang menjadi indikator utama bagi para petani saat panen.\n\n2.  **Mesocarp (Daging Buah / Pulp):** Tepat di bawah kulit luar, terdapat lapisan daging buah yang tipis. Lapisan ini kaya akan gula dan pektin. Rasa manis dari pulp inilah yang memainkan peran penting selama proses fermentasi, terutama pada metode proses natural dan honey.\n\n3.  **Parenchyma (Lapisan Lendir / Mucilage):** Ini adalah lapisan berlendir yang licin dan lengket yang menyelimuti biji. Lapisan ini juga sangat kaya akan gula dan asam, yang berkontribusi signifikan terhadap profil rasa manis dan keasaman pada kopi.\n\n4.  **Endocarp (Kulit Tanduk / Parchment):** Setelah lapisan lendir, ada lapisan pelindung yang keras seperti perkamen atau kertas tipis. Warnanya kekuningan. Lapisan ini berfungsi sebagai 'cangkang' pelindung terakhir untuk biji kopi di dalamnya dari kontaminasi atau kerusakan fisik selama pengeringan.\n\n5.  **Spermoderm (Kulit Perak / Silver Skin):** Ini adalah selaput tipis yang menempel langsung pada biji kopi. Saat proses roasting, silver skin ini akan terkelupas dan menjadi produk sampingan yang disebut 'chaff'. Terkadang, sisa-sisa silver skin masih bisa terlihat di celah biji kopi yang sudah disangrai.\n\n6.  **Endosperm (Biji Kopi / Bean):** Inilah bagian inti yang kita cari. Biasanya, terdapat dua biji dalam satu cherry, yang saling berhadapan di sisi datarnya. Biji inilah yang mengandung kafein, karbohidrat, minyak, dan senyawa-senyawa lain yang akan berubah saat di-roasting untuk menciptakan rasa dan aroma kopi yang kita kenal. Dalam beberapa kasus langka, hanya ada satu biji tunggal yang tumbuh di dalam cherry. Biji ini disebut 'Peaberry' dan bentuknya bulat (bukan pipih di satu sisi), dan sering dianggap memiliki rasa yang lebih intens.",
+          "quiz": [
+            {
+              "question": "Apa nama lapisan terluar dari buah kopi?",
+              "options": ["Pulp", "Mucilage", "Exocarp (Skin)", "Parchment"],
+              "answer": "Exocarp (Skin)"
+            },
+            {
+              "question": "Lapisan mana yang kaya akan gula dan pektin, terletak tepat di bawah kulit?",
+              "options": ["Silver Skin", "Parchment", "Mesocarp (Pulp)", "Bean"],
+              "answer": "Mesocarp (Pulp)"
+            },
+            {
+              "question": "Lapisan keras seperti perkamen yang melindungi biji kopi disebut...",
+              "options": ["Mucilage", "Endocarp (Parchment)", "Exocarp", "Silver Skin"],
+              "answer": "Endocarp (Parchment)"
+            },
+            {
+              "question": "Selaput tipis yang menempel langsung pada biji kopi dan terkelupas saat roasting adalah...",
+              "options": ["Pulp", "Parchment", "Spermoderm (Silver Skin)", "Mucilage"],
+              "answer": "Spermoderm (Silver Skin)"
+            },
+            {
+              "question": "Bagian inti dari buah kopi yang kita proses menjadi minuman disebut...",
+              "options": ["Parchment", "Endosperm (Bean)", "Pulp", "Mucilage"],
+              "answer": "Endosperm (Bean)"
+            },
+            {
+              "question": "Apa nama biji kopi tunggal yang bentuknya bulat dan terkadang ditemukan dalam satu cherry?",
+              "options": ["Single Bean", "Round Bean", "Peaberry", "Mono-bean"],
+              "answer": "Peaberry"
+            },
+            {
+              "question": "Warna buah kopi yang matang sempurna biasanya...",
+              "options": ["Hijau", "Cokelat", "Merah terang", "Hitam"],
+              "answer": "Merah terang"
+            },
+            {
+              "question": "Lapisan mana yang paling berperan dalam memberikan rasa manis pada kopi dengan metode proses natural dan honey?",
+              "options": ["Kulit Luar (Skin)", "Daging Buah (Pulp) dan Lendir (Mucilage)", "Kulit Tanduk (Parchment)", "Kulit Perak (Silver Skin)"],
+              "answer": "Daging Buah (Pulp) dan Lendir (Mucilage)"
+            },
+            {
+              "question": "Apa nama produk sampingan dari proses roasting yang berasal dari Silver Skin?",
+              "options": ["Husk", "Chaff", "Pulp", "Dust"],
+              "answer": "Chaff"
+            },
+            {
+              "question": "Berapa jumlah biji kopi yang umumnya ditemukan dalam satu buah cherry?",
+              "options": ["Satu", "Dua", "Tiga", "Empat"],
+              "answer": "Dua"
+            }
+          ]
+        },
+        { 
+          "id": "materi-1-5", 
+          "title": "Apa itu 'Specialty Coffee'?", 
+          "content": "Istilah 'Specialty Coffee' atau Kopi Spesialti sering kita dengar, namun apa sebenarnya artinya? Ini bukan sekadar istilah pemasaran, melainkan sebuah standar kualitas yang diakui secara global.\n\n**Definisi Formal:**\nMenurut Specialty Coffee Association (SCA), sebuah organisasi nirlaba yang menetapkan standar untuk industri kopi, kopi dapat diberi label 'spesialti' jika berhasil mencapai skor **80 poin atau lebih** pada skala penilaian 100 poin. Penilaian ini dilakukan oleh seorang pencicip kopi profesional bersertifikat yang disebut **Q Grader**.\n\n**Apa yang Dinilai?**\nSeorang Q Grader akan mengevaluasi sampel kopi hijau (green bean) dan kopi yang sudah disangrai (roasted bean) melalui proses yang disebut 'cupping'. Atribut yang dinilai meliputi:\n*   **Fragrance/Aroma:** Bau bubuk kopi kering dan basah.\n*   **Flavor:** Rasa utama kopi saat diseruput.\n*   **Aftertaste:** Sensasi rasa yang tertinggal setelah kopi ditelan.\n*   **Acidity:** Kualitas keasaman, apakah cerah dan hidup, atau datar.\n*   **Body:** Sensasi kekentalan atau 'berat' kopi di mulut.\n*   **Balance:** Seberapa harmonis semua komponen rasa di atas.\n*   **Uniformity, Clean Cup, Sweetness:** Konsistensi rasa di setiap cangkir, tidak adanya rasa negatif, dan tingkat rasa manis alami.\n*   **Overall:** Kesan keseluruhan dari kopi tersebut.\n\nSelain penilaian rasa, kopi spesialti juga harus bebas dari **cacat primer (primary defects)** pada biji hijaunya. Cacat primer adalah kerusakan serius seperti biji hitam, biji asam (sour bean), atau adanya jamur yang dapat merusak seluruh batch kopi.\n\n**Lebih dari Sekadar Skor:**\nDi luar skor, filosofi kopi spesialti mencakup seluruh rantai pasokan. Ini tentang **ketertelusuran (traceability)**, yaitu mengetahui secara pasti dari perkebunan mana, petani siapa, dan bagaimana kopi tersebut diproses. Ini juga tentang **keberlanjutan (sustainability)**, memastikan petani mendapatkan harga yang adil atas kerja keras mereka, yang memungkinkan mereka untuk terus berinvestasi dalam meningkatkan kualitas.\n\nSingkatnya, specialty coffee adalah kopi yang dirawat dengan sangat baik di setiap langkah perjalanannya, dari saat ditanam, dipanen, diproses, disangrai, hingga diseduh. Hasilnya adalah secangkir kopi dengan potensi rasa yang luar biasa, yang mencerminkan karakteristik unik dari 'terroir' asalnya.",
+          "quiz": [
+             {
+              "question": "Berapa skor minimal yang harus dicapai kopi untuk diklasifikasikan sebagai 'Specialty Coffee' menurut SCA?",
+              "options": ["70", "80", "90", "100"],
+              "answer": "80"
+            },
+            {
+              "question": "Siapakah orang yang berwenang untuk memberikan skor pada specialty coffee?",
+              "options": ["Barista", "Roaster", "Q Grader", "Petani Kopi"],
+              "answer": "Q Grader"
+            },
+            {
+              "question": "Proses pencicipan kopi secara profesional untuk evaluasi disebut...",
+              "options": ["Drinking", "Tasting", "Cupping", "Slurping"],
+              "answer": "Cupping"
+            },
+            {
+              "question": "Manakah dari berikut ini yang BUKAN merupakan atribut utama yang dinilai saat cupping?",
+              "options": ["Flavor", "Acidity", "Body", "Caffeine Level"],
+              "answer": "Caffeine Level"
+            },
+            {
+              "question": "Apa yang dimaksud dengan cacat primer (primary defects) pada biji kopi?",
+              "options": ["Biji yang ukurannya terlalu kecil", "Kerusakan serius seperti biji hitam atau jamur", "Biji yang warnanya tidak seragam", "Biji yang pecah"],
+              "answer": "Kerusakan serius seperti biji hitam atau jamur"
+            },
+            {
+              "question": "Kemampuan untuk melacak asal-usul kopi hingga ke tingkat petani disebut...",
+              "options": ["Grading", "Traceability", "Sustainability", "Processing"],
+              "answer": "Traceability"
+            },
+            {
+              "question": "Sensasi kekentalan atau 'berat' kopi di mulut disebut...",
+              "options": ["Acidity", "Flavor", "Body", "Aftertaste"],
+              "answer": "Body"
+            },
+            {
+              "question": "Mengapa keberlanjutan (sustainability) penting dalam filosofi specialty coffee?",
+              "options": ["Agar kopi lebih murah", "Agar petani mendapatkan harga yang adil dan dapat meningkatkan kualitas", "Agar kopi bisa dipanen lebih cepat", "Agar kopi memiliki lebih banyak kafein"],
+              "answer": "Agar petani mendapatkan harga yang adil dan dapat meningkatkan kualitas"
+            },
+            {
+              "question": "Apa arti dari 'Clean Cup' dalam penilaian kopi?",
+              "options": ["Cangkir yang digunakan bersih", "Tidak adanya rasa negatif atau 'off-flavors'", "Kopi yang disajikan tanpa gula", "Warna kopi yang jernih"],
+              "answer": "Tidak adanya rasa negatif atau 'off-flavors'"
+            },
+            {
+              "question": "Specialty Coffee Association (SCA) adalah...",
+              "options": ["Sebuah merek kopi", "Perusahaan ekspor kopi", "Organisasi nirlaba yang menetapkan standar industri kopi", "Kompetisi barista tahunan"],
+              "answer": "Organisasi nirlaba yang menetapkan standar industri kopi"
+            }
+          ]
+        },
+        { 
+          "id": "materi-1-6", 
+          "title": "Faktor yang Mempengaruhi Rasa: Terroir", 
+          "content": "Pernahkah Anda bertanya-tanya mengapa kopi dari Ethiopia bisa memiliki rasa seperti teh melati, sementara kopi dari Sumatra bisa terasa 'earthy' dan penuh rempah? Jawabannya terletak pada sebuah konsep yang disebut **Terroir**.\n\nTerroir adalah istilah yang dipinjam dari dunia anggur (wine). Ini adalah kata dari bahasa Prancis yang tidak memiliki padanan kata langsung dalam bahasa lain. Secara sederhana, terroir merujuk pada **totalitas lingkungan alami** tempat sebuah tanaman tumbuh, yang memberikan karakteristik rasa dan aroma yang unik pada hasil panennya.\n\nUntuk kopi, faktor-faktor utama yang membentuk terroir adalah:\n\n1.  **Ketinggian (Altitude):** Ini adalah salah satu faktor terpenting. Kopi yang ditanam di dataran yang lebih tinggi (umumnya di atas 1.200 meter di atas permukaan laut/mdpl) cenderung memiliki kualitas yang lebih baik. Suhu malam yang dingin di dataran tinggi memperlambat siklus pematangan buah kopi. Proses yang lebih lambat ini memungkinkan pengembangan senyawa gula dan asam yang lebih kompleks di dalam biji. Hasilnya adalah kopi dengan tingkat keasaman (acidity) yang lebih cerah, body yang lebih ringan, dan profil rasa yang lebih aromatik dan bernuansa, seringkali floral atau fruity.\n\n2.  **Iklim (Climate):** Pola cuaca, termasuk suhu rata-rata, curah hujan, dan paparan sinar matahari, sangat mempengaruhi pertumbuhan tanaman kopi. Tanaman kopi membutuhkan keseimbangan antara musim hujan (untuk pertumbuhan) dan musim kemarau (untuk pematangan dan panen). Perubahan iklim menjadi ancaman serius bagi banyak daerah penanam kopi di dunia.\n\n3.  **Komposisi Tanah (Soil Composition):** Jenis dan kesehatan tanah tempat kopi tumbuh juga memainkan peran besar. Tanah vulkanik yang subur, seperti yang banyak ditemukan di Amerika Tengah dan Indonesia, kaya akan mineral yang dibutuhkan tanaman kopi untuk menghasilkan biji yang berkualitas. Tingkat pH tanah dan kandungan nutrisi seperti nitrogen dan fosfor semuanya berkontribusi pada rasa akhir.\n\n4.  **Topografi (Topography):** Kemiringan lereng tempat kopi ditanam mempengaruhi drainase air dan paparan sinar matahari. Tanaman kopi seringkali tumbuh subur di lereng-lereng gunung.\n\n5.  **Tanaman di Sekitarnya (Surrounding Flora):** Tanaman lain yang tumbuh di sekitar perkebunan kopi juga dapat mempengaruhi rasa. Misalnya, kopi yang ditanam di bawah naungan pohon buah atau rempah terkadang dapat menyerap sedikit aroma dari lingkungan sekitarnya.\n\nDengan memahami terroir, kita bisa mulai menghargai mengapa kopi dari setiap daerah, negara, atau bahkan perkebunan yang berbeda bisa memiliki sidik jari rasa yang begitu unik. Ini adalah alasan mengapa pada kemasan kopi spesialti seringkali dicantumkan informasi detail tentang ketinggian, daerah, dan bahkan nama perkebunannya.",
+          "quiz": [
+             {
+              "question": "Apa definisi sederhana dari 'Terroir'?",
+              "options": ["Jenis biji kopi", "Metode penyeduhan", "Totalitas lingkungan alami tempat tanaman tumbuh", "Tingkat sangrai kopi"],
+              "answer": "Totalitas lingkungan alami tempat tanaman tumbuh"
+            },
+            {
+              "question": "Mengapa kopi yang ditanam di dataran tinggi cenderung memiliki kualitas lebih baik?",
+              "options": ["Karena lebih banyak kafein", "Karena suhu dingin memperlambat pematangan, menciptakan rasa kompleks", "Karena lebih mudah dipanen", "Karena tanahnya lebih kering"],
+              "answer": "Karena suhu dingin memperlambat pematangan, menciptakan rasa kompleks"
+            },
+            {
+              "question": "Manakah dari berikut ini yang BUKAN merupakan bagian dari terroir?",
+              "options": ["Ketinggian", "Iklim", "Jenis tanah", "Merek mesin espresso"],
+              "answer": "Merek mesin espresso"
+            },
+            {
+              "question": "Jenis tanah apa yang sering dianggap ideal untuk menanam kopi?",
+              "options": ["Tanah liat", "Tanah berpasir", "Tanah vulkanik yang subur", "Tanah gambut"],
+              "answer": "Tanah vulkanik yang subur"
+            },
+            {
+              "question": "Kopi dari dataran tinggi biasanya memiliki karakteristik rasa seperti apa?",
+              "options": ["Body tebal dan pahit", "Keasaman cerah dan aromatik", "Rendah keasaman dan earthy", "Rasa kacang yang kuat"],
+              "answer": "Keasaman cerah dan aromatik"
+            },
+            {
+              "question": "Istilah 'Terroir' berasal dari dunia apa?",
+              "options": ["Teh", "Cokelat", "Anggur (wine)", "Keju"],
+              "answer": "Anggur (wine)"
+            },
+            {
+              "question": "Bagaimana iklim mempengaruhi tanaman kopi?",
+              "options": ["Tidak ada pengaruh sama sekali", "Kopi hanya butuh musim kemarau", "Kopi butuh keseimbangan musim hujan dan kemarau", "Kopi hanya butuh musim hujan"],
+              "answer": "Kopi butuh keseimbangan musim hujan dan kemarau"
+            },
+            {
+              "question": "Apa fungsi kemiringan lereng dalam topografi penanaman kopi?",
+              "options": ["Mempengaruhi drainase air dan paparan sinar matahari", "Membuat panen lebih sulit", "Menghalangi angin", "Tidak ada fungsi khusus"],
+              "answer": "Mempengaruhi drainase air dan paparan sinar matahari"
+            },
+            {
+              "question": "Mengapa informasi 'terroir' sering dicantumkan pada kemasan kopi spesialti?",
+              "options": ["Agar kemasan terlihat lebih bagus", "Untuk menjelaskan karakteristik rasa yang unik dari daerah tersebut", "Sebagai syarat hukum", "Untuk menaikkan harga"],
+              "answer": "Untuk menjelaskan karakteristik rasa yang unik dari daerah tersebut"
+            },
+            {
+              "question": "Suhu malam yang dingin di dataran tinggi menyebabkan...",
+              "options": ["Tanaman kopi mati", "Pematangan buah kopi lebih cepat", "Pematangan buah kopi lebih lambat", "Kadar kafein meningkat drastis"],
+              "answer": "Pematangan buah kopi lebih lambat"
+            }
+          ]
+        },
+        { 
+          "id": "materi-1-7", 
+          "title": "Tingkatan Roasting (Light, Medium, Dark)", 
+          "content": "Proses penyangraian atau **roasting** adalah salah satu tahap paling krusial dalam perjalanan kopi. Ini adalah seni dan ilmu memanaskan biji kopi hijau (green beans) untuk mengubahnya menjadi biji cokelat yang rapuh dan beraroma yang siap kita giling dan seduh. Proses kimia yang terjadi selama roasting sangat kompleks dan inilah yang menciptakan ratusan senyawa rasa dan aroma yang kita nikmati.\n\nSecara umum, profil roasting dibagi menjadi tiga tingkatan utama, masing-masing dengan karakteristiknya sendiri:\n\n**1. Light Roast (Sangrai Cerah):**\n*   **Warna:** Cokelat muda, seperti kayu manis.\n*   **Permukaan:** Kering, tidak ada minyak di permukaan biji.\n*   **Karakteristik Rasa:** Tingkat keasaman (acidity) paling tinggi dan paling menonjol. Profil rasa cenderung cerah, fruity, atau floral. Karakter asli dari terroir (asal) biji kopi sangat terasa. Bodynya paling ringan.\n*   **Proses:** Biji kopi dipanaskan hingga 'first crack' (retakan pertama), yaitu suara letupan seperti popcorn saat uap air di dalam biji keluar. Proses roasting biasanya dihentikan sesaat setelah first crack dimulai atau selesai.\n\n**2. Medium Roast (Sangrai Sedang):**\n*   **Warna:** Cokelat susu.\n*   **Permukaan:** Masih kering, namun mungkin mulai muncul sedikit kilau minyak.\n*   **Karakteristik Rasa:** Ini adalah tingkatan yang paling seimbang. Keasaman mulai menurun, sementara body dan rasa manis (sweetness) mulai berkembang. Karakter asli biji masih terasa, namun dilengkapi dengan rasa-rasa yang muncul dari proses roasting itu sendiri, seperti karamel, kacang, atau cokelat.\n*   **Proses:** Roasting dilanjutkan setelah first crack selesai, namun dihentikan sebelum 'second crack' (retakan kedua) dimulai.\n\n**3. Dark Roast (Sangrai Gelap):**\n*   **Warna:** Cokelat gelap hingga nyaris hitam.\n*   **Permukaan:** Berminyak dan berkilau karena minyak di dalam biji pecah dan keluar ke permukaan.\n*   **Karakteristik Rasa:** Keasaman hampir tidak terasa. Rasa didominasi oleh proses roasting itu sendiri: pahit, 'smoky' (asap), dan rasa 'roasted' yang kuat. Body paling tebal dan berat. Karakter asli dari biji kopi sudah hampir sepenuhnya tertutupi oleh rasa dari proses sangrai.\n*   **Proses:** Roasting dilanjutkan hingga 'second crack' dimulai, atau bahkan setelahnya. Semakin gelap sangrai, semakin rendah kandungan kafeinnya (meskipun perbedaannya tidak terlalu signifikan).\n\nTidak ada tingkatan roasting yang 'terbaik', semuanya tergantung pada preferensi pribadi. Light roast sangat bagus untuk menonjolkan keunikan kopi single-origin, sementara medium roast sering dianggap paling 'aman' dan disukai banyak orang. Dark roast populer untuk espresso dan bagi mereka yang menyukai kopi dengan rasa yang kuat dan pahit.",
+          "quiz": [
+             {
+              "question": "Tingkat roasting manakah yang paling menonjolkan karakter asli (terroir) dari biji kopi?",
+              "options": ["Medium Roast", "Dark Roast", "Light Roast", "Semua sama saja"],
+              "answer": "Light Roast"
+            },
+            {
+              "question": "Permukaan biji kopi yang berminyak dan berkilau adalah ciri khas dari...",
+              "options": ["Light Roast", "Medium Roast", "Dark Roast", "Green Beans"],
+              "answer": "Dark Roast"
+            },
+            {
+              "question": "Suara letupan pertama saat roasting yang mirip popcorn disebut...",
+              "options": ["First Pop", "First Crack", "First Break", "First Sound"],
+              "answer": "First Crack"
+            },
+            {
+              "question": "Profil rasa yang paling seimbang antara keasaman dan body ditemukan pada...",
+              "options": ["Light Roast", "Medium Roast", "Dark Roast", "Extra Light Roast"],
+              "answer": "Medium Roast"
+            },
+            {
+              "question": "Rasa 'smoky' (asap) dan pahit adalah karakteristik dominan dari...",
+              "options": ["Light Roast", "Medium Roast", "Dark Roast", "Natural Process"],
+              "answer": "Dark Roast"
+            },
+            {
+              "question": "Bagaimana pengaruh dark roast terhadap keasaman (acidity) kopi?",
+              "options": ["Meningkatkannya", "Tidak ada pengaruh", "Membuatnya hampir tidak terasa", "Mengubahnya menjadi rasa manis"],
+              "answer": "Membuatnya hampir tidak terasa"
+            },
+            {
+              "question": "Proses roasting untuk Medium Roast biasanya dihentikan kapan?",
+              "options": ["Sebelum first crack", "Setelah first crack selesai, sebelum second crack", "Setelah second crack selesai", "Saat biji sudah hitam"],
+              "answer": "Setelah first crack selesai, sebelum second crack"
+            },
+            {
+              "question": "Manakah tingkat roasting yang memiliki body paling ringan?",
+              "options": ["Light Roast", "Medium Roast", "Dark Roast", "Sama semua"],
+              "answer": "Light Roast"
+            },
+            {
+              "question": "Apa yang terjadi pada kafein saat biji kopi di-roasting lebih gelap (dark roast)?",
+              "options": ["Kandungan kafein meningkat drastis", "Kandungan kafein sedikit menurun", "Kandungan kafein tidak berubah", "Kandungan kafein menjadi nol"],
+              "answer": "Kandungan kafein sedikit menurun"
+            },
+            {
+              "question": "Biji kopi mentah yang belum di-roasting disebut...",
+              "options": ["White Beans", "Raw Beans", "Green Beans", "Yellow Beans"],
+              "answer": "Green Beans"
+            }
+          ]
+        },
+        { 
+          "id": "materi-1-8", 
+          "title": "Menyimpan Biji Kopi dengan Benar", 
+          "content": "Anda telah membeli sebungkus biji kopi spesialti yang nikmat. Bagaimana cara terbaik untuk menyimpannya agar kesegarannya tetap terjaga hingga tetes terakhir? Penyimpanan yang salah dapat merusak rasa kopi dalam hitungan hari.\n\nAda empat musuh utama kesegaran biji kopi:\n1.  **Oksigen:** Oksidasi adalah proses yang membuat banyak makanan menjadi basi, dan kopi tidak terkecuali. Kontak dengan oksigen akan mempercepat penuaan biji kopi dan menghilangkan aroma serta rasanya yang kompleks.\n2.  **Cahaya:** Sinar UV dari matahari atau bahkan lampu ruangan dapat memecah senyawa kimia di dalam biji kopi, yang menyebabkan rasanya menjadi hambar.\n3.  **Panas:** Panas akan mempercepat proses kimia di dalam biji kopi, membuat minyak esensial yang terkandung di dalamnya menguap lebih cepat. Minyak inilah yang membawa sebagian besar rasa dan aroma kopi.\n4.  **Kelembapan:** Biji kopi bersifat *hygroscopic*, artinya ia mudah menyerap kelembapan—dan juga bau—dari lingkungan sekitarnya. Kelembapan dapat menyebabkan biji kopi menjadi apek dan merusak cita rasanya.\n\n**Praktik Terbaik untuk Penyimpanan:**\n\n*   **Gunakan Wadah Kedap Udara:** Ini adalah aturan nomor satu. Pindahkan biji kopi Anda dari kemasan aslinya (kecuali jika kemasan tersebut memiliki katup satu arah dan ritsleting yang baik) ke dalam wadah yang kedap udara. Wadah dari keramik, kaca gelap, atau stainless steel adalah pilihan yang sangat baik.\n\n*   **Pilih Tempat yang Gelap dan Sejuk:** Simpan wadah kopi Anda di dalam lemari dapur atau pantry yang gelap dan jauh dari sumber panas seperti kompor atau oven. Hindari meletakkan wadah kopi di atas meja dapur yang terkena sinar matahari langsung.\n\n*   **Beli dalam Jumlah Kecil:** Beli biji kopi dalam jumlah yang akan Anda habiskan dalam satu hingga dua minggu. Biji kopi mencapai puncak kesegarannya beberapa hari setelah di-roasting dan akan mulai kehilangan kualitasnya setelah beberapa minggu.\n\n*   **Giling Sesaat Sebelum Menyeduh (Grind on Demand):** Ini adalah salah satu tips terpenting. Biji kopi yang utuh memiliki luas permukaan yang jauh lebih kecil dibandingkan bubuk kopi, sehingga proses oksidasinya lebih lambat. Dengan menggiling kopi sesaat sebelum Anda menyeduhnya, Anda melepaskan semua aroma dan rasa yang 'terkunci' di dalam biji pada saat yang paling optimal.\n\n**Haruskah Menyimpan Kopi di Kulkas atau Freezer?**\nJawaban singkatnya: **Tidak disarankan.** Suhu dingin di kulkas tidak cukup untuk menghentikan proses penuaan secara signifikan, tetapi perubahan suhu saat Anda mengeluarkan dan memasukkan wadah dapat menciptakan kondensasi. Tetesan air ini akan merusak biji kopi. Selain itu, sifat *hygroscopic* kopi akan membuatnya menyerap bau dari makanan lain di kulkas (misalnya, bau bawang atau keju). Freezer dapat digunakan untuk penyimpanan jangka panjang (beberapa bulan), tetapi hanya jika kopi disegel vakum dengan benar dan tidak akan dibuka-tutup.",
+          "quiz": [
+            {
+              "question": "Manakah dari berikut ini yang BUKAN merupakan musuh utama kesegaran biji kopi?",
+              "options": ["Oksigen", "Cahaya", "Suhu Dingin", "Kelembapan"],
+              "answer": "Suhu Dingin"
+            },
+            {
+              "question": "Mengapa wadah kedap udara penting untuk menyimpan kopi?",
+              "options": ["Agar terlihat lebih bagus", "Untuk mencegah kontak dengan oksigen", "Agar lebih mudah dibawa", "Untuk menjaga suhu kopi tetap panas"],
+              "answer": "Untuk mencegah kontak dengan oksigen"
+            },
+            {
+              "question": "Di mana tempat terbaik untuk menyimpan wadah kopi Anda?",
+              "options": ["Di atas meja dekat jendela", "Di dalam kulkas", "Di dalam lemari dapur yang sejuk dan gelap", "Di sebelah kompor"],
+              "answer": "Di dalam lemari dapur yang sejuk dan gelap"
+            },
+            {
+              "question": "Sifat biji kopi yang mudah menyerap kelembapan dan bau disebut...",
+              "options": ["Hydrophobic", "Hygroscopic", "Photosynthesis", "Oxidation"],
+              "answer": "Hygroscopic"
+            },
+            {
+              "question": "Kapan waktu terbaik untuk menggiling biji kopi?",
+              "options": ["Sesaat setelah membeli", "Satu minggu sebelum diseduh", "Sesaat sebelum menyeduh", "Di malam hari sebelum tidur"],
+              "answer": "Sesaat sebelum menyeduh"
+            },
+            {
+              "question": "Mengapa menyimpan kopi di kulkas tidak disarankan?",
+              "options": ["Kulkas terlalu dingin", "Dapat menciptakan kondensasi dan menyerap bau lain", "Kopi akan membeku", "Akan merusak mesin kulkas"],
+              "answer": "Dapat menciptakan kondensasi dan menyerap bau lain"
+            },
+            {
+              "question": "Sinar UV dari matahari dapat menyebabkan rasa kopi menjadi...",
+              "options": ["Lebih kuat", "Lebih manis", "Hambar", "Lebih asam"],
+              "answer": "Hambar"
+            },
+            {
+              "question": "Untuk konsumsi harian, sebaiknya beli biji kopi dalam jumlah yang akan habis dalam...",
+              "options": ["Satu hari", "Satu hingga dua minggu", "Satu hingga dua bulan", "Satu tahun"],
+              "answer": "Satu hingga dua minggu"
+            },
+            {
+              "question": "Mengapa menggiling kopi 'on demand' menjaga kesegaran lebih baik?",
+              "options": ["Karena bubuk kopi lebih awet", "Karena biji utuh memiliki luas permukaan lebih kecil dan oksidasi lebih lambat", "Karena mesin giling memanaskan kopi", "Karena lebih praktis"],
+              "answer": "Karena biji utuh memiliki luas permukaan lebih kecil dan oksidasi lebih lambat"
+            },
+            {
+              "question": "Penyimpanan di freezer bisa dilakukan untuk jangka panjang dengan syarat...",
+              "options": ["Wadah tidak ditutup rapat", "Kopi disegel vakum dan tidak dibuka-tutup", "Kopi dicampur dengan air", "Kopi sudah digiling halus"],
+              "answer": "Kopi disegel vakum dan tidak dibuka-tutup"
+            }
+          ]
+        }
       ]
     },
     {
@@ -29,14 +469,14 @@
       "title": "Bab 2: Teknik Seduh Manual",
       "description": "Fokus pada seni menyeduh kopi tanpa mesin. Kuasai metode populer seperti Pour Over, French Press, dan lainnya untuk mengeluarkan potensi rasa terbaik.",
       "materials": [
-        { "id": "materi-2-1", "title": "Pengantar Seduh Manual", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-2", "title": "Memahami Rasio Kopi dan Air", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-3", "title": "Teknik Pour Over: V60", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-4", "title": "Teknik Rendam: French Press", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-5", "title": "Teknik Tekan: AeroPress", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-6", "title": "Seni Cold Brew", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-7", "title": "Grind Size: Kunci Konsistensi", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-2-8", "title": "Troubleshooting Seduhan Anda", "content": "Konten akan segera ditambahkan." }
+        { "id": "materi-2-1", "title": "Pengantar Seduh Manual", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-2", "title": "Memahami Rasio Kopi dan Air", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-3", "title": "Teknik Pour Over: V60", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-4", "title": "Teknik Rendam: French Press", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-5", "title": "Teknik Tekan: AeroPress", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-6", "title": "Seni Cold Brew", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-7", "title": "Grind Size: Kunci Konsistensi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-2-8", "title": "Troubleshooting Seduhan Anda", "content": "Konten akan segera ditambahkan.", "quiz": [] }
       ]
     },
     {
@@ -44,14 +484,14 @@
       "title": "Bab 3: Dunia Espresso",
       "description": "Selami dunia espresso yang kaya dan kompleks. Pelajari cara kerja mesin, teknik dasar, dan cara membuat minuman turunan espresso seperti Latte dan Cappuccino.",
        "materials": [
-        { "id": "materi-3-1", "title": "Apa itu Espresso?", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-2", "title": "Anatomi Mesin Espresso", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-3", "title": "Dosing, Tamping, dan Ekstraksi", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-4", "title": "Membaca Shot Espresso", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-5", "title": "Steaming Susu: Menciptakan Microfoam", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-6", "title": "Membuat Latte dan Cappuccino", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-7", "title": "Minuman Turunan Espresso Lainnya", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-3-8", "title": "Perawatan Dasar Mesin Espresso", "content": "Konten akan segera ditambahkan." }
+        { "id": "materi-3-1", "title": "Apa itu Espresso?", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-2", "title": "Anatomi Mesin Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-3", "title": "Dosing, Tamping, dan Ekstraksi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-4", "title": "Membaca Shot Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-5", "title": "Steaming Susu: Menciptakan Microfoam", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-6", "title": "Membuat Latte dan Cappuccino", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-7", "title": "Minuman Turunan Espresso Lainnya", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-3-8", "title": "Perawatan Dasar Mesin Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] }
       ]
     },
     {
@@ -59,14 +499,14 @@
       "title": "Bab 4: Keterampilan Barista Tingkat Lanjut",
       "description": "Tingkatkan permainan kopi Anda dengan mempelajari tentang Latte Art, kalibrasi grinder, dan cara melakukan uji cita rasa (cupping) seperti seorang profesional.",
       "materials": [
-        { "id": "materi-4-1", "title": "Dasar-dasar Latte Art", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4-2", "title": "Kalibrasi Grinder Espresso", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4-3", "title": "Memahami Roda Cita Rasa Kopi", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4-4", "title": "Protokol Cupping Kopi", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4.5", "title": "Air untuk Kopi: TDS dan Komposisi Mineral", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4-6", "title": "Variabel Ekstraksi Lanjutan", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4-7", "title": "Pengenalan Varietas Kopi Eksotis", "content": "Konten akan segera ditambahkan." },
-        { "id": "materi-4-8", "title": "Persiapan Kompetisi Barista", "content": "Konten akan segera ditambahkan." }
+        { "id": "materi-4-1", "title": "Dasar-dasar Latte Art", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4-2", "title": "Kalibrasi Grinder Espresso", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4-3", "title": "Memahami Roda Cita Rasa Kopi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4-4", "title": "Protokol Cupping Kopi", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4.5", "title": "Air untuk Kopi: TDS dan Komposisi Mineral", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4-6", "title": "Variabel Ekstraksi Lanjutan", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4-7", "title": "Pengenalan Varietas Kopi Eksotis", "content": "Konten akan segera ditambahkan.", "quiz": [] },
+        { "id": "materi-4-8", "title": "Persiapan Kompetisi Barista", "content": "Konten akan segera ditambahkan.", "quiz": [] }
       ]
     }
   ]

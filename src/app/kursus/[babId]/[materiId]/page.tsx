@@ -5,7 +5,7 @@ import { useParams, notFound, useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Check, PartyPopper } from 'lucide-react';
+import { ArrowLeft, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
 import {
@@ -16,15 +16,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
 
 type Material = {
   id: string;
@@ -38,12 +29,6 @@ type Chapter = {
   materials: Material[];
 };
 
-const PROGRESS_KEY = 'kopiStartProgress';
-
-type Progress = {
-    completedMaterials: string[];
-}
-
 export default function MaterialDetailPage() {
   const params = useParams();
   const router = useRouter();
@@ -51,9 +36,7 @@ export default function MaterialDetailPage() {
   
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [material, setMaterial] = useState<Material | null>(null);
-  const [isCompleted, setIsCompleted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [showCompleteDialog, setShowCompleteDialog] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -65,48 +48,8 @@ export default function MaterialDetailPage() {
         setMaterial(materialData);
       }
     }
-    
-    try {
-      const savedProgress = localStorage.getItem(PROGRESS_KEY);
-      if (savedProgress) {
-        const progress: Progress = JSON.parse(savedProgress);
-        if(progress.completedMaterials.includes(materiId)){
-            setIsCompleted(true);
-        }
-      }
-    } catch (error) {
-      console.error("Failed to process localStorage", error);
-    }
-
   }, [babId, materiId]);
 
-  const handleComplete = () => {
-    try {
-        const savedProgress = localStorage.getItem(PROGRESS_KEY);
-        let progress: Progress = savedProgress ? JSON.parse(savedProgress) : { completedMaterials: [] };
-        
-        if (!progress.completedMaterials.includes(materiId)) {
-            progress.completedMaterials.push(materiId);
-            localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
-            setIsCompleted(true);
-        }
-        setShowCompleteDialog(true);
-    } catch (error) {
-        console.error("Failed to save progress to localStorage", error);
-    }
-  };
-
-  const handleNext = () => {
-    setShowCompleteDialog(false);
-    if (!chapter || !material) return;
-    const currentIndex = chapter.materials.findIndex(m => m.id === material.id);
-    const nextMaterial = chapter.materials[currentIndex + 1];
-    if (nextMaterial) {
-      router.push(`/kursus/${babId}/${nextMaterial.id}`);
-    } else {
-      router.push(`/kursus/${babId}`);
-    }
-  };
 
   if (!isMounted) {
     return (
@@ -125,9 +68,6 @@ export default function MaterialDetailPage() {
   if (!chapter || !material) {
     return notFound();
   }
-
-  const isLastMaterial = chapter.materials[chapter.materials.length - 1].id === material.id;
-
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -168,33 +108,14 @@ export default function MaterialDetailPage() {
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Kembali ke Daftar Materi
                 </Button>
-                <Button onClick={handleComplete} size="lg">
-                    {isCompleted ? 'Materi Telah Selesai' : 'Tandai Selesai'}
-                    <Check className="ml-2 h-5 w-5" />
+                <Button onClick={() => router.push(`/kursus/${babId}/${materiId}/kuis`)} size="lg">
+                    Mulai Kuis
+                    <BrainCircuit className="ml-2 h-5 w-5" />
                 </Button>
             </div>
           </div>
         </section>
       </main>
-
-      <AlertDialog open={showCompleteDialog} onOpenChange={setShowCompleteDialog}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                <PartyPopper className="h-6 w-6 text-green-600" />
-            </div>
-            <AlertDialogTitle className="text-center mt-4">Materi Selesai!</AlertDialogTitle>
-            <AlertDialogDescription className="text-center">
-              Kerja bagus! Anda telah menyelesaikan materi ini. Mari kita lanjutkan ke tantangan berikutnya.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter className="sm:justify-center">
-            <AlertDialogAction onClick={handleNext}>
-                {isLastMaterial ? 'Kembali ke Bab' : 'Lanjut ke Materi Berikutnya'}
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
 
       <Footer />
     </div>
