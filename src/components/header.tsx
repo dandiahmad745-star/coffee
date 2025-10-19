@@ -34,7 +34,7 @@ export default function Header({ className }: { className?: string }) {
           <Link href="/" className="flex items-center gap-3 group">
             <Coffee className="h-8 w-8 text-primary group-hover:rotate-12 transition-transform" />
             <h1 className="text-3xl font-bold font-headline text-primary tracking-tight">
-              KopiStart
+              Coffe Learning
             </h1>
           </Link>
           <div className="flex items-center gap-2">

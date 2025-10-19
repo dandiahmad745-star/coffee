@@ -4,7 +4,7 @@ import './globals.css';
 import { UserProvider } from '@/context/UserContext';
 
 export const metadata: Metadata = {
-  title: 'KopiStart',
+  title: 'Coffe Learning',
   description: 'Belajar tentang kopi dengan bantuan AI',
 };
 

@@ -82,7 +82,7 @@ export default function CoursePage() {
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary">
-                Kurikulum KopiStart
+                Kurikulum Coffe Learning
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
                 Selamat datang, {user.name}! Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan.

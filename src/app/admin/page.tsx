@@ -18,7 +18,7 @@ export default function AdminDashboardPage() {
                   Dasbor Admin
                 </h1>
                 <p className="mt-2 text-lg text-muted-foreground">
-                  Selamat datang di pusat pengelolaan KopiStart.
+                  Selamat datang di pusat pengelolaan Coffe Learning.
                 </p>
             </div>
 

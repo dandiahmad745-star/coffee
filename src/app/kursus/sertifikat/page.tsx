@@ -18,12 +18,7 @@ export default function CertificatePage() {
     
     useEffect(() => {
         setIsMounted(true);
-        // We allow access for admins previewing, but for direct access, we check user.
-        // A more robust logic would check completion status from context/backend.
-        if (process.env.NODE_ENV === 'production' && !isUserLoading && !user) {
-            router.push('/login');
-        }
-    }, [user, isUserLoading, router]);
+    }, []);
 
     const handleDownload = () => {
         window.print();
@@ -46,7 +41,7 @@ export default function CertificatePage() {
     
     const today = new Date();
     const formattedDate = format(today, "d MMMM yyyy", { locale: id });
-    const userName = user?.name || "Sobat KopiStart";
+    const userName = user?.name || "Sobat Coffe Learning";
 
     return (
         <div className="flex flex-col min-h-screen bg-muted/40 text-foreground print:bg-white">
@@ -75,7 +70,7 @@ export default function CertificatePage() {
                             <div className="flex justify-center items-center gap-2">
                                 <Coffee className="h-8 w-8 text-primary" />
                                 <h1 className="text-3xl font-bold font-headline text-primary">
-                                KopiStart
+                                Coffe Learning
                                 </h1>
                             </div>
                             
@@ -102,7 +97,7 @@ export default function CertificatePage() {
                         <div className="mt-auto pt-12 z-10 flex justify-between items-end text-center">
                             <div className="w-2/5">
                                 <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">Arul Faathir</p>
-                                <p className="text-sm text-muted-foreground pt-1">Founder, KopiStart</p>
+                                <p className="text-sm text-muted-foreground pt-1">Founder, Coffe Learning</p>
                             </div>
                             <div className="w-1/5">
                                 <Award className="h-16 w-16 text-primary/80 mx-auto" />

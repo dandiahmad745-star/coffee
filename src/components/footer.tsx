@@ -11,7 +11,7 @@ export default function Footer({ className }: { className?: string }) {
                 <div className="flex items-center gap-3 mb-6 md:mb-0">
                     <Coffee className="h-8 w-8 text-primary" />
                     <h1 className="text-2xl font-bold font-headline text-primary">
-                        KopiStart
+                        Coffe Learning
                     </h1>
                 </div>
                 <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-muted-foreground mb-6 md:mb-0">
