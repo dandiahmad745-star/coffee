@@ -4,7 +4,7 @@ import Header from '@/components/header';
 import Hero from '@/components/hero';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Coffee, BookOpen, Wrench, FileText } from 'lucide-react';
+import { Coffee, BookOpen, Wrench, FileText, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const features = [
@@ -19,6 +19,12 @@ const features = [
     title: 'Pelajari Teknik',
     description: 'Kuasai seni menyeduh kopi, mulai dari pour-over, espresso, hingga cold brew dengan panduan kami.',
     href: '/teknik'
+  },
+   {
+    icon: <GraduationCap className="h-10 w-10 text-primary" />,
+    title: 'Mulai Kursus Kopi',
+    description: 'Ikuti kurikulum terstruktur dari Bab 1 hingga mahir dan dapatkan sertifikat digital.',
+    href: '/kursus'
   },
   {
     icon: <Wrench className="h-10 w-10 text-primary" />,
@@ -51,7 +57,7 @@ export default function Home() {
                 mulai dari biji hingga cangkir.
               </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {features.map((feature, index) => (
                  <Link href={feature.href} passHref key={index}>
                     <Card

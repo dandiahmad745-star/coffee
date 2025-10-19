@@ -1,0 +1,38 @@
+
+{
+  "chapters": [
+    {
+      "id": "bab-1",
+      "title": "Bab 1: Pengenalan Dasar Kopi",
+      "description": "Mulai dari nol, kita akan belajar tentang sejarah kopi, perbedaan mendasar antara biji kopi, dan bagaimana perjalanan biji kopi dari pohon hingga ke cangkir Anda.",
+      "materials": [
+        { "id": "materi-1-1", "title": "Sejarah Singkat Kopi Dunia" },
+        { "id": "materi-1-2", "title": "Mengenal Arabika vs. Robusta" },
+        { "id": "materi-1-3", "title": "Perjalanan Biji Kopi: Dari Panen ke Cangkir" },
+        { "id": "materi-1-4", "title": "Anatomi Buah Kopi (Coffee Cherry)" },
+        { "id": "materi-1-5", "title": "Apa itu 'Specialty Coffee'?" },
+        { "id": "materi-1-6", "title": "Faktor yang Mempengaruhi Rasa: Terroir" },
+        { "id": "materi-1-7", "title": "Tingkatan Roasting (Light, Medium, Dark)" },
+        { "id": "materi-1-8", "title": "Menyimpan Biji Kopi dengan Benar" }
+      ]
+    },
+    {
+      "id": "bab-2",
+      "title": "Bab 2: Teknik Seduh Manual",
+      "description": "Fokus pada seni menyeduh kopi tanpa mesin. Kuasai metode populer seperti Pour Over, French Press, dan lainnya untuk mengeluarkan potensi rasa terbaik.",
+      "materials": []
+    },
+    {
+      "id": "bab-3",
+      "title": "Bab 3: Dunia Espresso",
+      "description": "Selami dunia espresso yang kaya dan kompleks. Pelajari cara kerja mesin, teknik dasar, dan cara membuat minuman turunan espresso seperti Latte dan Cappuccino.",
+      "materials": []
+    },
+    {
+      "id": "bab-4",
+      "title": "Bab 4: Keterampilan Barista Tingkat Lanjut",
+      "description": "Tingkatkan permainan kopi Anda dengan mempelajari tentang Latte Art, kalibrasi grinder, dan cara melakukan uji cita rasa (cupping) seperti seorang profesional.",
+      "materials": []
+    }
+  ]
+}

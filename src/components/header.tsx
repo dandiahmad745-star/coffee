@@ -33,7 +33,7 @@ export default function Header() {
               KopiStart
             </h1>
           </Link>
-          <nav className="hidden md:flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-1">
             <Button variant="ghost" asChild>
                 <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
             </Button>
@@ -42,6 +42,9 @@ export default function Header() {
             </Button>
             <Button variant="ghost" asChild>
                 <Link href="/tools" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
+            </Button>
+             <Button variant="ghost" asChild>
+                <Link href="/kursus" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Kursus</Link>
             </Button>
             <Button variant="ghost" asChild>
                 <Link href="/glosarium" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Glosarium</Link>

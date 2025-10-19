@@ -17,6 +17,7 @@ export default function Footer() {
                     <Link href="/biji-kopi" className="hover:text-primary transition-colors">Biji Kopi</Link>
                     <Link href="/teknik" className="hover:text-primary transition-colors">Teknik</Link>
                     <Link href="/tools" className="hover:text-primary transition-colors">Alat</Link>
+                    <Link href="/kursus" className="hover:text-primary transition-colors">Kursus</Link>
                     <Link href="/glosarium" className="hover:text-primary transition-colors">Glosarium</Link>
                 </div>
                  <p className="text-center text-sm text-muted-foreground">
