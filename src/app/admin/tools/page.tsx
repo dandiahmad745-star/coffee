@@ -1,3 +1,4 @@
+
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Header from '@/components/header';
@@ -27,8 +28,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Upload, Download, Trash2, Edit, PlusCircle } from 'lucide-react';
+import { Upload, Download, Trash2, Edit, PlusCircle, FileImage } from 'lucide-react';
 import initialData from '@/data/barista-tools.json';
+import Image from 'next/image';
 
 type Tool = {
   id: string;
@@ -251,6 +253,19 @@ function ToolFormDialog({
   const [imageUrl, setImageUrl] = useState(tool?.imageUrl || '');
   const [imageHint, setImageHint] = useState(tool?.imageHint || '');
 
+  const imageUploadRef = useRef<HTMLInputElement>(null);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave({ name, description, imageUrl, imageHint });
@@ -264,7 +279,7 @@ function ToolFormDialog({
   };
 
   const trigger = tool ? null : (
-    <Button>
+    <Button onClick={() => onOpenChange(true)}>
       <PlusCircle className="mr-2 h-4 w-4" /> Tambah Alat
     </Button>
   );
@@ -291,10 +306,25 @@ function ToolFormDialog({
               <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="imageUrl">
-                URL Gambar
-              </Label>
-              <Input id="imageUrl" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required placeholder="https://images.unsplash.com/..."/>
+              <Label>Gambar</Label>
+              <Input 
+                type="file" 
+                accept="image/*" 
+                ref={imageUploadRef} 
+                onChange={handleImageChange} 
+                className="hidden" 
+              />
+               <div className="flex items-center gap-4">
+                <Button type="button" variant="outline" onClick={() => imageUploadRef.current?.click()}>
+                  <FileImage className="mr-2 h-4 w-4" />
+                  Pilih Gambar
+                </Button>
+                {imageUrl && (
+                  <div className="relative w-20 h-20 rounded-md overflow-hidden border">
+                    <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" />
+                  </div>
+                )}
+              </div>
             </div>
              <div className="grid gap-2">
               <Label htmlFor="imageHint">
@@ -314,3 +344,5 @@ function ToolFormDialog({
     </Dialog>
   );
 }
+
+    
