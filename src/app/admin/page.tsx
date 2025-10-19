@@ -3,7 +3,7 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Wrench, Settings, Coffee, BookOpen, FileText } from 'lucide-react';
+import { Wrench, Settings, Coffee, BookOpen, FileText, Users, Award } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AdminDashboardPage() {
@@ -90,6 +90,42 @@ export default function AdminDashboardPage() {
                         <CardContent>
                             <CardDescription>
                                 Tambah, edit, atau hapus istilah dan definisi dalam kamus kopi.
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+
+                <Link href="/admin/peserta-kursus" passHref>
+                    <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                        <CardHeader>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
+                                    <Users className="h-6 w-6 text-primary" />
+                                </div>
+                                <CardTitle className="!text-xl">Lihat Peserta Kursus</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                (Simulasi) Lihat daftar peserta dan progres belajar mereka.
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+
+                <Link href="/kursus/sertifikat" passHref>
+                    <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                        <CardHeader>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
+                                    <Award className="h-6 w-6 text-primary" />
+                                </div>
+                                <CardTitle className="!text-xl">Preview Sertifikat</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Lihat bagaimana tampilan sertifikat digital yang akan didapatkan peserta.
                             </CardDescription>
                         </CardContent>
                     </Card>
