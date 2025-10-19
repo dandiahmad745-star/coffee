@@ -5,56 +5,28 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { Download, Award, Coffee, ArrowLeft } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import initialData from '@/data/course-structure.json';
 import { format } from 'date-fns';
 import id from 'date-fns/locale/id';
 import Link from 'next/link';
 
-const PROGRESS_KEY = 'kopiStartProgress';
-
-type Progress = {
-    completedMaterials: string[];
-}
-
 export default function CertificatePage() {
-    const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
-    const [isCourseCompleted, setIsCourseCompleted] = useState(false);
     
     useEffect(() => {
         setIsMounted(true);
-        try {
-            const savedProgress = localStorage.getItem(PROGRESS_KEY);
-            if (savedProgress) {
-                const progress: Progress = JSON.parse(savedProgress);
-                const allMaterialsCount = initialData.chapters.reduce((acc, chapter) => acc + chapter.materials.length, 0);
-                if (progress.completedMaterials.length >= allMaterialsCount) {
-                    setIsCourseCompleted(true);
-                } else {
-                    // Jika belum selesai, tendang kembali ke halaman kursus
-                    router.push('/kursus');
-                }
-            } else {
-                 router.push('/kursus');
-            }
-        } catch (error) {
-            console.error("Failed to verify progress", error);
-            router.push('/kursus');
-        }
-    }, [router]);
+    }, []);
 
     const handleDownload = () => {
         window.print();
     };
 
-    if (!isMounted || !isCourseCompleted) {
+    if (!isMounted) {
         return (
             <div className="flex flex-col min-h-screen bg-background text-foreground">
                 <Header />
                 <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
                     <div className="text-center">
-                        <h1 className="font-headline text-2xl md:text-3xl font-bold text-primary">Memverifikasi Pencapaian...</h1>
+                        <h1 className="font-headline text-2xl md:text-3xl font-bold text-primary">Memuat Sertifikat...</h1>
                         <p className="mt-2 text-muted-foreground">Silakan tunggu sebentar.</p>
                     </div>
                 </main>
@@ -128,4 +100,3 @@ export default function CertificatePage() {
         </div>
     );
 }
-
