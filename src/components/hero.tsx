@@ -29,7 +29,7 @@ export default function Hero() {
           Jelajahi dunia kopi dari biji hingga seduhan. Tingkatkan pengetahuan Anda dengan panduan dan alat interaktif dari kami.
         </p>
         <Button size="lg" className="mt-10 bg-white/90 text-primary hover:bg-white" asChild>
-          <Link href="/chat">
+          <Link href="/#features">
             Mulai Petualangan Anda
           </Link>
         </Button>
