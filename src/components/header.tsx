@@ -2,6 +2,7 @@ import { Coffee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,24 +26,27 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div
-            className={cn(
-              'flex items-center gap-3 transition-opacity duration-300',
-              isScrolled ? 'opacity-100' : 'opacity-0'
-            )}
-          >
-            <Coffee className="h-8 w-8 text-primary" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <Coffee className="h-8 w-8 text-primary group-hover:rotate-12 transition-transform" />
             <h1 className="text-3xl font-bold font-headline text-primary tracking-tight">
               KopiStart
             </h1>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-2">
-            <Button variant="ghost" className={cn("text-lg", isScrolled ? "" : "text-white hover:bg-white/10")}>Tentang</Button>
-            <Button variant="ghost" className={cn("text-lg", isScrolled ? "" : "text-white hover:bg-white/10")}>Fitur</Button>
-            <Button variant="ghost" className={cn("text-lg", isScrolled ? "" : "text-white hover:bg-white/10")}>Kontak</Button>
+            <Button variant="ghost" asChild>
+              <Link href="/#features" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Fitur</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+                <Link href="/tools" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
+            </Button>
+             <Button variant="ghost" asChild>
+                <Link href="/chat" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Chat AI</Link>
+            </Button>
           </nav>
-          <Button className={cn("hidden md:inline-flex rounded-full shadow-lg", isScrolled ? "" : "bg-white/90 text-primary hover:bg-white")}>
-            Mulai Belajar
+           <Button asChild className={cn("hidden md:inline-flex rounded-full shadow-lg", isScrolled ? "" : "bg-white/90 text-primary hover:bg-white")}>
+             <Link href="/chat">
+                Mulai Belajar
+             </Link>
           </Button>
         </div>
       </div>

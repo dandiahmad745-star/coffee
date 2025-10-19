@@ -13,9 +13,9 @@ export default function Footer() {
                     </h1>
                 </div>
                 <div className="flex gap-6 text-muted-foreground mb-6 md:mb-0">
-                    <a href="#" className="hover:text-primary transition-colors">Tentang</a>
-                    <a href="#" className="hover:text-primary transition-colors">Fitur</a>
-                    <Link href="/admin/tools" className="hover:text-primary transition-colors">Admin</Link>
+                    <Link href="/#features" className="hover:text-primary transition-colors">Fitur</Link>
+                    <Link href="/tools" className="hover:text-primary transition-colors">Alat</Link>
+                    <Link href="/admin" className="hover:text-primary transition-colors">Admin</Link>
                 </div>
                  <p className="text-center text-sm text-muted-foreground">
                     © {new Date().getFullYear()} KopiStart. Dibuat oleh MOHAMMAD ARUL FAATHIR ERVANSYAH.
@@ -25,4 +25,3 @@ export default function Footer() {
       </footer>
     );
 }
-  

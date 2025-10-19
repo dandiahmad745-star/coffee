@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from './ui/button';
 import { ArrowDown } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
@@ -27,8 +28,10 @@ export default function Hero() {
         <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-stone-100" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.7)'}}>
           Jelajahi dunia kopi dari biji hingga seduhan. Tingkatkan pengetahuan Anda dengan panduan dan alat interaktif dari kami.
         </p>
-        <Button size="lg" className="mt-10 rounded-full text-xl px-10 py-7 shadow-2xl hover:scale-105 transition-transform duration-300 bg-white/90 text-primary hover:bg-white">
-          Mulai Petualangan Anda
+        <Button size="lg" className="mt-10 rounded-full text-xl px-10 py-7 shadow-2xl hover:scale-105 transition-transform duration-300 bg-white/90 text-primary hover:bg-white" asChild>
+          <Link href="/chat">
+            Mulai Petualangan Anda
+          </Link>
         </Button>
         <a href="#features" className="absolute -bottom-16 md:-bottom-24 animate-bounce">
             <ArrowDown className="h-10 w-10"/>
