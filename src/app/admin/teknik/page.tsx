@@ -28,7 +28,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Upload, Download, Trash2, Edit, PlusCircle, FileImage } from 'lucide-react';
+import { Upload, Download, Trash2, Edit, PlusCircle, FileImage, Copy } from 'lucide-react';
 import initialData from '@/data/techniques.json';
 import Image from 'next/image';
 
@@ -47,7 +47,9 @@ export default function AdminTechniquesPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
   const [editingTechnique, setEditingTechnique] = useState<Technique | null>(null);
+  const [duplicatingTechnique, setDuplicatingTechnique] = useState<Omit<Technique, 'id'> | null>(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -80,6 +82,13 @@ export default function AdminTechniquesPage() {
       ...newTechniqueData,
     };
     setTechniques((prev) => [...prev, newTechnique]);
+    setDuplicatingTechnique(null);
+  };
+
+  const handleDuplicateTechnique = (techniqueToDuplicate: Technique) => {
+    const { id, ...techniqueData } = techniqueToDuplicate;
+    setDuplicatingTechnique(techniqueData);
+    setIsAddModalOpen(true);
   };
 
   const handleEditTechnique = (updatedTechnique: Technique) => {
@@ -166,7 +175,18 @@ export default function AdminTechniquesPage() {
                 <Button variant="outline" onClick={handleExport}>
                   <Download className="mr-2 h-4 w-4" /> Export
                 </Button>
-                <TechniqueFormDialog onSave={handleAddTechnique} />
+                <TechniqueFormDialog
+                  key={duplicatingTechnique ? 'add-duplicate' : 'add-new'}
+                  onSave={handleAddTechnique}
+                  technique={duplicatingTechnique || undefined}
+                  isOpen={isAddModalOpen}
+                  onOpenChange={(isOpen) => {
+                    setIsAddModalOpen(isOpen);
+                    if (!isOpen) {
+                      setDuplicatingTechnique(null);
+                    }
+                  }}
+                />
               </div>
             </div>
 
@@ -183,6 +203,9 @@ export default function AdminTechniquesPage() {
                       <p className="text-muted-foreground line-clamp-3">{technique.description}</p>
                     </CardContent>
                     <CardFooter className="flex justify-end gap-2 border-t pt-4 mt-4">
+                       <Button variant="outline" size="sm" onClick={() => handleDuplicateTechnique(technique)}>
+                        <Copy className="mr-2 h-4 w-4" /> Duplikat
+                       </Button>
                        <Button variant="outline" size="sm" onClick={() => openEditModal(technique)}>
                         <Edit className="mr-2 h-4 w-4" /> Edit
                        </Button>
@@ -220,6 +243,7 @@ export default function AdminTechniquesPage() {
                 key={editingTechnique.id}
                 technique={editingTechnique}
                 onSave={(data) => handleEditTechnique({ ...editingTechnique, ...data })}
+                isEditing={true}
                 isOpen={isEditModalOpen}
                 onOpenChange={setIsEditModalOpen}
              />
@@ -234,11 +258,13 @@ export default function AdminTechniquesPage() {
 function TechniqueFormDialog({
   technique,
   onSave,
+  isEditing = false,
   isOpen: externalIsOpen,
   onOpenChange: externalOnOpenChange,
 }: {
-  technique?: Technique;
+  technique?: Partial<Technique>;
   onSave: (data: Omit<Technique, 'id'>) => void;
+  isEditing?: boolean;
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
 }) {
@@ -252,6 +278,15 @@ function TechniqueFormDialog({
   const [imageHint, setImageHint] = useState(technique?.imageHint || '');
 
   const imageUploadRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setName(technique?.name || '');
+      setDescription(technique?.description || '');
+      setImageUrl(technique?.imageUrl || '');
+      setImageHint(technique?.imageHint || '');
+    }
+  }, [technique, isOpen]);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -267,7 +302,7 @@ function TechniqueFormDialog({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave({ name, description, imageUrl, imageHint });
-    if (!technique) { // Reset form only for "add new"
+    if (!isEditing) { // Reset form only for "add new"
         setName('');
         setDescription('');
         setImageUrl('');
@@ -275,8 +310,10 @@ function TechniqueFormDialog({
     }
     onOpenChange(false);
   };
+  
+  const dialogTitle = isEditing ? 'Edit Teknik' : 'Tambah Teknik Baru';
 
-  const trigger = technique ? null : (
+  const trigger = isEditing ? null : (
     <Button onClick={() => onOpenChange(true)}>
       <PlusCircle className="mr-2 h-4 w-4" /> Tambah Teknik
     </Button>
@@ -287,7 +324,7 @@ function TechniqueFormDialog({
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
-          <DialogTitle>{technique ? 'Edit Teknik' : 'Tambah Teknik Baru'}</DialogTitle>
+          <DialogTitle>{dialogTitle}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-6 py-4">
@@ -319,7 +356,7 @@ function TechniqueFormDialog({
                 </Button>
                 {imageUrl && (
                   <div className="relative w-20 h-20 rounded-md overflow-hidden border">
-                    <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" />
+                    <Image src={imageUrl} alt="Preview" fill objectFit="cover" />
                   </div>
                 )}
               </div>
@@ -342,5 +379,3 @@ function TechniqueFormDialog({
     </Dialog>
   );
 }
-
-    

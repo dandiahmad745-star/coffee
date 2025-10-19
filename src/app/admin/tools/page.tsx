@@ -28,7 +28,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Upload, Download, Trash2, Edit, PlusCircle, FileImage } from 'lucide-react';
+import { Upload, Download, Trash2, Edit, PlusCircle, FileImage, Copy } from 'lucide-react';
 import initialData from '@/data/barista-tools.json';
 import Image from 'next/image';
 
@@ -47,7 +47,9 @@ export default function AdminToolsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
   const [editingTool, setEditingTool] = useState<Tool | null>(null);
+  const [duplicatingTool, setDuplicatingTool] = useState<Omit<Tool, 'id'> | null>(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -80,6 +82,13 @@ export default function AdminToolsPage() {
       ...newToolData,
     };
     setTools((prevTools) => [...prevTools, newTool]);
+    setDuplicatingTool(null);
+  };
+  
+  const handleDuplicateTool = (toolToDuplicate: Tool) => {
+    const { id, ...toolData } = toolToDuplicate;
+    setDuplicatingTool(toolData);
+    setIsAddModalOpen(true);
   };
 
   const handleEditTool = (updatedTool: Tool) => {
@@ -118,7 +127,6 @@ export default function AdminToolsPage() {
           const content = e.target?.result as string;
           const parsedData = JSON.parse(content);
           if (parsedData.tools && Array.isArray(parsedData.tools)) {
-            // Merge new data with existing data
             setTools((prevTools) => [...prevTools, ...parsedData.tools]);
           } else {
             alert('Invalid JSON format. Expected an object with a "tools" array.');
@@ -127,7 +135,6 @@ export default function AdminToolsPage() {
           alert('Failed to parse JSON file.');
           console.error(error);
         } finally {
-            // Reset file input to allow importing the same file again
             if(fileInputRef.current) {
                 fileInputRef.current.value = '';
             }
@@ -168,7 +175,18 @@ export default function AdminToolsPage() {
                 <Button variant="outline" onClick={handleExport}>
                   <Download className="mr-2 h-4 w-4" /> Export
                 </Button>
-                <ToolFormDialog onSave={handleAddTool} />
+                <ToolFormDialog
+                  key={duplicatingTool ? 'add-duplicate' : 'add-new'}
+                  onSave={handleAddTool}
+                  tool={duplicatingTool || undefined}
+                  isOpen={isAddModalOpen}
+                  onOpenChange={(isOpen) => {
+                    setIsAddModalOpen(isOpen);
+                    if (!isOpen) {
+                      setDuplicatingTool(null);
+                    }
+                  }}
+                />
               </div>
             </div>
 
@@ -185,6 +203,9 @@ export default function AdminToolsPage() {
                       <p className="text-muted-foreground line-clamp-3">{tool.description}</p>
                     </CardContent>
                     <CardFooter className="flex justify-end gap-2 border-t pt-4 mt-4">
+                       <Button variant="outline" size="sm" onClick={() => handleDuplicateTool(tool)}>
+                        <Copy className="mr-2 h-4 w-4" /> Duplikat
+                       </Button>
                        <Button variant="outline" size="sm" onClick={() => openEditModal(tool)}>
                         <Edit className="mr-2 h-4 w-4" /> Edit
                        </Button>
@@ -222,6 +243,7 @@ export default function AdminToolsPage() {
                 key={editingTool.id}
                 tool={editingTool}
                 onSave={(data) => handleEditTool({ ...editingTool, ...data })}
+                isEditing={true}
                 isOpen={isEditModalOpen}
                 onOpenChange={setIsEditModalOpen}
              />
@@ -236,11 +258,13 @@ export default function AdminToolsPage() {
 function ToolFormDialog({
   tool,
   onSave,
+  isEditing = false,
   isOpen: externalIsOpen,
   onOpenChange: externalOnOpenChange,
 }: {
-  tool?: Tool;
+  tool?: Partial<Tool>;
   onSave: (data: Omit<Tool, 'id'>) => void;
+  isEditing?: boolean;
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
 }) {
@@ -254,6 +278,16 @@ function ToolFormDialog({
   const [imageHint, setImageHint] = useState(tool?.imageHint || '');
 
   const imageUploadRef = useRef<HTMLInputElement>(null);
+  
+  useEffect(() => {
+    if (isOpen) {
+      setName(tool?.name || '');
+      setDescription(tool?.description || '');
+      setImageUrl(tool?.imageUrl || '');
+      setImageHint(tool?.imageHint || '');
+    }
+  }, [tool, isOpen]);
+
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -269,7 +303,7 @@ function ToolFormDialog({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave({ name, description, imageUrl, imageHint });
-    if (!tool) { // Reset form only for "add new"
+    if (!isEditing) {
         setName('');
         setDescription('');
         setImageUrl('');
@@ -277,8 +311,10 @@ function ToolFormDialog({
     }
     onOpenChange(false);
   };
+  
+  const dialogTitle = isEditing ? 'Edit Alat' : 'Tambah Alat Baru';
 
-  const trigger = tool ? null : (
+  const trigger = isEditing ? null : (
     <Button onClick={() => onOpenChange(true)}>
       <PlusCircle className="mr-2 h-4 w-4" /> Tambah Alat
     </Button>
@@ -289,7 +325,7 @@ function ToolFormDialog({
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
-          <DialogTitle>{tool ? 'Edit Alat' : 'Tambah Alat Baru'}</DialogTitle>
+          <DialogTitle>{dialogTitle}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-6 py-4">
@@ -321,7 +357,7 @@ function ToolFormDialog({
                 </Button>
                 {imageUrl && (
                   <div className="relative w-20 h-20 rounded-md overflow-hidden border">
-                    <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" />
+                    <Image src={imageUrl} alt="Preview" fill objectFit="cover" />
                   </div>
                 )}
               </div>
@@ -344,5 +380,3 @@ function ToolFormDialog({
     </Dialog>
   );
 }
-
-    
