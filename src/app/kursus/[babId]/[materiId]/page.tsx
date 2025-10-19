@@ -157,7 +157,10 @@ export default function MaterialDetailPage() {
             
             <article className="prose lg:prose-xl max-w-none bg-card p-8 rounded-lg shadow-sm">
                 <h1 className="font-headline text-primary">{material.title}</h1>
-                <p className="whitespace-pre-line">{material.content}</p>
+                <div
+                    className="whitespace-pre-line"
+                    dangerouslySetInnerHTML={{ __html: material.content.replace(/\n\n/g, '<br/><br/>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
+                />
             </article>
 
             <div className="mt-12 flex justify-between items-center">
@@ -166,7 +169,7 @@ export default function MaterialDetailPage() {
                     Kembali ke Daftar Materi
                 </Button>
                 <Button onClick={handleComplete} size="lg">
-                    {isCompleted ? 'Materi Telah Selesai' : 'Tandai Selesai & Lanjut'}
+                    {isCompleted ? 'Materi Telah Selesai' : 'Tandai Selesai'}
                     <Check className="ml-2 h-5 w-5" />
                 </Button>
             </div>

@@ -376,7 +376,7 @@ function BeanFormDialog({
                 </Button>
                 {imageUrl && (
                   <div className="relative w-20 h-20 rounded-md overflow-hidden border">
-                    <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" />
+                    <Image src={imageUrl} alt="Preview" fill objectFit="cover" />
                   </div>
                 )}
               </div>
@@ -397,5 +397,3 @@ function BeanFormDialog({
     </Dialog>
   );
 }
-
-    
