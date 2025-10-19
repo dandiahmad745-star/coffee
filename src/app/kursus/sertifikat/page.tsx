@@ -89,19 +89,17 @@ export default function CertificatePage() {
                             </p>
                         </div>
                         
-                        <div className="text-center mt-auto pt-12 z-10">
-                            <div className="flex justify-between items-end">
-                                <div className="text-center w-1/3">
-                                     <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">Arul Faathir</p>
-                                    <p className="text-sm text-muted-foreground pt-1">Founder, KopiStart</p>
-                                </div>
-                                <div className="text-center w-1/3">
-                                    <Award className="h-16 w-16 text-primary/80 mx-auto" />
-                                </div>
-                                <div className="text-center w-1/3">
-                                    <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">{formattedDate}</p>
-                                    <p className="text-sm text-muted-foreground pt-1">Tanggal Diterbitkan</p>
-                                </div>
+                        <div className="mt-auto pt-12 z-10 flex justify-between items-end text-center">
+                            <div className="w-2/5">
+                                <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">Arul Faathir</p>
+                                <p className="text-sm text-muted-foreground pt-1">Founder, KopiStart</p>
+                            </div>
+                            <div className="w-1/5">
+                                <Award className="h-16 w-16 text-primary/80 mx-auto" />
+                            </div>
+                            <div className="w-2/5">
+                                <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">{formattedDate}</p>
+                                <p className="text-sm text-muted-foreground pt-1">Tanggal Diterbitkan</p>
                             </div>
                         </div>
                     </div>
