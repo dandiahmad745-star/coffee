@@ -19,11 +19,6 @@ const features = [
     title: 'Pelajari Teknik',
     description: 'Kuasai seni menyeduh kopi, mulai dari pour-over, espresso, hingga cold brew dengan panduan kami.',
   },
-  {
-    icon: <BrainCircuit className="h-10 w-10 text-primary" />,
-    title: 'Tanya Ahli Kopi',
-    description: 'Dapatkan jawaban atas pertanyaan Anda tentang kopi dengan bantuan ahli kopi virtual berbasis AI kami.',
-  },
 ];
 
 export default function Home() {
@@ -43,7 +38,7 @@ export default function Home() {
                 mulai dari biji hingga cangkir.
               </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {features.map((feature, index) => (
                 <Card
                   key={index}
@@ -86,21 +81,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-muted/50 py-20 sm:py-32">
-            <div className="container mx-auto px-4 text-center">
-                 <h2 className="font-headline text-4xl md:text-5xl font-bold text-primary">
-                    Siap Memulai Petualangan Kopi Anda?
-                </h2>
-                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Klik tombol di bawah ini untuk mulai berinteraksi dengan asisten kopi AI kami dan perluas wawasan Anda.
-                </p>
-                <Link href="/chat" passHref>
-                  <Button size="lg" className="mt-8">
-                      Tanya Ahli Kopi Sekarang
-                  </Button>
-                </Link>
-            </div>
-        </section>
       </main>
       <Footer />
     </div>

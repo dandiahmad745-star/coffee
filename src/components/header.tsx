@@ -43,15 +43,7 @@ export default function Header() {
             <Button variant="ghost" asChild>
                 <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
             </Button>
-             <Button variant="ghost" asChild>
-                <Link href="/chat" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Chat AI</Link>
-            </Button>
           </nav>
-           <Button asChild className={cn("hidden md:inline-flex", isScrolled ? "" : "bg-white/90 text-primary hover:bg-white")}>
-             <Link href="/chat">
-                Mulai Belajar
-             </Link>
-          </Button>
         </div>
       </div>
     </header>
