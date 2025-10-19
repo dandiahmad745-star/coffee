@@ -16,7 +16,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
 
 type Material = {
   id: string;
@@ -31,7 +31,7 @@ type Chapter = {
 };
 
 export default function MaterialDetailPage() {
-  const { user, loading: isUserLoading } = useUserContext();
+  const { user, loading: isUserLoading } = useAuth();
   const router = useRouter();
   const params = useParams();
   const { babId, materiId } = params as { babId: string; materiId: string };

@@ -1,4 +1,3 @@
-
 {
   "chapters": [
     {
@@ -457,8 +456,8 @@
             },
             {
               "question": "Penyimpanan di freezer bisa dilakukan untuk jangka panjang dengan syarat...",
-              "options": ["Wadah tidak ditutup rapat", "Kopi disegel vakum dan tidak dibuka-tutup", "Kopi dicampur dengan air", "Kopi sudah digiling halus"],
-              "answer": "Kopi disegel vakum dan tidak dibuka-tutup"
+              "options": ["Wadah tidak ditutup rapat", "Kopi disegel vakum dan tidak akan dibuka-tutup", "Kopi dicampur dengan air", "Kopi sudah digiling halus"],
+              "answer": "Kopi disegel vakum dan tidak akan dibuka-tutup"
             }
           ]
         }
@@ -1855,5 +1854,3 @@
     }
   ]
 }
-
-    

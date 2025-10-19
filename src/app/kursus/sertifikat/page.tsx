@@ -9,10 +9,10 @@ import { Download, Award, Coffee, ArrowLeft } from 'lucide-react';
 import { format } from 'date-fns';
 import id from 'date-fns/locale/id';
 import Link from 'next/link';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
 
 export default function CertificatePage() {
-    const { user, loading: isUserLoading } = useUserContext();
+    const { user, loading: isUserLoading } = useAuth();
     const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     

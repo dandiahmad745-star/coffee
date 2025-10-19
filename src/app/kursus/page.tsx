@@ -9,7 +9,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, BookCheck, Lock, Award } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
+import useSWR from 'swr';
 
 type Chapter = {
   id: string;
@@ -18,8 +19,17 @@ type Chapter = {
   materials: { id: string; title: string }[];
 };
 
+const progressFetcher = (key: string | null) => {
+    if (typeof window === 'undefined' || !key) return { completedMaterials: [] };
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : { completedMaterials: [] };
+};
+
+
 export default function CoursePage() {
-  const { user, loading: isUserLoading, userProgress } = useUserContext();
+  const { user, loading: isUserLoading } = useAuth();
+  const { data: userProgress } = useSWR(user ? `progress-${user.id}` : null, progressFetcher);
+  
   const router = useRouter();
   const [chapters] = useState<Chapter[]>(initialData.chapters);
   const [isMounted, setIsMounted] = useState(false);
@@ -34,6 +44,21 @@ export default function CoursePage() {
     }
   }, [user, isUserLoading, router, isMounted]);
   
+  if (!isMounted || isUserLoading || !user || !userProgress) {
+     return (
+       <div className="flex flex-col min-h-screen bg-background text-foreground">
+        <Header />
+        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
+            <div className="text-center">
+                <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary">Memuat...</h1>
+                <p className="mt-2 text-muted-foreground">Mengecek status login Anda.</p>
+            </div>
+        </main>
+        <Footer />
+       </div>
+    )
+  }
+
   const allMaterialsCount = chapters.reduce((acc, chapter) => acc + chapter.materials.length, 0);
   const isCourseCompleted = userProgress.completedMaterials.length >= allMaterialsCount && allMaterialsCount > 0;
 
@@ -42,21 +67,6 @@ export default function CoursePage() {
     if (!chapter) return [];
     return chapter.materials.filter(m => userProgress.completedMaterials.includes(m.id));
   };
-  
-  if (!isMounted || isUserLoading || !user) {
-     return (
-       <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <Header />
-        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
-            <div className="text-center">
-                <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary">Memuat...</h1>
-                <p className="mt-2 text-muted-foreground">Mengarahkan ke halaman login jika belum masuk.</p>
-            </div>
-        </main>
-        <Footer />
-       </div>
-    )
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">

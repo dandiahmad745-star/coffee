@@ -28,7 +28,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
+import useSWR from 'swr';
 
 type Question = {
   question: string;
@@ -50,11 +51,19 @@ type Chapter = {
 
 const PASSING_SCORE = 75;
 
+const progressFetcher = (key: string) => {
+    if (typeof window === 'undefined') return { completedMaterials: [] };
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : { completedMaterials: [] };
+};
+
 export default function QuizPage() {
-  const { user, loading: isUserLoading, saveProgress, userProgress } = useUserContext();
+  const { user, loading: isUserLoading } = useAuth();
   const params = useParams();
   const router = useRouter();
   const { babId, materiId } = params as { babId: string; materiId: string };
+
+  const { data: userProgress, mutate: mutateProgress } = useSWR(user ? `progress-${user.id}`: null, progressFetcher);
 
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [material, setMaterial] = useState<Material | null>(null);
@@ -94,8 +103,14 @@ export default function QuizPage() {
     }
   };
 
+  const saveProgress = (newProgress: { completedMaterials: string[] }) => {
+    if(!user) return;
+    localStorage.setItem(`progress-${user.id}`, JSON.stringify(newProgress));
+    mutateProgress(newProgress, false);
+  };
+
   const handleSubmit = () => {
-    if (!material || !user) return;
+    if (!material || !userProgress) return;
     
     let correctAnswers = 0;
     material.quiz.forEach((q, index) => {
@@ -131,7 +146,7 @@ export default function QuizPage() {
     }
   };
 
-  if (!isMounted || isUserLoading || !user) {
+  if (!isMounted || isUserLoading || !user || !userProgress) {
     return (
       <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
         <Header />

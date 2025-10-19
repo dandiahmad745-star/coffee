@@ -18,7 +18,8 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Progress } from '@/components/ui/progress';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
+import useSWR from 'swr';
 
 
 type Material = {
@@ -33,8 +34,16 @@ type Chapter = {
   materials: Material[];
 };
 
+const progressFetcher = (key: string) => {
+    if (typeof window === 'undefined') return { completedMaterials: [] };
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : { completedMaterials: [] };
+};
+
 export default function ChapterDetailPage() {
-  const { user, loading: isUserLoading, userProgress } = useUserContext();
+  const { user, loading: isUserLoading } = useAuth();
+  const { data: userProgress } = useSWR(user ? `progress-${user.id}` : null, progressFetcher);
+  
   const router = useRouter();
   const params = useParams();
   const babId = params.babId as string;
@@ -64,7 +73,7 @@ export default function ChapterDetailPage() {
     }
   };
   
-  if (!isMounted || isUserLoading || !user) {
+  if (!isMounted || isUserLoading || !user || !userProgress) {
      return (
        <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
         <Header />

@@ -4,12 +4,11 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
-import { useRouter } from 'next/navigation';
 
 export default function Header({ className }: { className?: string }) {
-  const { user, loading, logout } = useUserContext();
+  const { user, loading, logout } = useAuth();
   const { setIsThemeDialogOpen } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -61,7 +60,7 @@ export default function Header({ className }: { className?: string }) {
             {loading ? null : user ? (
               <div className="flex items-center gap-2">
                   <span className={cn("hidden sm:inline text-sm font-semibold", isScrolled ? 'text-foreground' : 'text-white')}>{user.name || user.email}</span>
-                  <Button variant="outline" size="sm" onClick={logout}>
+                  <Button variant="outline" size="sm" onClick={() => logout()}>
                       <LogOut className="h-4 w-4" />
                       <span className="ml-2 hidden sm:inline">Logout</span>
                   </Button>

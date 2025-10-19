@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -12,17 +12,22 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Lock, User as UserIcon } from 'lucide-react';
-import { useUserContext } from '@/context/UserContext';
+import { useAuth } from '@/context/AuthContext';
+import { loginUser, registerUser } from '@/app/actions';
 
 export default function LoginPage() {
-  const { user } = useUserContext();
+  const { user, mutate } = useAuth();
   const router = useRouter();
   
-  useEffect(() => {
-    if (user) {
-      router.push('/kursus');
-    }
-  }, [user, router]);
+  if (user) {
+    router.push('/kursus');
+    return null;
+  }
+
+  const handleAuthSuccess = async () => {
+    await mutate(); // Re-fetches the session
+    router.push('/kursus');
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
@@ -40,7 +45,7 @@ export default function LoginPage() {
                         <CardDescription>Masuk untuk mengakses kurikulum dan progres belajar Anda.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                       <AuthForm isRegister={false} />
+                       <AuthForm isRegister={false} onAuthSuccess={handleAuthSuccess} />
                     </CardContent>
                 </Card>
             </TabsContent>
@@ -51,7 +56,7 @@ export default function LoginPage() {
                         <CardDescription>Daftar sekarang untuk memulai petualangan kopi Anda.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <AuthForm isRegister={true} />
+                        <AuthForm isRegister={true} onAuthSuccess={handleAuthSuccess} />
                     </CardContent>
                 </Card>
             </TabsContent>
@@ -63,13 +68,14 @@ export default function LoginPage() {
 }
 
 
-function AuthForm({ isRegister }: { isRegister: boolean }) {
+function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSuccess: () => void }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { login, register } = useUserContext();
   const { toast } = useToast();
+  
+  const [activeTab, setActiveTab] = useState(isRegister ? 'register' : 'login');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -86,17 +92,21 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
 
     try {
       if (isRegister) {
-        await register(name, email, password);
+        const result = await registerUser(name, email, password);
         toast({
           title: "Pendaftaran Berhasil!",
-          description: `Selamat datang, ${name}!`,
+          description: result.message,
         });
+        // Switch to login tab after successful registration
+        // This is a UX choice, you might want to auto-login instead.
+        window.location.reload(); // Reload to switch tab cleanly, could be improved with state management
       } else {
-        await login(email, password);
+        const result = await loginUser(email, password);
         toast({
             title: "Login Berhasil!",
-            description: `Selamat datang kembali!`,
+            description: result.message,
         });
+        onAuthSuccess();
       }
     } catch (error: any) {
       toast({
