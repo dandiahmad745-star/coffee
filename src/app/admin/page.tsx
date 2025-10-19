@@ -23,10 +23,10 @@ export default function AdminDashboardPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <Link href="/admin/tools" passHref>
-                    <Card className="h-full hover:border-primary hover:shadow-lg transition-all duration-200 cursor-pointer">
+                    <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
                         <CardHeader>
                             <div className="flex items-center gap-4">
-                                <div className="p-3 bg-muted rounded-lg">
+                                <div className="p-3 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
                                     <Wrench className="h-6 w-6 text-primary" />
                                 </div>
                                 <CardTitle className="!text-xl">Kelola Alat Barista</CardTitle>

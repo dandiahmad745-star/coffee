@@ -143,7 +143,7 @@ export default function AdminToolsPage() {
       <main className="flex-grow pt-24 sm:pt-32">
         <section className="py-12 sm:py-16">
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center mb-12">
+            <div className="flex flex-wrap justify-between items-center gap-4 mb-12">
               <div>
                 <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">
                   Kelola Alat Barista
@@ -175,21 +175,21 @@ export default function AdminToolsPage() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {tools.map((tool) => (
-                  <Card key={tool.id} className="flex flex-col">
+                  <Card key={tool.id} className="flex flex-col bg-card hover:shadow-lg transition-shadow duration-200">
                     <CardHeader>
                       <CardTitle>{tool.name}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
                       <p className="text-muted-foreground line-clamp-3">{tool.description}</p>
                     </CardContent>
-                    <CardFooter className="flex justify-end gap-2">
-                       <Button variant="ghost" size="icon" onClick={() => openEditModal(tool)}>
-                        <Edit className="h-4 w-4" />
+                    <CardFooter className="flex justify-end gap-2 border-t pt-4 mt-4">
+                       <Button variant="outline" size="sm" onClick={() => openEditModal(tool)}>
+                        <Edit className="mr-2 h-4 w-4" /> Edit
                        </Button>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
-                          <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive">
-                            <Trash2 className="h-4 w-4" />
+                          <Button variant="destructive" size="sm">
+                            <Trash2 className="mr-2 h-4 w-4" /> Hapus
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>
@@ -272,42 +272,42 @@ function ToolFormDialog({
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
           <DialogTitle>{tool ? 'Edit Alat' : 'Tambah Alat Baru'}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
+          <div className="grid gap-6 py-4">
+            <div className="grid gap-2">
+              <Label htmlFor="name">
                 Nama
               </Label>
-              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} className="col-span-3" required />
+              <Input id="name" value={name} onChange={(e) => setName(e.target.value)} required />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="description" className="text-right">
+            <div className="grid gap-2">
+              <Label htmlFor="description">
                 Deskripsi
               </Label>
-              <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} className="col-span-3" required />
+              <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="imageUrl" className="text-right">
+            <div className="grid gap-2">
+              <Label htmlFor="imageUrl">
                 URL Gambar
               </Label>
-              <Input id="imageUrl" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} className="col-span-3" required />
+              <Input id="imageUrl" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required placeholder="https://images.unsplash.com/..."/>
             </div>
-             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="imageHint" className="text-right">
-                Petunjuk AI
+             <div className="grid gap-2">
+              <Label htmlFor="imageHint">
+                Petunjuk AI untuk Gambar
               </Label>
-              <Input id="imageHint" value={imageHint} onChange={(e) => setImageHint(e.target.value)} className="col-span-3" placeholder="e.g. coffee grinder" />
+              <Input id="imageHint" value={imageHint} onChange={(e) => setImageHint(e.target.value)} placeholder="e.g. coffee grinder" />
             </div>
           </div>
-          <DialogFooter>
+          <DialogFooter className="mt-4">
             <DialogClose asChild>
-                <Button type="button" variant="secondary">Batal</Button>
+                <Button type="button" variant="outline">Batal</Button>
             </DialogClose>
-            <Button type="submit">Simpan</Button>
+            <Button type="submit">Simpan Perubahan</Button>
           </DialogFooter>
         </form>
       </DialogContent>
