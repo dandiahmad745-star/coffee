@@ -4,8 +4,8 @@ import Header from '@/components/header';
 import Hero from '@/components/hero';
 import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Coffee, BookOpen, BrainCircuit } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Coffee, BookOpen, BrainCircuit, Wrench } from 'lucide-react';
 import Link from 'next/link';
 
 const features = [
@@ -63,16 +63,24 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-             <div className="flex justify-center flex-wrap gap-6 text-center mt-20">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 max-w-4xl mx-auto">
                 <Link href="/tools" passHref>
-                    <Button size="lg" variant="outline">
-                        Kenali Alat Barista
-                    </Button>
+                    <div className="bg-card border-border/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 h-full flex flex-col items-center text-center group cursor-pointer">
+                         <div className="p-4 bg-muted rounded-full group-hover:bg-primary/10 transition-colors duration-300 mb-4">
+                           <Wrench className="h-10 w-10 text-primary" />
+                         </div>
+                         <h3 className="font-headline text-2xl font-bold text-primary mb-2">Kenali Alat Barista</h3>
+                         <p className="text-muted-foreground">Pelajari berbagai alat yang digunakan untuk membuat secangkir kopi sempurna.</p>
+                    </div>
                 </Link>
                 <Link href="/biji-kopi" passHref>
-                    <Button size="lg">
-                        Jelajahi Biji Kopi
-                    </Button>
+                    <div className="bg-card border-border/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 h-full flex flex-col items-center text-center group cursor-pointer">
+                        <div className="p-4 bg-muted rounded-full group-hover:bg-primary/10 transition-colors duration-300 mb-4">
+                           <Coffee className="h-10 w-10 text-primary" />
+                         </div>
+                         <h3 className="font-headline text-2xl font-bold text-primary mb-2">Jelajahi Biji Kopi</h3>
+                         <p className="text-muted-foreground">Temukan kekayaan rasa dan aroma dari berbagai biji kopi pilihan.</p>
+                    </div>
                 </Link>
             </div>
           </div>
