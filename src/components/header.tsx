@@ -1,5 +1,5 @@
 
-import { Coffee } from 'lucide-react';
+import { Coffee, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
@@ -42,6 +42,9 @@ export default function Header() {
             </Button>
             <Button variant="ghost" asChild>
                 <Link href="/tools" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+                <Link href="/glosarium" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Glosarium</Link>
             </Button>
           </nav>
         </div>

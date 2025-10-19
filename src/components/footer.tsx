@@ -13,10 +13,11 @@ export default function Footer() {
                         KopiStart
                     </h1>
                 </div>
-                <div className="flex gap-6 text-muted-foreground mb-6 md:mb-0">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-muted-foreground mb-6 md:mb-0">
                     <Link href="/biji-kopi" className="hover:text-primary transition-colors">Biji Kopi</Link>
                     <Link href="/teknik" className="hover:text-primary transition-colors">Teknik</Link>
                     <Link href="/tools" className="hover:text-primary transition-colors">Alat</Link>
+                    <Link href="/glosarium" className="hover:text-primary transition-colors">Glosarium</Link>
                 </div>
                  <p className="text-center text-sm text-muted-foreground">
                     © {new Date().getFullYear()} Arul Faathir Web Dev. All rights reserved.
