@@ -28,7 +28,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Upload, Download, Trash2, Edit, PlusCircle, Coffee } from 'lucide-react';
+import { Upload, Download, Trash2, Edit, PlusCircle, Copy } from 'lucide-react';
 import initialData from '@/data/coffee-beans.json';
 
 type Bean = {
@@ -49,7 +49,9 @@ export default function AdminBeansPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
   const [editingBean, setEditingBean] = useState<Bean | null>(null);
+  const [duplicatingBean, setDuplicatingBean] = useState<Omit<Bean, 'id'> | null>(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -82,6 +84,13 @@ export default function AdminBeansPage() {
       ...newBeanData,
     };
     setBeans((prevBeans) => [...prevBeans, newBean]);
+    setDuplicatingBean(null);
+  };
+
+  const handleDuplicateBean = (beanToDuplicate: Bean) => {
+    const { id, ...beanData } = beanToDuplicate;
+    setDuplicatingBean(beanData);
+    setIsAddModalOpen(true);
   };
 
   const handleEditBean = (updatedBean: Bean) => {
@@ -168,7 +177,18 @@ export default function AdminBeansPage() {
                 <Button variant="outline" onClick={handleExport}>
                   <Download className="mr-2 h-4 w-4" /> Export
                 </Button>
-                <BeanFormDialog onSave={handleAddBean} />
+                <BeanFormDialog 
+                  key={duplicatingBean ? 'add-duplicate' : 'add-new'}
+                  onSave={handleAddBean} 
+                  bean={duplicatingBean || undefined}
+                  isOpen={isAddModalOpen}
+                  onOpenChange={(isOpen) => {
+                    setIsAddModalOpen(isOpen);
+                    if (!isOpen) {
+                      setDuplicatingBean(null);
+                    }
+                  }}
+                />
               </div>
             </div>
 
@@ -185,6 +205,9 @@ export default function AdminBeansPage() {
                       <p className="text-muted-foreground line-clamp-3">{bean.description}</p>
                     </CardContent>
                     <CardFooter className="flex justify-end gap-2 border-t pt-4 mt-4">
+                       <Button variant="outline" size="sm" onClick={() => handleDuplicateBean(bean)}>
+                        <Copy className="mr-2 h-4 w-4" /> Duplikat
+                       </Button>
                        <Button variant="outline" size="sm" onClick={() => openEditModal(bean)}>
                         <Edit className="mr-2 h-4 w-4" /> Edit
                        </Button>
@@ -222,6 +245,7 @@ export default function AdminBeansPage() {
                 key={editingBean.id}
                 bean={editingBean}
                 onSave={(data) => handleEditBean({ ...editingBean, ...data })}
+                isEditing={true}
                 isOpen={isEditModalOpen}
                 onOpenChange={setIsEditModalOpen}
              />
@@ -236,11 +260,13 @@ export default function AdminBeansPage() {
 function BeanFormDialog({
   bean,
   onSave,
+  isEditing = false,
   isOpen: externalIsOpen,
   onOpenChange: externalOnOpenChange,
 }: {
-  bean?: Bean;
+  bean?: Partial<Bean>;
   onSave: (data: Omit<Bean, 'id'>) => void;
+  isEditing?: boolean;
   isOpen?: boolean;
   onOpenChange?: (isOpen: boolean) => void;
 }) {
@@ -255,11 +281,23 @@ function BeanFormDialog({
   const [description, setDescription] = useState(bean?.description || '');
   const [imageUrl, setImageUrl] = useState(bean?.imageUrl || '');
   const [imageHint, setImageHint] = useState(bean?.imageHint || '');
+  
+  useEffect(() => {
+    if (isOpen) {
+      setName(bean?.name || '');
+      setOrigin(bean?.origin || '');
+      setType(bean?.type || '');
+      setFlavor(bean?.flavor || '');
+      setDescription(bean?.description || '');
+      setImageUrl(bean?.imageUrl || '');
+      setImageHint(bean?.imageHint || '');
+    }
+  }, [bean, isOpen]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave({ name, origin, type, flavor, description, imageUrl, imageHint });
-    if (!bean) { // Reset form only for "add new"
+    if (!isEditing) { // Reset form only for "add new" (including duplicate)
         setName('');
         setOrigin('');
         setType('');
@@ -271,8 +309,10 @@ function BeanFormDialog({
     onOpenChange(false);
   };
 
-  const trigger = bean ? null : (
-    <Button>
+  const dialogTitle = isEditing ? 'Edit Biji Kopi' : 'Tambah Biji Kopi Baru';
+
+  const trigger = isEditing ? null : (
+    <Button onClick={() => onOpenChange(true)}>
       <PlusCircle className="mr-2 h-4 w-4" /> Tambah Biji Kopi
     </Button>
   );
@@ -282,7 +322,7 @@ function BeanFormDialog({
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
       <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
-          <DialogTitle>{bean ? 'Edit Biji Kopi' : 'Tambah Biji Kopi Baru'}</DialogTitle>
+          <DialogTitle>{dialogTitle}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4 max-h-[70vh] overflow-y-auto pr-4">
