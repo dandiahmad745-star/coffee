@@ -31,6 +31,8 @@ import {
 import { Upload, Download, Trash2, Edit, PlusCircle, FileImage, Copy } from 'lucide-react';
 import initialData from '@/data/barista-tools.json';
 import Image from 'next/image';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 type Tool = {
   id: string;
@@ -43,6 +45,8 @@ type Tool = {
 const LOCAL_STORAGE_KEY = 'barista-tools';
 
 export default function AdminToolsPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const [tools, setTools] = useState<Tool[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
@@ -55,20 +59,28 @@ export default function AdminToolsPage() {
 
   useEffect(() => {
     setIsMounted(true);
-    try {
-      const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (storedData) {
-        setTools(JSON.parse(storedData));
-      } else {
-        setTools(initialData.tools);
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initialData.tools));
-      }
-    } catch (error) {
-      console.error("Failed to process localStorage", error);
-      setTools(initialData.tools);
+    if (!loading && (!user || user.role !== 'admin')) {
+      router.push('/login');
     }
-    setIsLoading(false);
-  }, []);
+  }, [user, loading, router]);
+
+  useEffect(() => {
+    if(isMounted){
+      try {
+        const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (storedData) {
+          setTools(JSON.parse(storedData));
+        } else {
+          setTools(initialData.tools);
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initialData.tools));
+        }
+      } catch (error) {
+        console.error("Failed to process localStorage", error);
+        setTools(initialData.tools);
+      }
+      setIsLoading(false);
+    }
+  }, [isMounted]);
 
   useEffect(() => {
     if (!isLoading && isMounted) {
@@ -144,7 +156,17 @@ export default function AdminToolsPage() {
     }
   };
 
-  if (!isMounted) return null;
+  if (!isMounted || loading || !user || user.role !== 'admin') {
+    return (
+      <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
+        <Header />
+        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Mengarahkan...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">

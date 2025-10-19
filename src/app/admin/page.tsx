@@ -5,8 +5,33 @@ import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Wrench, Settings, Coffee, BookOpen, FileText, Users, Award } from 'lucide-react';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function AdminDashboardPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && (!user || user.role !== 'admin')) {
+      router.push('/login');
+    }
+  }, [user, loading, router]);
+  
+  if (loading || !user || user.role !== 'admin') {
+    return (
+       <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
+        <Header />
+        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Mengarahkan...</h1>
+        </main>
+        <Footer />
+       </div>
+    )
+  }
+
+
   return (
     <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
       <Header />
@@ -18,7 +43,7 @@ export default function AdminDashboardPage() {
                   Dasbor Admin
                 </h1>
                 <p className="mt-2 text-lg text-muted-foreground">
-                  Selamat datang di pusat pengelolaan Coffe Learning.
+                  Selamat datang di pusat pengelolaan Coffe Learning, {user.name}.
                 </p>
             </div>
 

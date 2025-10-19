@@ -31,6 +31,8 @@ import {
 import { Upload, Download, Trash2, Edit, PlusCircle, FileImage, Copy } from 'lucide-react';
 import initialData from '@/data/techniques.json';
 import Image from 'next/image';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 type Technique = {
   id: string;
@@ -43,6 +45,8 @@ type Technique = {
 const LOCAL_STORAGE_KEY = 'brewing-techniques';
 
 export default function AdminTechniquesPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const [techniques, setTechniques] = useState<Technique[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
@@ -55,20 +59,28 @@ export default function AdminTechniquesPage() {
 
   useEffect(() => {
     setIsMounted(true);
-    try {
-      const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (storedData) {
-        setTechniques(JSON.parse(storedData));
-      } else {
-        setTechniques(initialData.techniques);
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initialData.techniques));
-      }
-    } catch (error) {
-      console.error("Failed to process localStorage", error);
-      setTechniques(initialData.techniques);
+    if (!loading && (!user || user.role !== 'admin')) {
+      router.push('/login');
     }
-    setIsLoading(false);
-  }, []);
+  }, [user, loading, router]);
+
+  useEffect(() => {
+    if(isMounted) {
+      try {
+        const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (storedData) {
+          setTechniques(JSON.parse(storedData));
+        } else {
+          setTechniques(initialData.techniques);
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initialData.techniques));
+        }
+      } catch (error) {
+        console.error("Failed to process localStorage", error);
+        setTechniques(initialData.techniques);
+      }
+      setIsLoading(false);
+    }
+  }, [isMounted]);
 
   useEffect(() => {
     if (!isLoading && isMounted) {
@@ -144,7 +156,17 @@ export default function AdminTechniquesPage() {
     }
   };
 
-  if (!isMounted) return null;
+  if (!isMounted || loading || !user || user.role !== 'admin') {
+    return (
+      <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
+        <Header />
+        <main className="flex-grow pt-24 sm:pt-32 flex items-center justify-center">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Mengarahkan...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">

@@ -13,27 +13,27 @@ import { useToast } from '@/hooks/use-toast';
 import { Mail, Lock, User as UserIcon } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
-// This is a simplified in-memory "hash" function for simulation.
-// In a real app, NEVER store plain passwords. This would be handled by a secure backend.
-const simpleHash = (s: string) => `hashed_${s}_secret`;
-
 export default function LoginPage() {
-  const { user, login } = useAuth();
+  const { user, loading } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('login');
   
   useEffect(() => {
-    if (user) {
+    if (!loading && user) {
       router.push('/kursus');
     }
-  }, [user, router]);
+  }, [user, loading, router]);
   
-  if (user) {
-    return null; // Render nothing while redirecting
-  }
-
-  const handleAuthSuccess = (userData: any) => {
-    login(userData);
+  if (loading || user) {
+    return (
+       <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
+        <Header />
+        <main className="flex-grow flex items-center justify-center">
+          <p>Memuat...</p>
+        </main>
+        <Footer />
+       </div>
+    );
   }
 
   return (
@@ -52,7 +52,7 @@ export default function LoginPage() {
                         <CardDescription>Masuk untuk mengakses kurikulum dan progres belajar Anda.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                       <AuthForm isRegister={false} onAuthSuccess={handleAuthSuccess} />
+                       <AuthForm isRegister={false} onLoginSuccess={() => router.push('/kursus')} />
                     </CardContent>
                 </Card>
             </TabsContent>
@@ -63,13 +63,7 @@ export default function LoginPage() {
                         <CardDescription>Daftar sekarang untuk memulai petualangan kopi Anda.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <AuthForm isRegister={true} onAuthSuccess={() => {
-                            toast({
-                                title: "Pendaftaran Berhasil!",
-                                description: "Silakan login dengan akun baru Anda.",
-                            });
-                            setActiveTab('login');
-                        }} />
+                        <AuthForm isRegister={true} onRegisterSuccess={() => setActiveTab('login')} />
                     </CardContent>
                 </Card>
             </TabsContent>
@@ -81,7 +75,16 @@ export default function LoginPage() {
 }
 
 
-function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSuccess: (user?: any) => void }) {
+function AuthForm({ 
+    isRegister, 
+    onRegisterSuccess, 
+    onLoginSuccess 
+}: { 
+    isRegister: boolean, 
+    onRegisterSuccess?: () => void,
+    onLoginSuccess?: () => void
+}) {
+  const { login, register } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -101,53 +104,20 @@ function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSu
     
     setIsLoading(true);
 
-    // Simulate async operation
-    await new Promise(resolve => setTimeout(resolve, 500));
-
     try {
-      const usersStore = localStorage.getItem('coffe-learning-users');
-      const users = usersStore ? JSON.parse(usersStore) : [];
-
       if (isRegister) {
-        const existingUser = users.find((u: any) => u.email === email);
-        if (existingUser) {
-            throw new Error('Pengguna dengan email ini sudah terdaftar.');
-        }
-
-        const newUser = {
-            id: `user-${Date.now()}`,
-            name,
-            email,
-            hashedPassword: simpleHash(password),
-            role: 'user',
-        };
-        users.push(newUser);
-        localStorage.setItem('coffe-learning-users', JSON.stringify(users));
-        onAuthSuccess();
-      } else {
-        const userData = users.find((u: any) => u.email === email);
-        if (!userData || userData.hashedPassword !== simpleHash(password)) {
-            throw new Error('Email atau password salah.');
-        }
-
-        const userToLogin = {
-            id: userData.id,
-            name: userData.name,
-            email: userData.email,
-            role: userData.role,
-        };
+        await register({ name, email, password });
         toast({
-            title: "Login Berhasil!",
-            description: `Selamat datang kembali, ${userToLogin.name}!`,
+            title: "Pendaftaran Berhasil!",
+            description: "Silakan login dengan akun baru Anda.",
         });
-        onAuthSuccess(userToLogin);
+        onRegisterSuccess?.();
+      } else {
+        await login({ email, password });
+        onLoginSuccess?.();
       }
-    } catch (error: any) {
-      toast({
-          variant: "destructive",
-          title: "Gagal",
-          description: error.message || "Terjadi kesalahan. Silakan coba lagi.",
-      });
+    } catch (error) {
+      // Error toast is handled inside the auth context hooks
     } finally {
       setIsLoading(false);
     }

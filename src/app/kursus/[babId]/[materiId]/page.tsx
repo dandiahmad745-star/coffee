@@ -55,7 +55,7 @@ export default function MaterialDetailPage() {
     if (chapterData) {
       const materialData = chapterData.materials.find(m => m.id === materiId) as Material | undefined;
       if(materialData) {
-        setChapter(chapterData);
+        setChapter(chapterData as Chapter);
         setMaterial(materialData);
       }
     }
@@ -110,7 +110,7 @@ export default function MaterialDetailPage() {
                 <h1 className="font-headline text-primary">{material.title}</h1>
                 <div
                     className="whitespace-pre-line"
-                    dangerouslySetInnerHTML={{ __html: material.content.replace(/\n\n/g, '<br/><br/>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
+                    dangerouslySetInnerHTML={{ __html: material.content.replace(/\\n\\n/g, '<br/><br/>').replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>') }}
                 />
             </article>
 

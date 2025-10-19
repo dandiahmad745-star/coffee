@@ -9,6 +9,9 @@ import { AuthProvider } from '@/context/AuthContext';
 export const metadata: Metadata = {
   title: 'Coffe Learning',
   description: 'Belajar tentang kopi dengan bantuan AI',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -24,13 +27,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <ThemeProvider>
-          <AuthProvider>
+        <AuthProvider>
+          <ThemeProvider>
             {children}
-          </AuthProvider>
-          <Toaster />
-          <ThemeSwitcher />
-        </ThemeProvider>
+            <Toaster />
+            <ThemeSwitcher />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
