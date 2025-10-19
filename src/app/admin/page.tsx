@@ -3,7 +3,7 @@
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Wrench, Settings, Coffee } from 'lucide-react';
+import { Wrench, Settings, Coffee, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AdminDashboardPage() {
@@ -23,24 +23,6 @@ export default function AdminDashboardPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Link href="/admin/tools" passHref>
-                    <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                        <CardHeader>
-                            <div className="flex items-center gap-4">
-                                <div className="p-3 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
-                                    <Wrench className="h-6 w-6 text-primary" />
-                                </div>
-                                <CardTitle className="!text-xl">Kelola Alat Barista</CardTitle>
-                            </div>
-                        </CardHeader>
-                        <CardContent>
-                            <CardDescription>
-                                Tambah, edit, atau hapus data alat barista yang ditampilkan di halaman publik.
-                            </CardDescription>
-                        </CardContent>
-                    </Card>
-                </Link>
-
                 <Link href="/admin/biji-kopi" passHref>
                     <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
                         <CardHeader>
@@ -54,6 +36,42 @@ export default function AdminDashboardPage() {
                         <CardContent>
                             <CardDescription>
                                 Tambah, edit, atau hapus data biji kopi yang ditampilkan di halaman publik.
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+
+                <Link href="/admin/teknik" passHref>
+                    <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                        <CardHeader>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
+                                    <BookOpen className="h-6 w-6 text-primary" />
+                                </div>
+                                <CardTitle className="!text-xl">Kelola Teknik Seduh</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Tambah, edit, atau hapus panduan teknik menyeduh kopi.
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </Link>
+
+                <Link href="/admin/tools" passHref>
+                    <Card className="h-full hover:border-primary/50 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                        <CardHeader>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
+                                    <Wrench className="h-6 w-6 text-primary" />
+                                </div>
+                                <CardTitle className="!text-xl">Kelola Alat Barista</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Tambah, edit, atau hapus data alat barista yang ditampilkan di halaman publik.
                             </CardDescription>
                         </CardContent>
                     </Card>

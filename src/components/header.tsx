@@ -35,13 +35,13 @@ export default function Header() {
           </Link>
           <nav className="hidden md:flex items-center gap-2">
             <Button variant="ghost" asChild>
-              <Link href="/#features" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Fitur</Link>
+                <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+                <Link href="/teknik" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Teknik</Link>
             </Button>
             <Button variant="ghost" asChild>
                 <Link href="/tools" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-                <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
             </Button>
           </nav>
         </div>

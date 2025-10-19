@@ -3,9 +3,8 @@
 import Header from '@/components/header';
 import Hero from '@/components/hero';
 import Footer from '@/components/footer';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Coffee, BookOpen, BrainCircuit, Wrench } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Coffee, BookOpen, Wrench } from 'lucide-react';
 import Link from 'next/link';
 
 const features = [
@@ -13,11 +12,13 @@ const features = [
     icon: <Coffee className="h-10 w-10 text-primary" />,
     title: 'Jelajahi Kopi',
     description: 'Temukan berbagai jenis biji kopi dari seluruh dunia, dari Arabika yang lembut hingga Robusta yang kuat.',
+    href: '/biji-kopi'
   },
   {
     icon: <BookOpen className="h-10 w-10 text-primary" />,
     title: 'Pelajari Teknik',
     description: 'Kuasai seni menyeduh kopi, mulai dari pour-over, espresso, hingga cold brew dengan panduan kami.',
+    href: '/teknik'
   },
 ];
 
@@ -40,25 +41,26 @@ export default function Home() {
             </div>
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {features.map((feature, index) => (
-                <Card
-                  key={index}
-                  className="bg-card/80 backdrop-blur-sm border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                >
-                  <CardHeader className="items-center text-center p-6">
-                    <div className="p-4 bg-muted rounded-full group-hover:bg-primary/10 transition-colors duration-300">
-                      {feature.icon}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="text-center p-6 pt-0">
-                     <CardTitle className="!text-2xl font-headline text-primary mb-2">
-                      {feature.title}
-                    </CardTitle>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
+                 <Link href={feature.href} passHref key={index}>
+                    <Card
+                      className="bg-card/80 backdrop-blur-sm border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group h-full cursor-pointer"
+                    >
+                      <CardHeader className="items-center text-center p-6">
+                        <div className="p-4 bg-muted rounded-full group-hover:bg-primary/10 transition-colors duration-300">
+                          {feature.icon}
+                        </div>
+                      </CardHeader>
+                      <CardContent className="text-center p-6 pt-0">
+                         <CardTitle className="!text-2xl font-headline text-primary mb-2">
+                          {feature.title}
+                        </CardTitle>
+                        <p className="text-muted-foreground">{feature.description}</p>
+                      </CardContent>
+                    </Card>
+                </Link>
               ))}
             </div>
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20 max-w-4xl mx-auto">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
                 <Link href="/tools" passHref>
                     <div className="bg-card border-border/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 h-full flex flex-col items-center text-center group cursor-pointer">
                          <div className="p-4 bg-muted rounded-full group-hover:bg-primary/10 transition-colors duration-300 mb-4">
@@ -80,7 +82,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>

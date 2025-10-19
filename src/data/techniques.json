@@ -1,0 +1,33 @@
+
+{
+  "techniques": [
+    {
+      "id": "pour-over",
+      "name": "Pour Over",
+      "description": "Metode seduh manual di mana air panas dituangkan secara perlahan ke atas bubuk kopi dalam sebuah dripper. Metode ini memberikan kontrol penuh atas variabel seperti suhu air, kecepatan tuang, dan waktu ekstraksi, menghasilkan kopi yang bersih, jernih, dan menonjolkan nuansa rasa (flavor notes) yang kompleks. Populer di kalangan pecinta kopi spesialti.",
+      "imageUrl": "https://images.unsplash.com/photo-1545665225-b23b99e4d45e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3VyJTIwb3ZlciUyMGNvZmZlZXxlbnwwfHx8fDE3MTY4ODg0NjB8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "pour over coffee"
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "description": "Metode membuat kopi pekat dengan memaksa sejumlah kecil air panas bertekanan tinggi melalui bubuk kopi yang sangat halus dan padat. Hasilnya adalah 'shot' kopi yang terkonsentrasi, kaya rasa, dan menjadi dasar untuk banyak minuman lain seperti latte, cappuccino, dan americano. Proses ini membutuhkan mesin espresso.",
+      "imageUrl": "https://images.unsplash.com/photo-1559305459-cb5f24f6b0d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMHNob3R8ZW58MHx8fHwxNzE2ODg4NDg5fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "espresso shot"
+    },
+    {
+      "id": "french-press",
+      "name": "French Press",
+      "description": "Metode seduh rendam (full immersion) di mana bubuk kopi direndam dalam air panas selama beberapa menit dalam sebuah bejana, kemudian ampasnya dipisahkan dengan menekan sebuah plunger. Metode ini menghasilkan kopi dengan body yang tebal, kaya, dan berminyak karena filter logamnya tidak menyaring minyak alami kopi.",
+      "imageUrl": "https://images.unsplash.com/photo-1590338279435-a6217e473e68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmcmVuY2glMjBwcmVzcyUyMGNvZmZlZXxlbnwwfHx8fDE3MTY4ODg1MTN8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "french press coffee"
+    },
+    {
+      "id": "cold-brew",
+      "name": "Cold Brew",
+      "description": "Berbeda dari es kopi biasa, cold brew dibuat dengan merendam bubuk kopi dalam air dingin atau suhu ruang untuk waktu yang lama (12-24 jam). Proses ekstraksi yang lambat dan tanpa panas ini menghasilkan konsentrat kopi dengan tingkat keasaman yang rendah, rasa yang lembut, dan sedikit rasa manis alami. Konsentrat ini kemudian diencerkan dengan air atau susu.",
+      "imageUrl": "https://images.unsplash.com/photo-1579888069322-c16790513998?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2xkJTIwYnJldyUyMGNvZmZlZXxlbnwwfHx8fDE3MTY4ODg1NDB8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "cold brew coffee"
+    }
+  ]
+}
