@@ -54,6 +54,7 @@ export default function CertificatePage() {
                         </Button>
                     </div>
 
+                    {/* Certificate Component */}
                     <div className="bg-white p-8 md:p-12 border-8 border-primary/80 rounded-lg shadow-2xl aspect-[4/3] flex flex-col relative overflow-hidden font-sans">
                         {/* Decorative elements */}
                         <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary/30 rounded-tl-lg"></div>
@@ -88,16 +89,16 @@ export default function CertificatePage() {
                             </p>
                         </div>
                         
-                        <div className="text-center mt-12 z-10">
-                            <div className="mt-12 flex justify-between items-end">
-                                <div className="text-left w-1/3">
+                        <div className="text-center mt-auto pt-12 z-10">
+                            <div className="flex justify-between items-end">
+                                <div className="text-center w-1/3">
                                      <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">Arul Faathir</p>
                                     <p className="text-sm text-muted-foreground pt-1">Founder, KopiStart</p>
                                 </div>
                                 <div className="text-center w-1/3">
                                     <Award className="h-16 w-16 text-primary/80 mx-auto" />
                                 </div>
-                                <div className="text-right w-1/3">
+                                <div className="text-center w-1/3">
                                     <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">{formattedDate}</p>
                                     <p className="text-sm text-muted-foreground pt-1">Tanggal Diterbitkan</p>
                                 </div>
