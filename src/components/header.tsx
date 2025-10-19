@@ -35,19 +35,19 @@ export default function Header() {
           </Link>
           <nav className="hidden md:flex items-center gap-2">
             <Button variant="ghost" asChild>
-              <Link href="/#features" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Fitur</Link>
+              <Link href="/#features" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Fitur</Link>
             </Button>
             <Button variant="ghost" asChild>
-                <Link href="/tools" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
+                <Link href="/tools" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
             </Button>
             <Button variant="ghost" asChild>
-                <Link href="/biji-kopi" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
+                <Link href="/biji-kopi" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
             </Button>
              <Button variant="ghost" asChild>
-                <Link href="/chat" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Chat AI</Link>
+                <Link href="/chat" className={cn("text-lg font-semibold", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Chat AI</Link>
             </Button>
           </nav>
-           <Button asChild className={cn("hidden md:inline-flex rounded-full shadow-lg", isScrolled ? "" : "bg-white/90 text-primary hover:bg-white")}>
+           <Button asChild className={cn("hidden md:inline-flex", isScrolled ? "" : "bg-white/90 text-primary hover:bg-white")}>
              <Link href="/chat">
                 Mulai Belajar
              </Link>

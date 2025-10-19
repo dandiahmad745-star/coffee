@@ -63,14 +63,14 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-             <div className="flex justify-center flex-wrap gap-4 text-center mt-20">
+             <div className="flex justify-center flex-wrap gap-6 text-center mt-20">
                 <Link href="/tools" passHref>
-                    <Button size="lg" variant="outline" className="rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <Button size="lg" variant="outline">
                         Kenali Alat Barista
                     </Button>
                 </Link>
                 <Link href="/biji-kopi" passHref>
-                    <Button size="lg" className="rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <Button size="lg">
                         Jelajahi Biji Kopi
                     </Button>
                 </Link>
@@ -87,7 +87,7 @@ export default function Home() {
                     Klik tombol di bawah ini untuk mulai berinteraksi dengan asisten kopi AI kami dan perluas wawasan Anda.
                 </p>
                 <Link href="/chat" passHref>
-                  <Button size="lg" className="mt-8 rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                  <Button size="lg" className="mt-8">
                       Tanya Ahli Kopi Sekarang
                   </Button>
                 </Link>
