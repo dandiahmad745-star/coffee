@@ -73,7 +73,7 @@ export default function BeansPage() {
               {beans.map((bean) => (
                 <Card
                   key={bean.id}
-                  className="bg-card/80 backdrop-blur-sm border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                  className="bg-card border-border/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col"
                 >
                   <CardHeader className="p-0">
                     <div className="relative h-56 w-full">
@@ -84,19 +84,19 @@ export default function BeansPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         data-ai-hint={bean.imageHint}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <CardTitle className="absolute bottom-0 left-0 p-6 !text-2xl font-headline text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                      <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                        <Badge variant="secondary" className="backdrop-blur-sm bg-white/20 text-white border-none">{bean.origin}</Badge>
+                        <Badge variant="outline" className="backdrop-blur-sm bg-black/20 text-white border-none">{bean.type}</Badge>
+                      </div>
+                      <CardTitle className="absolute bottom-0 left-0 p-6 !text-2xl font-headline text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
                         {bean.name}
                       </CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-6">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                        <Badge variant="secondary">{bean.origin}</Badge>
-                        <Badge variant="outline">{bean.type}</Badge>
-                    </div>
-                    <p className="text-muted-foreground mb-2"><strong className="text-foreground">Rasa:</strong> {bean.flavor}</p>
-                    <p className="text-muted-foreground">{bean.description}</p>
+                  <CardContent className="p-6 flex-grow flex flex-col">
+                     <p className="text-muted-foreground mb-4 italic"><strong className="text-foreground not-italic font-semibold">Profil Rasa:</strong> {bean.flavor}</p>
+                     <p className="text-muted-foreground flex-grow">{bean.description}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -1,3 +1,4 @@
+
 'use client';
 import { useState, useEffect } from 'react';
 import Header from '@/components/header';
@@ -65,14 +66,14 @@ export default function ToolsPage() {
                 Jelajahi berbagai alat yang digunakan oleh para barista profesional untuk menciptakan secangkir kopi yang sempurna.
               </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {tools.map((tool) => (
                 <Card
                   key={tool.id}
-                  className="bg-card/80 backdrop-blur-sm border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                  className="bg-card border-border/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col"
                 >
                   <CardHeader className="p-0">
-                    <div className="relative h-56 w-full">
+                    <div className="relative h-60 w-full">
                        <Image
                         src={tool.imageUrl || 'https://picsum.photos/seed/default/600/400'}
                         alt={tool.name}
@@ -80,13 +81,13 @@ export default function ToolsPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         data-ai-hint={tool.imageHint}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <CardTitle className="absolute bottom-0 left-0 p-6 !text-2xl font-headline text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                      <CardTitle className="absolute bottom-0 left-0 p-6 !text-2xl font-headline text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
                         {tool.name}
                       </CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 flex-grow">
                     <p className="text-muted-foreground">{tool.description}</p>
                   </CardContent>
                 </Card>

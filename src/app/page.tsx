@@ -47,17 +47,17 @@ export default function Home() {
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className="bg-card/80 backdrop-blur-sm border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="bg-card/80 backdrop-blur-sm border-border/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
-                  <CardHeader className="items-center text-center">
-                    <div className="p-4 bg-muted rounded-full">
+                  <CardHeader className="items-center text-center p-6">
+                    <div className="p-4 bg-muted rounded-full group-hover:bg-primary/10 transition-colors duration-300">
                       {feature.icon}
                     </div>
-                    <CardTitle className="mt-4 !text-2xl font-headline text-primary">
+                  </CardHeader>
+                  <CardContent className="text-center p-6 pt-0">
+                     <CardTitle className="!text-2xl font-headline text-primary mb-2">
                       {feature.title}
                     </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
                     <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
                 </Card>
