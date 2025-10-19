@@ -28,8 +28,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Upload, Download, Trash2, Edit, PlusCircle, Copy } from 'lucide-react';
+import { Upload, Download, Trash2, Edit, PlusCircle, Copy, FileImage } from 'lucide-react';
 import initialData from '@/data/coffee-beans.json';
+import Image from 'next/image';
 
 type Bean = {
   id: string;
@@ -281,6 +282,8 @@ function BeanFormDialog({
   const [description, setDescription] = useState(bean?.description || '');
   const [imageUrl, setImageUrl] = useState(bean?.imageUrl || '');
   const [imageHint, setImageHint] = useState(bean?.imageHint || '');
+
+  const imageUploadRef = useRef<HTMLInputElement>(null);
   
   useEffect(() => {
     if (isOpen) {
@@ -293,6 +296,17 @@ function BeanFormDialog({
       setImageHint(bean?.imageHint || '');
     }
   }, [bean, isOpen]);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageUrl(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -347,11 +361,28 @@ function BeanFormDialog({
               <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="imageUrl">URL Gambar</Label>
-              <Input id="imageUrl" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required placeholder="https://images.unsplash.com/..."/>
+              <Label>Gambar</Label>
+              <Input 
+                type="file" 
+                accept="image/*" 
+                ref={imageUploadRef} 
+                onChange={handleImageChange} 
+                className="hidden" 
+              />
+              <div className="flex items-center gap-4">
+                <Button type="button" variant="outline" onClick={() => imageUploadRef.current?.click()}>
+                  <FileImage className="mr-2 h-4 w-4" />
+                  Pilih Gambar
+                </Button>
+                {imageUrl && (
+                  <div className="relative w-20 h-20 rounded-md overflow-hidden border">
+                    <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" />
+                  </div>
+                )}
+              </div>
             </div>
              <div className="grid gap-2">
-              <Label htmlFor="imageHint">Petunjuk AI untuk Gambar</Label>
+              <Label htmlFor="imageHint">Petunjuk AI untuk Gambar (Opsional)</Label>
               <Input id="imageHint" value={imageHint} onChange={(e) => setImageHint(e.target.value)} placeholder="e.g. coffee beans" />
             </div>
           </div>
@@ -366,3 +397,5 @@ function BeanFormDialog({
     </Dialog>
   );
 }
+
+    
