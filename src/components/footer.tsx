@@ -19,7 +19,7 @@ export default function Footer() {
                     <Link href="/tools" className="hover:text-primary transition-colors">Alat</Link>
                 </div>
                  <p className="text-center text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} KopiStart. All rights reserved.
+                    © {new Date().getFullYear()} Arul Faathir Web Dev. All rights reserved.
                 </p>
             </div>
         </div>
