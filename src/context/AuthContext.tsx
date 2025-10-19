@@ -1,7 +1,6 @@
 'use client';
 
 import React, { createContext, useContext, ReactNode, useState, useEffect, useCallback } from 'react';
-import { SessionProvider, signIn, signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 
@@ -21,31 +20,22 @@ type AuthContextType = {
   loading: boolean;
   login: (credentials: Record<"email" | "password", string>) => Promise<void>;
   logout: () => void;
-  register: (credentials: Record<"name" | "email" | "password", string>) => Promise<any>;
+  register: (credentials: Record<"name" | "email" | "password", string>) => Promise<void>;
   userProgress: UserProgress | null;
   saveProgress: (progress: UserProgress) => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// This is a wrapper component that includes the SessionProvider
-export function AuthProvider({ children }: { children: ReactNode }) {
-  return (
-    <SessionProvider>
-      <AuthManager>{children}</AuthManager>
-    </SessionProvider>
-  );
-}
+const USERS_DB_KEY = 'coffee-learning-users';
+const SESSION_KEY = 'coffee-learning-session';
 
-// This component contains the actual logic and context provider
-function AuthManager({ children }: { children: ReactNode }) {
-  const { data: session, status } = useSession();
+export function AuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const { toast } = useToast();
-
   const [user, setUser] = useState<User | null>(null);
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
-  const loading = status === 'loading';
+  const [loading, setLoading] = useState(true);
 
   const loadUserProgress = useCallback((userId: string) => {
     try {
@@ -54,7 +44,9 @@ function AuthManager({ children }: { children: ReactNode }) {
       if (storedProgress) {
         setUserProgress(JSON.parse(storedProgress));
       } else {
-        setUserProgress({ completedMaterials: [] });
+        const initialProgress = { completedMaterials: [] };
+        setUserProgress(initialProgress);
+        localStorage.setItem(progressKey, JSON.stringify(initialProgress));
       }
     } catch (error) {
       console.error("Gagal memuat progres pengguna", error);
@@ -63,42 +55,52 @@ function AuthManager({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (status === 'authenticated' && session?.user) {
-      const currentUser = session.user as User;
-      setUser(currentUser);
-      loadUserProgress(currentUser.id);
-    } else {
-      setUser(null);
-      setUserProgress(null);
+    try {
+      const sessionUser = localStorage.getItem(SESSION_KEY);
+      if (sessionUser) {
+        const activeUser = JSON.parse(sessionUser);
+        setUser(activeUser);
+        loadUserProgress(activeUser.id);
+      }
+    } catch (error) {
+      console.error("Gagal memuat sesi", error);
+    } finally {
+      setLoading(false);
     }
-  }, [session, status, loadUserProgress]);
-
+  }, [loadUserProgress]);
+  
   const login = async (credentials: Record<"email" | "password", string>) => {
-    const result = await signIn('credentials', {
-      redirect: false,
-      email: credentials.email,
-      password: credentials.password,
-    });
+    try {
+      const usersStr = localStorage.getItem(USERS_DB_KEY);
+      const users = usersStr ? JSON.parse(usersStr) : [];
+      const foundUser = users.find(
+        (u: User) => u.email === credentials.email && u.password === credentials.password
+      );
 
-    if (result?.error) {
+      if (foundUser) {
+        const { password, ...userToSave } = foundUser;
+        localStorage.setItem(SESSION_KEY, JSON.stringify(userToSave));
+        setUser(userToSave);
+        loadUserProgress(userToSave.id);
+        toast({
+          title: "Login Berhasil!",
+          description: `Selamat datang kembali, ${userToSave.name}!`,
+        });
+      } else {
+        throw new Error("Email atau password salah.");
+      }
+    } catch (error: any) {
       toast({
         variant: "destructive",
         title: "Login Gagal",
-        description: result.error || "Email atau password salah.",
+        description: error.message || "Terjadi kesalahan.",
       });
-      throw new Error(result.error);
-    } else if (result?.ok) {
-       toast({
-        title: "Login Berhasil!",
-        description: `Selamat datang kembali!`,
-      });
-      router.push('/kursus');
-      router.refresh();
+      throw error;
     }
   };
 
-  const logout = async () => {
-    await signOut({ redirect: false });
+  const logout = () => {
+    localStorage.removeItem(SESSION_KEY);
     setUser(null);
     setUserProgress(null);
     toast({
@@ -106,34 +108,40 @@ function AuthManager({ children }: { children: ReactNode }) {
       description: "Anda telah keluar dari akun Anda.",
     });
     router.push('/login');
-    router.refresh();
   };
 
   const register = async (credentials: Record<"name" | "email" | "password", string>) => {
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
-      });
+      const usersStr = localStorage.getItem(USERS_DB_KEY);
+      const users = usersStr ? JSON.parse(usersStr) : [];
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.message || 'Terjadi kesalahan saat pendaftaran.');
+      const existingUser = users.find((u: User) => u.email === credentials.email);
+      if (existingUser) {
+        throw new Error("Email ini sudah terdaftar.");
       }
-      return data;
+      
+      const isFirstUserOrAdmin = users.length === 0 || credentials.email.includes('admin');
+      
+      const newUser = {
+        id: `user-${Date.now()}`,
+        name: credentials.name,
+        email: credentials.email,
+        password: credentials.password, // In a real app, this should be hashed!
+        role: isFirstUserOrAdmin ? 'admin' : 'user',
+      };
+
+      users.push(newUser);
+      localStorage.setItem(USERS_DB_KEY, JSON.stringify(users));
+
     } catch (error: any) {
-        toast({
-          variant: "destructive",
-          title: "Pendaftaran Gagal",
-          description: error.message,
-        });
-        throw error;
+      toast({
+        variant: "destructive",
+        title: "Pendaftaran Gagal",
+        description: error.message || "Terjadi kesalahan.",
+      });
+      throw error;
     }
-  }
+  };
 
   const saveProgress = (progress: UserProgress) => {
     if (!user) return;
@@ -145,14 +153,11 @@ function AuthManager({ children }: { children: ReactNode }) {
       console.error("Gagal menyimpan progres pengguna", error);
     }
   };
+  
+  const value = { user, loading, login, logout, register, userProgress, saveProgress };
 
-  return (
-    <AuthContext.Provider value={{ user, loading, login, logout, register, userProgress, saveProgress }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
-
 
 export function useAuth() {
   const context = useContext(AuthContext);
