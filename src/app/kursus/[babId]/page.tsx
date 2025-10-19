@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useEffect } from 'react';
 import { useParams, notFound, useRouter } from 'next/navigation';
@@ -19,7 +18,6 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Progress } from '@/components/ui/progress';
 import { useAuth } from '@/context/AuthContext';
-import useSWR from 'swr';
 
 
 type Material = {
@@ -34,15 +32,9 @@ type Chapter = {
   materials: Material[];
 };
 
-const progressFetcher = (key: string) => {
-    if (typeof window === 'undefined') return { completedMaterials: [] };
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : { completedMaterials: [] };
-};
 
 export default function ChapterDetailPage() {
-  const { user, loading: isUserLoading } = useAuth();
-  const { data: userProgress } = useSWR(user ? `progress-${user.id}` : null, progressFetcher);
+  const { user, loading: isUserLoading, userProgress } = useAuth();
   
   const router = useRouter();
   const params = useParams();

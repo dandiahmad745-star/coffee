@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useEffect } from 'react';
 import { useParams, notFound, useRouter } from 'next/navigation';
@@ -29,7 +28,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { useAuth } from '@/context/AuthContext';
-import useSWR from 'swr';
+
 
 type Question = {
   question: string;
@@ -51,19 +50,12 @@ type Chapter = {
 
 const PASSING_SCORE = 75;
 
-const progressFetcher = (key: string) => {
-    if (typeof window === 'undefined') return { completedMaterials: [] };
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : { completedMaterials: [] };
-};
 
 export default function QuizPage() {
-  const { user, loading: isUserLoading } = useAuth();
+  const { user, loading: isUserLoading, userProgress, saveProgress } = useAuth();
   const params = useParams();
   const router = useRouter();
   const { babId, materiId } = params as { babId: string; materiId: string };
-
-  const { data: userProgress, mutate: mutateProgress } = useSWR(user ? `progress-${user.id}`: null, progressFetcher);
 
   const [chapter, setChapter] = useState<Chapter | null>(null);
   const [material, setMaterial] = useState<Material | null>(null);
@@ -101,12 +93,6 @@ export default function QuizPage() {
     if (material && currentQuestionIndex < material.quiz.length - 1) {
         setCurrentQuestionIndex(prev => prev + 1);
     }
-  };
-
-  const saveProgress = (newProgress: { completedMaterials: string[] }) => {
-    if(!user) return;
-    localStorage.setItem(`progress-${user.id}`, JSON.stringify(newProgress));
-    mutateProgress(newProgress, false);
   };
 
   const handleSubmit = () => {

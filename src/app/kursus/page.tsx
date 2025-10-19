@@ -1,4 +1,3 @@
-
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -10,7 +9,7 @@ import { ArrowRight, BookCheck, Lock, Award } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
 import { useAuth } from '@/context/AuthContext';
-import useSWR from 'swr';
+
 
 type Chapter = {
   id: string;
@@ -19,17 +18,9 @@ type Chapter = {
   materials: { id: string; title: string }[];
 };
 
-const progressFetcher = (key: string | null) => {
-    if (typeof window === 'undefined' || !key) return { completedMaterials: [] };
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : { completedMaterials: [] };
-};
-
 
 export default function CoursePage() {
-  const { user, loading: isUserLoading } = useAuth();
-  const { data: userProgress } = useSWR(user ? `progress-${user.id}` : null, progressFetcher);
-  
+  const { user, loading: isUserLoading, userProgress } = useAuth();
   const router = useRouter();
   const [chapters] = useState<Chapter[]>(initialData.chapters);
   const [isMounted, setIsMounted] = useState(false);

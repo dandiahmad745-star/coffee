@@ -1,7 +1,6 @@
-
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -13,15 +12,24 @@ import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Lock, User as UserIcon } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
-import { loginUser, registerUser } from '@/app/actions';
+
+// This is a simplified in-memory "hash" function for simulation.
+// In a real app, NEVER store plain passwords. This would be handled by a secure backend.
+const simpleHash = (s: string) => `hashed_${s}_secret`;
 
 export default function LoginPage() {
   const { user, login } = useAuth();
   const router = useRouter();
+  const [activeTab, setActiveTab] = useState('login');
+  
+  useEffect(() => {
+    if (user) {
+      router.push('/kursus');
+    }
+  }, [user, router]);
   
   if (user) {
-    router.push('/kursus');
-    return null;
+    return null; // Render nothing while redirecting
   }
 
   const handleAuthSuccess = (userData: any) => {
@@ -32,7 +40,7 @@ export default function LoginPage() {
     <div className="flex flex-col min-h-screen bg-muted/20 text-foreground">
       <Header />
       <main className="flex-grow flex items-center justify-center pt-24 sm:pt-32 pb-12">
-        <Tabs defaultValue="login" className="w-full max-w-md mx-4">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-md mx-4">
             <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="login">Login</TabsTrigger>
                 <TabsTrigger value="register">Daftar</TabsTrigger>
@@ -56,8 +64,11 @@ export default function LoginPage() {
                     </CardHeader>
                     <CardContent>
                         <AuthForm isRegister={true} onAuthSuccess={() => {
-                            // After registration, user must login. We can switch tabs or reload.
-                             window.location.reload();
+                            toast({
+                                title: "Pendaftaran Berhasil!",
+                                description: "Silakan login dengan akun baru Anda.",
+                            });
+                            setActiveTab('login');
                         }} />
                     </CardContent>
                 </Card>
@@ -70,7 +81,7 @@ export default function LoginPage() {
 }
 
 
-function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSuccess: (user: any) => void }) {
+function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSuccess: (user?: any) => void }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -90,21 +101,46 @@ function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSu
     
     setIsLoading(true);
 
+    // Simulate async operation
+    await new Promise(resolve => setTimeout(resolve, 500));
+
     try {
+      const usersStore = localStorage.getItem('coffe-learning-users');
+      const users = usersStore ? JSON.parse(usersStore) : [];
+
       if (isRegister) {
-        const result = await registerUser(name, email, password);
-        toast({
-          title: "Pendaftaran Berhasil!",
-          description: result.message,
-        });
-        onAuthSuccess(null); // Reload page to switch to login tab
+        const existingUser = users.find((u: any) => u.email === email);
+        if (existingUser) {
+            throw new Error('Pengguna dengan email ini sudah terdaftar.');
+        }
+
+        const newUser = {
+            id: `user-${Date.now()}`,
+            name,
+            email,
+            hashedPassword: simpleHash(password),
+            role: 'user',
+        };
+        users.push(newUser);
+        localStorage.setItem('coffe-learning-users', JSON.stringify(users));
+        onAuthSuccess();
       } else {
-        const result = await loginUser(email, password);
+        const userData = users.find((u: any) => u.email === email);
+        if (!userData || userData.hashedPassword !== simpleHash(password)) {
+            throw new Error('Email atau password salah.');
+        }
+
+        const userToLogin = {
+            id: userData.id,
+            name: userData.name,
+            email: userData.email,
+            role: userData.role,
+        };
         toast({
             title: "Login Berhasil!",
-            description: result.message,
+            description: `Selamat datang kembali, ${userToLogin.name}!`,
         });
-        onAuthSuccess(result.user);
+        onAuthSuccess(userToLogin);
       }
     } catch (error: any) {
       toast({

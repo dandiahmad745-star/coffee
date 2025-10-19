@@ -1,7 +1,6 @@
-
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 
@@ -13,12 +12,18 @@ type User = {
   role: 'user' | 'admin';
 };
 
+// Define the shape of user progress
+type UserProgress = {
+  completedMaterials: string[];
+};
+
 type AuthContextType = {
   user: User | null;
   loading: boolean;
   login: (userData: User) => void;
   logout: () => void;
-  mutate: () => void; // Keep mutate for compatibility if needed elsewhere
+  userProgress: UserProgress | null;
+  saveProgress: (progress: UserProgress) => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -27,15 +32,33 @@ const USER_STORAGE_KEY = 'coffe-learning-user';
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { toast } = useToast();
+
+  const loadUserProgress = useCallback((userId: string) => {
+    try {
+      const progressKey = `progress-${userId}`;
+      const storedProgress = localStorage.getItem(progressKey);
+      if (storedProgress) {
+        setUserProgress(JSON.parse(storedProgress));
+      } else {
+        setUserProgress({ completedMaterials: [] }); // Default progress
+      }
+    } catch (error) {
+      console.error("Gagal memuat progres pengguna", error);
+      setUserProgress({ completedMaterials: [] });
+    }
+  }, []);
 
   useEffect(() => {
     try {
       const storedUser = localStorage.getItem(USER_STORAGE_KEY);
       if (storedUser) {
-        setUser(JSON.parse(storedUser));
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
+        loadUserProgress(parsedUser.id);
       }
     } catch (error) {
       console.error("Gagal memuat pengguna dari localStorage", error);
@@ -43,12 +66,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [loadUserProgress]);
 
   const login = (userData: User) => {
     try {
       localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(userData));
       setUser(userData);
+      loadUserProgress(userData.id); // Load progress on login
       router.push('/kursus');
     } catch (error) {
        console.error("Gagal menyimpan pengguna ke localStorage", error);
@@ -64,6 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       localStorage.removeItem(USER_STORAGE_KEY);
       setUser(null);
+      setUserProgress(null);
       toast({
         title: "Logout Berhasil",
         description: "Anda telah keluar dari akun Anda.",
@@ -79,26 +104,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // This function can be used to manually re-check localStorage if needed.
-  const mutate = () => {
-     setLoading(true);
-      try {
-        const storedUser = localStorage.getItem(USER_STORAGE_KEY);
-        if (storedUser) {
-          setUser(JSON.parse(storedUser));
-        } else {
-          setUser(null);
-        }
-      } catch (error) {
-        console.error("Gagal memuat ulang pengguna dari localStorage", error);
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
+  const saveProgress = (progress: UserProgress) => {
+    if (!user) return;
+    try {
+      const progressKey = `progress-${user.id}`;
+      localStorage.setItem(progressKey, JSON.stringify(progress));
+      setUserProgress(progress);
+    } catch (error) {
+      console.error("Gagal menyimpan progres pengguna", error);
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout, mutate }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, userProgress, saveProgress }}>
       {children}
     </AuthContext.Provider>
   );
