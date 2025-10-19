@@ -18,7 +18,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Progress } from '@/components/ui/progress';
-import { useUser } from '@/context/UserContext';
+import { useUser } from '@/firebase';
 
 type Material = {
   id: string;
@@ -39,7 +39,7 @@ type ProgressData = {
 }
 
 export default function ChapterDetailPage() {
-  const { user, isLoading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading } = useUser();
   const router = useRouter();
   const params = useParams();
   const babId = params.babId as string;
@@ -62,7 +62,7 @@ export default function ChapterDetailPage() {
 
     if (user) {
       try {
-        const progressKey = `${PROGRESS_KEY_PREFIX}${user.email}`;
+        const progressKey = `${PROGRESS_KEY_PREFIX}${user.uid}`;
         const savedProgress = localStorage.getItem(progressKey);
         if (savedProgress) {
           setProgress(JSON.parse(savedProgress));

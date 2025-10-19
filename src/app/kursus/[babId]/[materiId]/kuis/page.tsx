@@ -28,7 +28,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { useUser } from '@/context/UserContext';
+import { useUser } from '@/firebase';
 
 type Question = {
   question: string;
@@ -56,7 +56,7 @@ type ProgressData = {
 }
 
 export default function QuizPage() {
-  const { user, isLoading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading } = useUser();
   const params = useParams();
   const router = useRouter();
   const { babId, materiId } = params as { babId: string; materiId: string };
@@ -117,7 +117,7 @@ export default function QuizPage() {
 
     if (passed) {
       try {
-        const progressKey = `${PROGRESS_KEY_PREFIX}${user.email}`;
+        const progressKey = `${PROGRESS_KEY_PREFIX}${user.uid}`;
         const savedProgress = localStorage.getItem(progressKey);
         let progress: ProgressData = savedProgress ? JSON.parse(savedProgress) : { completedMaterials: [] };
         

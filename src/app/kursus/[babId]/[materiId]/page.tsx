@@ -16,7 +16,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { useUser } from '@/context/UserContext';
+import { useUser } from '@/firebase';
 
 type Material = {
   id: string;
@@ -31,7 +31,7 @@ type Chapter = {
 };
 
 export default function MaterialDetailPage() {
-  const { user, isLoading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading } = useUser();
   const router = useRouter();
   const params = useParams();
   const { babId, materiId } = params as { babId: string; materiId: string };

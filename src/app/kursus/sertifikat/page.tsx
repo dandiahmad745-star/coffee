@@ -9,10 +9,10 @@ import { Download, Award, Coffee, ArrowLeft } from 'lucide-react';
 import { format } from 'date-fns';
 import id from 'date-fns/locale/id';
 import Link from 'next/link';
-import { useUser } from '@/context/UserContext';
+import { useUser } from '@/firebase';
 
 export default function CertificatePage() {
-    const { user, isLoading: isUserLoading } = useUser();
+    const { user, loading: isUserLoading } = useUser();
     const router = useRouter();
     const [isMounted, setIsMounted] = useState(false);
     
@@ -41,7 +41,7 @@ export default function CertificatePage() {
     
     const today = new Date();
     const formattedDate = format(today, "d MMMM yyyy", { locale: id });
-    const userName = user?.name || "Sobat Coffe Learning";
+    const userName = user?.displayName || user?.email || "Sobat Coffe Learning";
 
     return (
         <div className="flex flex-col min-h-screen bg-muted/40 text-foreground print:bg-white">
@@ -59,9 +59,7 @@ export default function CertificatePage() {
                         </Button>
                     </div>
 
-                    {/* Certificate Component */}
                     <div className="bg-white p-8 md:p-12 border-8 border-primary/80 rounded-lg shadow-2xl aspect-[4/3] flex flex-col relative overflow-hidden font-sans">
-                        {/* Decorative elements */}
                         <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary/30 rounded-tl-lg"></div>
                         <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/30 rounded-br-lg"></div>
                          <Award className="absolute z-0 text-primary/5 h-2/3 w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />

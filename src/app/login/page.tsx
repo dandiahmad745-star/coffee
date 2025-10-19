@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, FormEvent, useEffect, ReactNode } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -10,9 +10,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { useUser } from '@/context/UserContext';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Lock, User as UserIcon } from 'lucide-react';
+import { useAuth, useUser } from '@/firebase';
+import { 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  updateProfile 
+} from 'firebase/auth';
 
 export default function LoginPage() {
   const { user } = useUser();
@@ -67,11 +72,12 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const { login } = useUser();
+  const [isLoading, setIsLoading] = useState(false);
+  const auth = useAuth();
   const router = useRouter();
   const { toast } = useToast();
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email || !password || (isRegister && !name)) {
         toast({
@@ -82,17 +88,52 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
         return;
     }
     
-    // For simulation, we'll create a user name from the email if it's not a registration form.
-    const userName = isRegister ? name : email.split('@')[0].replace(/[^a-zA-Z]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-    
-    login({ name: userName, email });
+    setIsLoading(true);
 
-    toast({
-        title: isRegister ? "Pendaftaran Berhasil!" : "Login Berhasil!",
-        description: `Selamat datang, ${userName}!`,
-    });
-
-    router.push('/kursus');
+    try {
+      if (isRegister) {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await updateProfile(userCredential.user, { displayName: name });
+        toast({
+          title: "Pendaftaran Berhasil!",
+          description: `Selamat datang, ${name}!`,
+        });
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+        toast({
+            title: "Login Berhasil!",
+            description: `Selamat datang kembali!`,
+        });
+      }
+      router.push('/kursus');
+    } catch (error: any) {
+      console.error(error);
+      let description = "Terjadi kesalahan. Silakan coba lagi.";
+      if (error.code) {
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            description = "Email ini sudah terdaftar. Silakan login.";
+            break;
+          case 'auth/user-invalid-credential':
+          case 'auth/wrong-password':
+          case 'auth/user-not-found':
+            description = "Email atau password salah.";
+            break;
+          case 'auth/weak-password':
+            description = "Password terlalu lemah. Gunakan minimal 6 karakter.";
+            break;
+          default:
+            description = error.message;
+        }
+      }
+      toast({
+          variant: "destructive",
+          title: "Gagal",
+          description: description,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -110,6 +151,7 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
                     onChange={(e) => setName(e.target.value)}
                     required
                     className="pl-10"
+                    disabled={isLoading}
                   />
                 </div>
               </div>
@@ -126,6 +168,7 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="pl-10"
+            disabled={isLoading}
             />
         </div>
         </div>
@@ -141,15 +184,13 @@ function AuthForm({ isRegister }: { isRegister: boolean }) {
             onChange={(e) => setPassword(e.target.value)}
             required
             className="pl-10"
+            disabled={isLoading}
             />
         </div>
         </div>
-        <Button type="submit" className="w-full" size="lg">
-        {isRegister ? 'Daftar' : 'Login'}
+        <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
+          {isLoading ? 'Memproses...' : (isRegister ? 'Daftar' : 'Login')}
         </Button>
-        <p className="text-center text-sm text-muted-foreground pt-4">
-        Ini adalah halaman simulasi. Anda dapat memasukkan data apa saja untuk melanjutkan.
-        </p>
     </form>
   )
 }

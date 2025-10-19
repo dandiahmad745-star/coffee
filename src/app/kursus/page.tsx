@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, BookCheck, Lock, Award } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
-import { useUser } from '@/context/UserContext';
+import { useUser } from '@/firebase';
 
 type Chapter = {
   id: string;
@@ -21,7 +21,7 @@ type Chapter = {
 const PROGRESS_KEY_PREFIX = 'kopiStartProgress_';
 
 export default function CoursePage() {
-  const { user, isLoading: isUserLoading } = useUser();
+  const { user, loading: isUserLoading } = useUser();
   const router = useRouter();
   const [chapters] = useState<Chapter[]>(initialData.chapters);
   const [progress, setProgress] = useState<{ completedMaterials: string[] }>({ completedMaterials: [] });
@@ -37,7 +37,7 @@ export default function CoursePage() {
   useEffect(() => {
     if (user) {
       try {
-        const progressKey = `${PROGRESS_KEY_PREFIX}${user.email}`;
+        const progressKey = `${PROGRESS_KEY_PREFIX}${user.uid}`;
         const savedProgress = localStorage.getItem(progressKey);
         if (savedProgress) {
           setProgress(JSON.parse(savedProgress));
@@ -85,7 +85,7 @@ export default function CoursePage() {
                 Kurikulum Coffe Learning
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">
-                Selamat datang, {user.name}! Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan.
+                Selamat datang, {user.displayName || user.email}! Panduan belajar terstruktur untuk membawa Anda dari pemula menjadi pencinta kopi yang berpengetahuan.
               </p>
             </div>
 

@@ -1,9 +1,10 @@
+
 import type { Metadata } from 'next';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
-import { UserProvider } from '@/context/UserContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
   title: 'Coffe Learning',
@@ -24,9 +25,9 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <ThemeProvider>
-          <UserProvider>
+          <FirebaseClientProvider>
             {children}
-          </UserProvider>
+          </FirebaseClientProvider>
           <Toaster />
           <ThemeSwitcher />
         </ThemeProvider>
