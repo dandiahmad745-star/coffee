@@ -80,9 +80,11 @@ export default function Home() {
                 <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                     Klik tombol di bawah ini untuk mulai berinteraksi dengan asisten kopi AI kami dan perluas wawasan Anda.
                 </p>
-                <Button size="lg" className="mt-8 rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
-                    Tanya Ahli Kopi Sekarang
-                </Button>
+                <Link href="/chat" passHref>
+                  <Button size="lg" className="mt-8 rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                      Tanya Ahli Kopi Sekarang
+                  </Button>
+                </Link>
             </div>
         </section>
       </main>
