@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Coffee } from "lucide-react";
 
@@ -15,6 +16,7 @@ export default function Footer() {
                 <div className="flex gap-6 text-muted-foreground mb-6 md:mb-0">
                     <Link href="/#features" className="hover:text-primary transition-colors">Fitur</Link>
                     <Link href="/tools" className="hover:text-primary transition-colors">Alat</Link>
+                    <Link href="/biji-kopi" className="hover:text-primary transition-colors">Biji Kopi</Link>
                 </div>
                  <p className="text-center text-sm text-muted-foreground">
                     © {new Date().getFullYear()} KopiStart. Dibuat oleh MOHAMMAD ARUL FAATHIR ERVANSYAH.

@@ -1,0 +1,35 @@
+
+{
+  "beans": [
+    {
+      "id": "arabica-gayo",
+      "name": "Arabika Gayo",
+      "origin": "Aceh, Indonesia",
+      "type": "Arabika",
+      "flavor": "Kompleks, dengan sentuhan buah, rempah, dan earthy.",
+      "description": "Kopi Gayo adalah salah satu kopi paling terkenal dari Indonesia, tumbuh di dataran tinggi Gayo, Aceh. Dikenal karena body yang penuh dan keasaman yang seimbang, memberikan pengalaman rasa yang kaya.",
+      "imageUrl": "https://images.unsplash.com/photo-1599380812220-338a1f736239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3MTY0MDY0OTd8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "roasted coffee beans"
+    },
+    {
+      "id": "robusta-lampung",
+      "name": "Robusta Lampung",
+      "origin": "Lampung, Indonesia",
+      "type": "Robusta",
+      "flavor": "Pahit yang kuat, cokelat hitam, dan sedikit rasa karet.",
+      "description": "Kopi Robusta dari Lampung terkenal dengan karakter rasanya yang kuat dan kandungan kafein yang tinggi. Sering digunakan sebagai dasar untuk espresso blend untuk menghasilkan crema yang tebal.",
+      "imageUrl": "https://images.unsplash.com/photo-1552346987-2a07c8a65545?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3MTY0MDY0OTd8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "dark coffee beans"
+    },
+    {
+      "id": "ethiopian-yirgacheffe",
+      "name": "Ethiopian Yirgacheffe",
+      "origin": "Yirgacheffe, Ethiopia",
+      "type": "Arabika (Heirloom)",
+      "flavor": "Bunga (floral), sitrus (lemon), dan teh.",
+      "description": "Dianggap sebagai tempat kelahiran kopi, Ethiopia menghasilkan biji kopi dengan profil rasa yang sangat cerah dan kompleks. Yirgacheffe secara khusus dikenal karena aroma bunganya yang lembut dan rasa seperti teh.",
+      "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBjdXB8ZW58MHx8fHwxNzE2NDA2NTg4fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "cup of coffee"
+    }
+  ]
+}

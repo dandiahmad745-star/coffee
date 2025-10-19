@@ -1,3 +1,4 @@
+
 'use client';
 import Header from '@/components/header';
 import Hero from '@/components/hero';
@@ -62,10 +63,15 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-             <div className="text-center mt-20">
+             <div className="flex justify-center flex-wrap gap-4 text-center mt-20">
                 <Link href="/tools" passHref>
+                    <Button size="lg" variant="outline" className="rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                        Kenali Alat Barista
+                    </Button>
+                </Link>
+                <Link href="/biji-kopi" passHref>
                     <Button size="lg" className="rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
-                        Kenali Alat-alat Barista
+                        Jelajahi Biji Kopi
                     </Button>
                 </Link>
             </div>

@@ -1,3 +1,4 @@
+
 import { Coffee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
@@ -38,6 +39,9 @@ export default function Header() {
             </Button>
             <Button variant="ghost" asChild>
                 <Link href="/tools" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Alat</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+                <Link href="/biji-kopi" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Biji Kopi</Link>
             </Button>
              <Button variant="ghost" asChild>
                 <Link href="/chat" className={cn("text-lg", isScrolled ? "text-foreground" : "text-white hover:bg-white/10")}>Chat AI</Link>
