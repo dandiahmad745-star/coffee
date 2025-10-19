@@ -1,11 +1,11 @@
 
-import { Coffee, FileText } from 'lucide-react';
+import { Coffee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-export default function Header() {
+export default function Header({ className }: { className?: string }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -13,6 +13,7 @@ export default function Header() {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // set initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -22,7 +23,8 @@ export default function Header() {
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
           ? 'bg-background/80 backdrop-blur-lg shadow-md'
-          : 'bg-transparent'
+          : 'bg-transparent',
+        className
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

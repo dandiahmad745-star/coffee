@@ -5,7 +5,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BookCheck, Lock } from 'lucide-react';
+import { ArrowRight, BookCheck, Lock, Award } from 'lucide-react';
 import Link from 'next/link';
 import initialData from '@/data/course-structure.json';
 
@@ -16,14 +16,51 @@ type Chapter = {
   materials: { id: string; title: string }[];
 };
 
+const PROGRESS_KEY = 'kopiStartProgress';
+
+type Progress = {
+    completedMaterials: string[];
+}
+
 export default function CoursePage() {
-  const [chapters, setChapters] = useState<Chapter[]>([]);
+  const [chapters] = useState<Chapter[]>(initialData.chapters);
+  const [progress, setProgress] = useState<Progress>({ completedMaterials: [] });
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // In a real app, you'd fetch user progress.
-    // For now, we'll just load the structure.
-    setChapters(initialData.chapters);
+    setIsMounted(true);
+    try {
+      const savedProgress = localStorage.getItem(PROGRESS_KEY);
+      if (savedProgress) {
+        setProgress(JSON.parse(savedProgress));
+      }
+    } catch (error) {
+      console.error("Failed to load progress from localStorage", error);
+    }
   }, []);
+  
+  const allMaterialsCount = chapters.reduce((acc, chapter) => acc + chapter.materials.length, 0);
+  const isCourseCompleted = progress.completedMaterials.length >= allMaterialsCount;
+
+  const getCompletedMaterialsInChapter = (chapterId: string) => {
+    const chapter = chapters.find(c => c.id === chapterId);
+    if (!chapter) return [];
+    return chapter.materials.filter(m => progress.completedMaterials.includes(m.id));
+  };
+  
+  if (!isMounted) {
+     return (
+       <div className="flex flex-col min-h-screen bg-background text-foreground">
+        <Header />
+        <main className="flex-grow pt-24 sm:pt-32">
+            <div className="container mx-auto px-4 text-center">
+                <h1 className="font-headline text-4xl md:text-6xl font-bold text-primary">Memuat Kurikulum...</h1>
+            </div>
+        </main>
+        <Footer />
+       </div>
+    )
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -42,8 +79,14 @@ export default function CoursePage() {
 
             <div className="mt-16 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
               {chapters.map((chapter, index) => {
-                const isLocked = index > 0; // For now, lock all but the first chapter
-                const isCompleted = false; // Placeholder for progress
+                const prevChapter = chapters[index - 1];
+                const isPrevChapterCompleted = prevChapter 
+                    ? getCompletedMaterialsInChapter(prevChapter.id).length === prevChapter.materials.length
+                    : true;
+                
+                const isLocked = index > 0 && !isPrevChapterCompleted;
+                const completedMaterialsCount = getCompletedMaterialsInChapter(chapter.id).length;
+                const isChapterCompleted = completedMaterialsCount === chapter.materials.length;
 
                 return (
                   <Card
@@ -67,7 +110,7 @@ export default function CoursePage() {
                         <div className="p-3 bg-muted rounded-lg">
                           {isLocked ? (
                             <Lock className="h-6 w-6 text-muted-foreground" />
-                          ) : isCompleted ? (
+                          ) : isChapterCompleted ? (
                             <BookCheck className="h-6 w-6 text-green-500" />
                           ) : (
                             <ArrowRight className="h-6 w-6 text-primary" />
@@ -85,7 +128,7 @@ export default function CoursePage() {
                         ) : (
                            <Link href={`/kursus/${chapter.id}`} passHref>
                             <Button>
-                                {isCompleted ? 'Ulas Bab' : 'Mulai Bab'} <ArrowRight className="ml-2 h-4 w-4" />
+                                {isChapterCompleted ? 'Ulas Bab' : 'Mulai Bab'} <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                            </Link>
                         )}
@@ -100,10 +143,19 @@ export default function CoursePage() {
                 <p className="mt-2 text-muted-foreground">
                     Selesaikan semua bab dan kuis dengan nilai memuaskan untuk membuka dan mengunduh sertifikat pencapaian Anda sebagai tanda keahlian kopi Anda.
                 </p>
-                <Button disabled className="mt-4">
-                    <Lock className="mr-2 h-4 w-4"/>
-                    Sertifikat Terkunci
-                </Button>
+                {isCourseCompleted ? (
+                     <Link href="/kursus/sertifikat" passHref>
+                        <Button className="mt-4">
+                            <Award className="mr-2 h-4 w-4"/>
+                            Lihat Sertifikat Anda
+                        </Button>
+                     </Link>
+                ) : (
+                    <Button disabled className="mt-4">
+                        <Lock className="mr-2 h-4 w-4"/>
+                        Sertifikat Terkunci
+                    </Button>
+                )}
              </div>
           </div>
         </section>

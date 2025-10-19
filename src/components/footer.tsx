@@ -1,10 +1,11 @@
 
 import Link from "next/link";
 import { Coffee } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
     return (
-      <footer className="bg-card py-12 border-t border-border/20">
+      <footer className={cn("bg-card py-12 border-t border-border/20", className)}>
         <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center gap-3 mb-6 md:mb-0">

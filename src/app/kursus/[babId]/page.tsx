@@ -17,6 +17,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { Progress } from '@/components/ui/progress';
 
 type Material = {
   id: string;
@@ -32,7 +33,7 @@ type Chapter = {
 
 const PROGRESS_KEY = 'kopiStartProgress';
 
-type Progress = {
+type ProgressData = {
     completedMaterials: string[];
 }
 
@@ -41,7 +42,7 @@ export default function ChapterDetailPage() {
   const router = useRouter();
   const babId = params.babId as string;
   const [chapter, setChapter] = useState<Chapter | null>(null);
-  const [progress, setProgress] = useState<Progress>({ completedMaterials: [] });
+  const [progress, setProgress] = useState<ProgressData>({ completedMaterials: [] });
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -128,9 +129,7 @@ export default function ChapterDetailPage() {
                             <span className="text-base font-medium text-primary">Progress Bab</span>
                             <span className="text-sm font-medium text-primary">{completedCount} / {totalMaterials} Selesai</span>
                         </div>
-                        <div className="w-full bg-muted rounded-full h-2.5">
-                            <div className="bg-primary h-2.5 rounded-full" style={{width: `${chapterProgress}%`}}></div>
-                        </div>
+                        <Progress value={chapterProgress} className="h-2.5" />
                     </div>
                 </div>
 
@@ -145,7 +144,7 @@ export default function ChapterDetailPage() {
                             <Card 
                                 key={material.id} 
                                 onClick={() => handleMaterialClick(material.id, isLocked)}
-                                className={`flex items-center p-6 transition-all duration-200 ${isLocked ? 'bg-muted/60 cursor-not-allowed' : 'bg-card hover:border-primary/50 hover:shadow-lg cursor-pointer'}`}
+                                className={`flex items-center p-6 transition-all duration-200 group ${isLocked ? 'bg-muted/60 cursor-not-allowed' : 'bg-card hover:border-primary/50 hover:shadow-lg cursor-pointer'}`}
                             >
                                 <div className="mr-6">
                                     {isLocked ? (
