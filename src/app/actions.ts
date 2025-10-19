@@ -2,36 +2,17 @@
 'use server';
 
 import { getStore } from '@netlify/blobs';
-import { getIronSession } from 'iron-session';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
-import { SignJWT, jwtVerify } from 'jose';
-import { sessionOptions, type SessionData } from '@/lib/session';
 
-// We use a constant secret key. In a real-world scenario, 
-// this should come from a secure environment variable.
-const secretKey = new TextEncoder().encode(process.env.SECRET_COOKIE_PASSWORD);
-
+// Simple in-memory password hashing for simulation.
+// In a real app, this would be a proper hashing library like bcrypt or argon2.
 async function hashPassword(password: string) {
-  // We're using a JWT with a short expiration as a "hash".
-  // The password is in the claims, and the signature is the "hash".
-  return await new SignJWT({ password })
-    .setProtectedHeader({ alg: 'HS256' })
-    .setIssuedAt()
-    .setExpirationTime('1s') // A very short-lived token, we only need the signature
-    .sign(secretKey);
+  // This is NOT a secure hash. For demonstration purposes only.
+  return `hashed_${password}`;
 }
 
 async function verifyPassword(hashedPassword: string, password: string): Promise<boolean> {
-  try {
-    const { payload } = await jwtVerify(hashedPassword, secretKey, {
-      algorithms: ['HS256'],
-    });
-    return payload.password === password;
-  } catch (e) {
-    // This can happen if the token is malformed or the signature is invalid.
-    return false;
-  }
+  // This is NOT a secure verification. For demonstration purposes only.
+  return hashedPassword === `hashed_${password}`;
 }
 
 export async function registerUser(name: string, email: string, password: string) {
@@ -69,26 +50,16 @@ export async function loginUser(email: string, password: string) {
     if (!passwordMatch) {
         throw new Error('Email atau password salah.');
     }
-
-    const session = await getIronSession<SessionData>(cookies(), sessionOptions);
-    session.user = {
-        id: userData.id,
-        name: userData.name,
-        email: userData.email,
-        role: userData.role,
-    };
-    await session.save();
     
-    return { success: true, message: 'Login berhasil!' };
-}
-
-export async function logout() {
-  const session = await getIronSession<SessionData>(cookies(), sessionOptions);
-  session.destroy();
-  redirect('/login');
-}
-
-export async function getSession() {
-  const session = await getIronSession<SessionData>(cookies(), sessionOptions);
-  return session;
+    // Instead of creating a server session, we'll return user data to be stored in localStorage by the client.
+    return { 
+        success: true, 
+        message: 'Login berhasil!',
+        user: {
+            id: userData.id,
+            name: userData.name,
+            email: userData.email,
+            role: userData.role,
+        }
+    };
 }

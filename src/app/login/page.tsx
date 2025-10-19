@@ -16,7 +16,7 @@ import { useAuth } from '@/context/AuthContext';
 import { loginUser, registerUser } from '@/app/actions';
 
 export default function LoginPage() {
-  const { user, mutate } = useAuth();
+  const { user, login } = useAuth();
   const router = useRouter();
   
   if (user) {
@@ -24,9 +24,8 @@ export default function LoginPage() {
     return null;
   }
 
-  const handleAuthSuccess = async () => {
-    await mutate(); // Re-fetches the session
-    router.push('/kursus');
+  const handleAuthSuccess = (userData: any) => {
+    login(userData);
   }
 
   return (
@@ -56,7 +55,10 @@ export default function LoginPage() {
                         <CardDescription>Daftar sekarang untuk memulai petualangan kopi Anda.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <AuthForm isRegister={true} onAuthSuccess={handleAuthSuccess} />
+                        <AuthForm isRegister={true} onAuthSuccess={() => {
+                            // After registration, user must login. We can switch tabs or reload.
+                             window.location.reload();
+                        }} />
                     </CardContent>
                 </Card>
             </TabsContent>
@@ -68,15 +70,13 @@ export default function LoginPage() {
 }
 
 
-function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSuccess: () => void }) {
+function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSuccess: (user: any) => void }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   
-  const [activeTab, setActiveTab] = useState(isRegister ? 'register' : 'login');
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!email || !password || (isRegister && !name)) {
@@ -97,16 +97,14 @@ function AuthForm({ isRegister, onAuthSuccess }: { isRegister: boolean, onAuthSu
           title: "Pendaftaran Berhasil!",
           description: result.message,
         });
-        // Switch to login tab after successful registration
-        // This is a UX choice, you might want to auto-login instead.
-        window.location.reload(); // Reload to switch tab cleanly, could be improved with state management
+        onAuthSuccess(null); // Reload page to switch to login tab
       } else {
         const result = await loginUser(email, password);
         toast({
             title: "Login Berhasil!",
             description: result.message,
         });
-        onAuthSuccess();
+        onAuthSuccess(result.user);
       }
     } catch (error: any) {
       toast({
