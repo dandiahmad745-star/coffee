@@ -116,13 +116,19 @@ export default function AdminToolsPage() {
           const content = e.target?.result as string;
           const parsedData = JSON.parse(content);
           if (parsedData.tools && Array.isArray(parsedData.tools)) {
-            setTools(parsedData.tools);
+            // Merge new data with existing data
+            setTools((prevTools) => [...prevTools, ...parsedData.tools]);
           } else {
             alert('Invalid JSON format. Expected an object with a "tools" array.');
           }
         } catch (error) {
           alert('Failed to parse JSON file.');
           console.error(error);
+        } finally {
+            // Reset file input to allow importing the same file again
+            if(fileInputRef.current) {
+                fileInputRef.current.value = '';
+            }
         }
       };
       reader.readAsText(file);
