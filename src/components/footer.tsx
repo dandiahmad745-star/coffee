@@ -15,7 +15,6 @@ export default function Footer() {
                 <div className="flex gap-6 text-muted-foreground mb-6 md:mb-0">
                     <Link href="/#features" className="hover:text-primary transition-colors">Fitur</Link>
                     <Link href="/tools" className="hover:text-primary transition-colors">Alat</Link>
-                    <Link href="/admin" className="hover:text-primary transition-colors">Admin</Link>
                 </div>
                  <p className="text-center text-sm text-muted-foreground">
                     © {new Date().getFullYear()} KopiStart. Dibuat oleh MOHAMMAD ARUL FAATHIR ERVANSYAH.
