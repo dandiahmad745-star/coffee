@@ -5,6 +5,7 @@ import Footer from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Coffee, BookOpen, BrainCircuit } from 'lucide-react';
+import Link from 'next/link';
 
 const features = [
   {
@@ -60,6 +61,13 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+             <div className="text-center mt-20">
+                <Link href="/tools" passHref>
+                    <Button size="lg" className="rounded-full text-lg px-8 py-6 shadow-lg hover:scale-105 transition-transform duration-300">
+                        Kenali Alat-alat Barista
+                    </Button>
+                </Link>
             </div>
           </div>
         </section>
