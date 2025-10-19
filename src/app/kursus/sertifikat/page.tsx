@@ -41,7 +41,7 @@ export default function CertificatePage() {
     return (
         <div className="flex flex-col min-h-screen bg-muted/40 text-foreground print:bg-white">
             <Header className="print:hidden" />
-            <main className="flex-grow pt-24 sm:pt-32">
+            <main className="flex-grow pt-24 sm:pt-32 pb-12">
                 <div className="container mx-auto px-4 max-w-4xl">
                      <div className="flex justify-between items-center mb-8 print:hidden">
                         <Button variant="outline" asChild>
@@ -54,46 +54,56 @@ export default function CertificatePage() {
                         </Button>
                     </div>
 
-                    <div className="bg-white p-8 md:p-12 border-4 border-primary/50 rounded-lg shadow-2xl aspect-[4/3] flex flex-col relative overflow-hidden">
+                    <div className="bg-white p-8 md:p-12 border-8 border-primary/80 rounded-lg shadow-2xl aspect-[4/3] flex flex-col relative overflow-hidden font-sans">
                         {/* Decorative elements */}
-                        <div className="absolute top-0 left-0 w-32 h-32 border-t-8 border-l-8 border-primary/20 rounded-tl-lg"></div>
-                        <div className="absolute bottom-0 right-0 w-32 h-32 border-b-8 border-r-8 border-primary/20 rounded-br-lg"></div>
+                        <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary/30 rounded-tl-lg"></div>
+                        <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary/30 rounded-br-lg"></div>
+                         <Award className="absolute z-0 text-primary/5 h-2/3 w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                         
-                        <div className="text-center z-10">
-                            <div className="flex justify-center items-center gap-3">
-                                <Coffee className="h-10 w-10 text-primary" />
-                                <h1 className="text-4xl font-bold font-headline text-primary">
+                        <div className="text-center z-10 flex-grow flex flex-col">
+                            <div className="flex justify-center items-center gap-2">
+                                <Coffee className="h-8 w-8 text-primary" />
+                                <h1 className="text-3xl font-bold font-headline text-primary">
                                 KopiStart
                                 </h1>
                             </div>
-
-                            <p className="text-lg mt-8 text-muted-foreground">Dengan bangga mempersembahkan</p>
-                            <h2 className="text-3xl md:text-5xl font-bold font-headline my-4 text-primary">SERTIFIKAT PENCAPAIAN</h2>
-                            <p className="text-lg text-muted-foreground">diberikan kepada:</p>
-                            <p className="text-2xl md:text-4xl font-semibold my-6 pb-6 border-b-2 border-muted">Sobat KopiStart</p>
+                            
+                            <p className="uppercase tracking-widest text-lg mt-8 text-muted-foreground">Sertifikat Penyelesaian</p>
+                            
+                            <h2 className="text-5xl font-bold font-headline my-4 text-primary/90">CERTIFICATE OF ACHIEVEMENT</h2>
+                            
+                            <p className="text-base text-muted-foreground mt-4">Dengan bangga diberikan kepada:</p>
+                            
+                            <div className="my-8 flex-grow flex items-center justify-center">
+                                <p className="text-5xl md:text-6xl font-headline font-bold text-primary border-b-2 border-primary/50 pb-4 px-8">
+                                    Sobat KopiStart
+                                </p>
+                            </div>
+                            
+                            <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+                                Telah berhasil menyelesaikan seluruh rangkaian materi dan kuis dalam kurikulum online:
+                            </p>
+                            <p className="font-bold font-headline text-2xl text-primary mt-2">
+                                "Barista Dasar: Dari Biji Hingga Cangkir"
+                            </p>
                         </div>
                         
-                        <div className="text-center mt-auto z-10">
-                            <p className="text-base md:text-lg text-muted-foreground">
-                                Telah berhasil menyelesaikan seluruh rangkaian materi dan kuis dalam
-                            </p>
-                            <p className="font-bold text-lg md:text-xl text-foreground mt-1">
-                                Kurikulum Barista Dasar KopiStart
-                            </p>
+                        <div className="text-center mt-12 z-10">
                             <div className="mt-12 flex justify-between items-end">
-                                <div className="text-left">
-                                    <p className="font-semibold text-foreground">Arul Faathir</p>
-                                    <p className="text-sm text-muted-foreground border-t pt-1 mt-1">Founder KopiStart</p>
+                                <div className="text-left w-1/3">
+                                     <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">Arul Faathir</p>
+                                    <p className="text-sm text-muted-foreground pt-1">Founder, KopiStart</p>
                                 </div>
-                                <div className="text-right">
-                                    <p className="font-semibold text-foreground">{formattedDate}</p>
-                                    <p className="text-sm text-muted-foreground border-t pt-1 mt-1">Tanggal Penyelesaian</p>
+                                <div className="text-center w-1/3">
+                                    <Award className="h-16 w-16 text-primary/80 mx-auto" />
+                                </div>
+                                <div className="text-right w-1/3">
+                                    <p className="font-semibold font-headline text-lg text-foreground border-b-2 border-muted pb-2">{formattedDate}</p>
+                                    <p className="text-sm text-muted-foreground pt-1">Tanggal Diterbitkan</p>
                                 </div>
                             </div>
                         </div>
-                        <Award className="absolute z-0 text-primary/5 opacity-50 h-2/3 w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                     </div>
-
                 </div>
             </main>
             <Footer className="print:hidden" />
